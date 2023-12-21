@@ -54,10 +54,10 @@ function Historypapers() {
     const userEmail = event.target.uemail.value;
     const userPass = event.target.upass.value;
     axios.post('https://padhaiplanet-backend.onrender.com/v1/signup', {
-      userName,
-      userPhnNumber,
-      userEmail,
-      userPass
+      'name': userName,
+      'email':userEmail,
+      'phone': userPhnNumber,
+      'password': userPass
     })
       .then((response) => {
         console.log(response);
