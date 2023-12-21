@@ -1,18 +1,44 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import { BreadcrumbHistory } from './Breadcrumbs'
-import Joiningoptions from './Joiningoptions'
-import Exploremore from './Exploremore'
+import React from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import axios from 'axios';
+import { BreadcrumbHistory } from './Breadcrumbs';
+import Joiningoptions from './Joiningoptions';
+import Exploremore from './Exploremore';
+import { useState, useEffect } from 'react'
 
 function Historypapers() {
 
+  //For fetching data
+  const API_hisory_paper = 'https://padhaiplanet-backend.onrender.com/v1/get-question?subject=english&medium=a&standard=10 ';
+
+  const [agayaData, setAgayaData] = useState([])
+
+  const fetchdata = async (url) => {
+      try{
+          const res = await fetch(url);
+          const data = await res.json();
+          console.log(data.data[0]);
+          setAgayaData(data.data[0].papers[0].question_url)
+      }catch (e){
+          console.log(e)
+      }
+  }
+
+  useEffect(() => {
+      fetchdata(API_hisory_paper);
+  }, [])
+
+
+
+
+
   function HandleClick(item) {
-    if(item === "bad"){
+    if (item === "bad") {
       document.getElementById("pop").classList.remove('hidden');
       document.getElementById("pop").classList.add('opacity-90');
     }
-    else{
+    else {
       document.getElementById("popgood").classList.remove('hidden');
     }
   }
@@ -21,7 +47,28 @@ function Historypapers() {
     document.getElementById("pop").classList.add('hidden');
   }
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const userName = event.target.uname.value;
+    const userPhnNumber = event.target.uphnnum.value;
+    const userEmail = event.target.uemail.value;
+    const userPass = event.target.upass.value;
+    axios.post('https://padhaiplanet-backend.onrender.com/v1/signup', {
+      userName,
+      userPhnNumber,
+      userEmail,
+      userPass
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
+
   return (
+
     <div>
       <Navbar />
       <BreadcrumbHistory />
@@ -55,24 +102,28 @@ function Historypapers() {
 
 
         <div id="pop" className='absolute top-0 w-full hidden pb-[20px]'>
-          <form>
-            <div className='text-center w-[40%] bg-teal-300 mx-[30%]'>
-              <h1 className='text-4xl text-left py-[40px] pl-[100px]'>PadhaiPlanet</h1>
 
-              <div>
-                <input type='text' className='mt-[50px] px-[10px] w-[350px] h-[50px]' placeholder='Name' required></input>
+          <div className='text-center w-[40%] bg-teal-300 mx-[30%]'>
+            <h1 className='text-4xl text-left py-[40px] pl-[100px]'>PadhaiPlanet</h1>
+            <form onSubmit={submitHandler}>
+              <div className='w-[50%] mt-[50px] pl-[25%]'>
+                <label for='uname' className='float-left ml-[3px] mb-[20px]'>Enter your Name: </label><br />
+                <input type='text' name='uname' className='px-[10px] w-[350px] h-[50px]' placeholder='Name' required></input>
               </div>
 
-              <div>
-                <input type='text' pattern="[7-9]{1}[0-9]{9}" maxLength="10" className='mt-[50px] px-[10px] w-[350px] h-[50px]' placeholder='Phone number' required></input>
+              <div className='w-[50%] mt-[50px] pl-[25%]'>
+                <label for='uphnnum' className='float-left ml-[3px] mb-[20px]'>Enter your Number: </label><br />
+                <input type='text' name='uphnnum' pattern="[7-9]{1}[0-9]{9}" maxLength="10" className='px-[10px] w-[350px] h-[50px]' placeholder='Phone number' required></input>
               </div>
 
-              <div>
-                <input type='email' className='mt-[50px] px-[10px] w-[350px] h-[50px]' placeholder='Email' required></input>
+              <div className='w-[50%] mt-[50px] pl-[25%]'>
+                <label for='uemail' className='float-left ml-[3px] mb-[20px]'>Enter your Email: </label><br />
+                <input type='email' name='uemail' className='px-[10px] w-[350px] h-[50px]' placeholder='Email' required></input>
               </div>
 
-              <div>
-                <input type='password' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" className='mt-[50px] mb-[50px] px-[10px] w-[350px] h-[50px]' placeholder='Password' required></input>
+              <div className='w-[50%] mt-[50px] pl-[25%]'>
+                <label for='upass' className='float-left ml-[3px] mb-[20px]'>Enter your Password: </label><br />
+                <input type='password' name='upass' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" className='mb-[50px] px-[10px] w-[350px] h-[50px]' placeholder='Password' required></input>
               </div>
 
               <div className='text-left italic pl-[135px] text-xl'>Password instructions: <hr className='w-[200px] h-1 bg-violet-900 border-0 rounded  dark:bg-gray-700' />
@@ -86,21 +137,14 @@ function Historypapers() {
 
               <button className='mb-[100px] mt-[50px] px-[10px] w-[150px] h-[50px] bg-cyan-500 text-xl' type='submit'>Login</button>
               <button className='mb-[100px] mt-[50px] px-[10px] w-[150px] h-[50px] bg-cyan-500 hidden text-xl' onClick={event => dataAgaya()} type='submit'></button>
+            </form>
+          </div>
 
-            </div>
-          </form>
         </div>
 
         <div id="popgood" className='absolute top-0 w-full hidden pb-[20px]'>
           <div className='bg-orange-400 w-[50%] ml-[25%] mt-[25px] text-center h-[1000px] overflow-scroll'>
-            <div>Home
-              <Footer />
-              <Footer />
-              <Footer />
-              <Footer />
-              <Footer />
-              <Footer />
-              <Footer />
+            <div><embed className='w-[100%] h-screen' src={agayaData} />
             </div>
           </div>
         </div>
@@ -113,7 +157,7 @@ function Historypapers() {
       </div>
       <Footer />
 
-    </div>
+    </div >
   )
 }
 
