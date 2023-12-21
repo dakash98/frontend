@@ -1,47 +1,111 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 
 function Body() {
+
+  const API1 = 'https://padhaiplanet-backend.onrender.com/v1/config';
+
+  const [standard, setStandard] = useState([])
+  const [medium, setMedium] = useState([])
+  const [subject, setSubject] = useState([])
+  const [subjectKey, setSubjectKey] = useState('')
+
+  const fetchdata = async (url) => {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data.data);
+      setStandard(data.data.standard)
+      setMedium(data.data.medium)
+      setSubject(data.data.subject)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    fetchdata(API1);
+  }, [])
+
+
+  function handleSubmit(){
+    let form = document.getElementById("cool");
+    if ( form.elements['sub'].value === 'History and Political Science' &&
+    form.elements['std'].value === "10th" &&
+    form.elements['med'].value === "English"){
+      console.log("going to history page..")
+      // return(
+      //   // <Redirect to='/history' />
+      // )
+    }else{
+      console.log('Not configured yet..')
+    }
+  }
+
+
   return (
-    <div className='bg-sky-100' >
-      <div className='text-center w-[40%] h-fit mx-[30%] my-10'>
-        <p className='text-5xl font-semibold my-10 pt-2.5'>Please select the relevant options</p>
-        <div>
-          <button
-            className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
-            Standard <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-            </svg>
-          </button>
-        </div>
+    <form id='cool'>
+      <div className='bg-sky-100' >
+        <div className='text-center w-[40%] h-fit mx-[30%] my-10'>
+          <p className='text-5xl font-semibold my-10 pt-2.5'>Please select the relevant options</p>
+          <div>
+            <select name='std'
+              className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
+              <option>
+                Standard <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                </svg>
+              </option>
 
-        <div>
-          <button
-            className="text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
-            Medium <svg className="w-2.5 h-2.5 ms-[20.10rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-            </svg>
-          </button>
-        </div>
+              {standard.map((standards) => (
+                <option key={standards.key}>{standards.value}</option>
+              ))}
 
-        <div>
-          <button
-            className="text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
-            Subject <svg className="w-2.5 h-2.5 ms-[20.50rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-            </svg>
-          </button>
-        </div>
+            </select>
+          </div>
 
-        <div>
-          <Link to='/history'
-            className="text-center rounded-lg text-white bg-indigo-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60" type="button">
-            Submit
-          </Link>
-        </div>
-      </div >
-      {/* <div className='text-center pt-[25px]'>
+          <div>
+            <select name='med'
+              className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
+              <option>
+                Medium <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                </svg>
+              </option>
+
+              {medium.map((mediums) => (
+                <option key={mediums.key}>{mediums.value}</option>
+              ))}
+
+            </select>
+          </div>
+
+          <div>
+            <select name='sub'
+              className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
+              <option>
+                Subject <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                </svg>
+              </option>
+
+              {subject.map((subjects) => (
+                <option key={subjects.key}>{subjects.value}</option>
+              ))}
+
+            </select>
+          </div>
+
+          <div>
+            <button  onClick={event => {handleSubmit()}}
+              className="text-center rounded-lg text-white bg-indigo-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60" type="button">
+              Submit
+            </button>
+          </div>
+        </div >
+        {/* <div className='text-center pt-[25px]'>
         <h1 className='text-lg'>For More Content of SSC please join below.</h1>
         <div className='text-center'>
           <button type='button' className='flex-inline text-white rounded-lg w-48 font-semibold bg-gray-800 py-4 my-[8px] mx-[10px]'>WhatsApp<svg className='inline ml-[10px]' xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
@@ -53,7 +117,8 @@ function Body() {
           </svg></button>
         </div>
       </div> */}
-    </div>
+      </div>
+    </form>
   )
 }
 

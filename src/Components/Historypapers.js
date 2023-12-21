@@ -1,16 +1,20 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import Loginpage from './Loginpage'
 import { BreadcrumbHistory } from './Breadcrumbs'
 import Joiningoptions from './Joiningoptions'
 import Exploremore from './Exploremore'
 
 function Historypapers() {
 
-  function HandleClick(event) {
-    document.getElementById("pop").classList.remove('hidden');
-    document.getElementById("pop").classList.add('opacity-90');
+  function HandleClick(item) {
+    if(item === "bad"){
+      document.getElementById("pop").classList.remove('hidden');
+      document.getElementById("pop").classList.add('opacity-90');
+    }
+    else{
+      document.getElementById("popgood").classList.remove('hidden');
+    }
   }
 
   function dataAgaya() {
@@ -28,8 +32,8 @@ function Historypapers() {
             <div className='w-[50%] ml-[25%] mt-[100px]'>
               <div className='w-[100px] h-[50px] text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>2022</div>
               <div className='flex'>
-                <button onClick={event => HandleClick()} type='submit' className='w-[250px] text-white h-[100px] text-center font-medium mt-[50px] bg-lime-600'>Histroy Q Paper</button>
-                <button type='submit' className='w-[250px] text-white h-[100px] text-center font-medium mt-[50px] bg-lime-600 ml-[120px]'>Histroy Q Paper</button>
+                <button onClick={event => HandleClick("bad")} type='submit' className='w-[250px] text-white h-[100px] text-center font-medium mt-[50px] bg-lime-600'>Histroy Q Paper</button>
+                <button onClick={event => HandleClick("good")} type='submit' className='w-[250px] text-white h-[100px] text-center font-medium mt-[50px] bg-lime-600 ml-[120px]'>Histroy Q Paper</button>
               </div>
             </div>
             <div className='w-[50%] ml-[25%] mt-[40px]'>
@@ -86,9 +90,23 @@ function Historypapers() {
             </div>
           </form>
         </div>
+
+        <div id="popgood" className='absolute top-0 w-full hidden pb-[20px]'>
+          <div className='bg-orange-400 w-[50%] ml-[25%] mt-[25px] text-center h-[1000px] overflow-scroll'>
+            <div>Home
+              <Footer />
+              <Footer />
+              <Footer />
+              <Footer />
+              <Footer />
+              <Footer />
+              <Footer />
+            </div>
+          </div>
+        </div>
       </div>
       <div className='mt-[150px]'>
-      <Joiningoptions />
+        <Joiningoptions />
       </div>
       <div>
         <Exploremore />
