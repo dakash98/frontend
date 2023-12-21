@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 
 function Body() {
 
   const API1 = 'https://padhaiplanet-backend.onrender.com/v1/config';
+
+  const navigate = useNavigate();
 
   const [standard, setStandard] = useState([])
   const [medium, setMedium] = useState([])
@@ -31,14 +33,13 @@ function Body() {
 
 
   function handleSubmit(){
+
     let form = document.getElementById("cool");
     if ( form.elements['sub'].value === 'History and Political Science' &&
     form.elements['std'].value === "10th" &&
     form.elements['med'].value === "English"){
       console.log("going to history page..")
-      // return(
-      //   // <Redirect to='/history' />
-      // )
+      navigate('/history');
     }else{
       console.log('Not configured yet..')
     }
