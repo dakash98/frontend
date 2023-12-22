@@ -5,14 +5,13 @@ import { useState, useEffect } from 'react'
 
 function Body() {
 
-  const API1 = 'https://padhaiplanet-backend.onrender.com/v1/config';
+  const API_config = 'https://padhaiplanet-backend.onrender.com/v1/config';
 
   const navigate = useNavigate();
 
   const [standard, setStandard] = useState([])
   const [medium, setMedium] = useState([])
   const [subject, setSubject] = useState([])
-  const [subjectKey, setSubjectKey] = useState('')
 
   const fetchdata = async (url) => {
     try {
@@ -28,7 +27,7 @@ function Body() {
   }
 
   useEffect(() => {
-    fetchdata(API1);
+    fetchdata(API_config);
   }, [])
 
 
@@ -39,7 +38,7 @@ function Body() {
     form.elements['std'].value === "10th" &&
     form.elements['med'].value === "English"){
       console.log("going to history page..")
-      navigate('/history');
+      navigate('/history-question-papers');
     }else{
       console.log('Not configured yet..')
     }
@@ -56,7 +55,7 @@ function Body() {
               className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
               <option>
                 Standard <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg>
               </option>
 
@@ -72,7 +71,7 @@ function Body() {
               className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
               <option>
                 Medium <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg>
               </option>
 
@@ -88,7 +87,7 @@ function Body() {
               className="animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2.5 mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[450px]" type="button">
               <option>
                 Subject <svg className="w-2.5 h-2.5 ms-[19.75rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg>
               </option>
 
