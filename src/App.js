@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/login' element={<Loginpage />} />
-        <Route path='/history-question-papers' element={<Historypapers />} />
+        <Route path='/history-and-political-science-question-papers' element={<Historypapers />} />
         <Route path='/about-us' element={<AboutUs />} />
         <Route path='/content' element={<Contentscreen />} />
         <Route path='/test' element={<Fetchdata />} />
