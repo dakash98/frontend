@@ -25,28 +25,41 @@ function Body() {
       console.log(e)
     }
   }
+  
+
 
   useEffect(() => {
     fetchdata(API_config);
   }, [])
 
 
-  function handleSubmit(){
+  function handleSubmit() {
 
-    let form = document.getElementById("cool");
-    if ( form.elements['sub'].value === 'History and Political Science' &&
-    form.elements['std'].value === "10th" &&
-    form.elements['med'].value === "English"){
-      console.log("going to history page..")
-      navigate('/history-question-papers');
-    }else{
-      console.log('Not configured yet..')
+    let form = document.getElementById("form");
+
+    const page_mapping = {
+      'english': '/english-question-papers',
+      'hindi_full':'hindi-full-question-papers',
+      'hindi_half':'hindi-half-question-papers',
+      'sanskrit_full':'sanskrit-full-question-papers',
+      'sanskrit_half':'sanskrit-half-question-papers',
+      'marathi':'marathi-question-papers',
+      'history_and_political_science':'history-and-political-science-question-papers',
+      'geography':'geography-question-papers',
+      'math_1':'math-1-question-papers',
+      'math_2':'math-2-question-papers',
+      'science_1':'science-1-question-papers',
+      'science_2':'science-2-question-papers',
     }
+   
+      console.log(form.elements['sub'].value)
+      navigate(page_mapping[form.elements['sub'].value]);
+
   }
 
 
   return (
-    <form id='cool'>
+    <form id='form'>
       <div className='bg-sky-100' >
         <div className='text-center w-[40%] h-fit mx-[30%] my-10'>
           <p className='text-5xl font-semibold my-10 pt-2.5'>Please select the relevant options</p>
@@ -60,7 +73,7 @@ function Body() {
               </option>
 
               {standard.map((standards) => (
-                <option key={standards.key}>{standards.value}</option>
+                <option value={standards.key}>{standards.value}</option>
               ))}
 
             </select>
@@ -76,7 +89,7 @@ function Body() {
               </option>
 
               {medium.map((mediums) => (
-                <option key={mediums.key}>{mediums.value}</option>
+                <option value={mediums.key}>{mediums.value}</option>
               ))}
 
             </select>
@@ -92,14 +105,14 @@ function Body() {
               </option>
 
               {subject.map((subjects) => (
-                <option key={subjects.key}>{subjects.value}</option>
+                <option value={subjects.key}>{subjects.value}</option>
               ))}
 
             </select>
           </div>
 
           <div>
-            <button  onClick={event => {handleSubmit()}}
+            <button onClick={event => { handleSubmit() }}
               className="text-center rounded-lg text-white bg-indigo-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60" type="button">
               Submit
             </button>
