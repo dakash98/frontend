@@ -4,7 +4,7 @@ import Footer from './Footer'
 function Contentscreen() {
   return (
     <div className='bg-orange-400 w-[50%] ml-[25%] mt-[200px] text-center h-[1000px] overflow-scroll'>
-      <div>Home
+      <div className='text-white'>Home
         <Footer />
         <Footer />
         <Footer />

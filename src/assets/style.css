@@ -1,5 +1,57 @@
 /* This file is for normal CSS.. */
 
-#gonnow{
-    transition: 0.5s;    
+#gonnow {
+  transition: 0.5s;
+}
+
+body {
+  margin-left: 3.33333%; 
+  margin-right: 3.33333%;
+  padding: 0; 
+  background-image: url("../Static/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position: center center;
+  height: 100vh;
+}
+
+/* Styles for the text gradient effect */
+.gradient-text {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  color: #333; /* Set your desired text color */
+}
+
+.gradient-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, #ff4800, #c5c5db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-text:hover::before {
+  opacity: 1;
+  animation: gradientAnimation 1s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

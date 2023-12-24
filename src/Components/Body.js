@@ -60,8 +60,8 @@ function Body() {
 
   return (
     <form id='form'>
-      <div className='bg-sky-100' >
-        <div className='text-center w-[40%] h-fit mx-[30%] my-10'>
+      <div className='' >
+        <div className='text-center w-[40%] h-fit  my-10'>
           <p className='text-5xl font-semibold my-10 pt-2.5'>Please select the relevant options</p>
           <div>
             <select name='std'
