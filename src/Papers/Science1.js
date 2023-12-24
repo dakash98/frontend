@@ -8,7 +8,7 @@ import Exploremore from '../Components/Exploremore';
 import { useState, useEffect } from 'react'
 import { fetchdata } from '../Global.js'
 
-function Historypapers() {
+function Science1() {
 
   //For fetching data
   const API_hisory_paper = 'https://padhaiplanet-backend.onrender.com/v1/get-question?subject=english&medium=a&standard=10 ';
@@ -103,7 +103,7 @@ function Historypapers() {
       <div id='parent' className='relative'>
         <div id='go' className=' top-0 w-full mt-[50px]'>
           <div className='outline-double w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
-            <h1 className='ml-[60%] text-3xl font-bold'>History</h1>
+            <h1 className='ml-[60%] text-3xl font-bold'>Science 1</h1>
             <div className='w-[50%] ml-[15%]'>
 
               {data_imp.map((item, index) =>
@@ -197,7 +197,7 @@ function Historypapers() {
         <Joiningoptions />
       </div>
       <div>
-        <Exploremore sub_name={'history_and_political_science'} />
+        <Exploremore sub_name={'science_1'} />
       </div>
       <Footer />
 
@@ -205,4 +205,4 @@ function Historypapers() {
   )
 }
 
-export default Historypapers
+export default Science1

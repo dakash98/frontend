@@ -39,20 +39,20 @@ function Body() {
 
     const page_mapping = {
       'english': '/english-question-papers',
-      'hindi_full':'hindi-full-question-papers',
-      'hindi_half':'hindi-half-question-papers',
-      'sanskrit_full':'sanskrit-full-question-papers',
-      'sanskrit_half':'sanskrit-half-question-papers',
-      'marathi':'marathi-question-papers',
-      'history_and_political_science':'history-and-political-science-question-papers',
-      'geography':'geography-question-papers',
-      'math_1':'math-1-question-papers',
-      'math_2':'math-2-question-papers',
-      'science_1':'science-1-question-papers',
-      'science_2':'science-2-question-papers',
+      'hindi_full':'/hindi-full-question-papers',
+      'hindi_half':'/hindi-half-question-papers',
+      'sanskrit_full':'/sanskrit-full-question-papers',
+      'sanskrit_half':'/sanskrit-half-question-papers',
+      'marathi':'/marathi-question-papers',
+      'history_and_political_science':'/history-and-political-science-question-papers',
+      'geography':'/geography-question-papers',
+      'math_1':'/math-1-question-papers',
+      'math_2':'/math-2-question-papers',
+      'science_1':'/science-1-question-papers',
+      'science_2':'/science-2-question-papers',
     }
    
-      console.log(form.elements['sub'].value)
+      
       navigate(page_mapping[form.elements['sub'].value]);
 
   }
