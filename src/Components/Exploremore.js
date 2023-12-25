@@ -16,7 +16,7 @@ function Exploremore(props) {
     'hindi_half':'/hindi-half-question-papers',
     'sanskrit_full':'/sanskrit-full-question-papers',
     'sanskrit_half':'/sanskrit-half-question-papers',
-    'marathi':'marathi-question-papers',
+    'marathi':'/marathi-question-papers',
     'history_and_political_science':'/history-and-political-science-question-papers',
     'geography':'/geography-question-papers',
     'math_1':'/math-1-question-papers',
@@ -52,8 +52,8 @@ function Exploremore(props) {
 
 
   return (
-    <div className='w-[25%] ml-[37.5%] mt-[150px]'>
-      <h2 className='text-2xl mb-[30px] font-semibold'>Explore more question papers</h2>
+    <div className='w-[50%] ml-[31%] mt-[150px]'>
+      <h2 className='text-3xl mb-[30px] font-semibold text-white'>Explore more question papers</h2>
       <div className='flex flex-wrap max-w-[100%]'>
       {subject.map((subjects) =>
       <div className='my-[5%] w-[50%] h-[50px]'> 

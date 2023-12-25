@@ -1,30 +1,75 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Footer() {
+
+    const navigate = useNavigate();
+
+    const API_config = 'https://padhaiplanet-backend.onrender.com/v1/config';
+  
+    const [subject, setSubject] = useState([]);
+  
+    function handleClick(user_selected_option) {
+    const page_mapping = {
+      'english': '/english-question-papers',
+      'hindi_full':'/hindi-full-question-papers',
+      'hindi_half':'/hindi-half-question-papers',
+      'sanskrit_full':'/sanskrit-full-question-papers',
+      'sanskrit_half':'/sanskrit-half-question-papers',
+      'marathi':'/marathi-question-papers',
+      'history_and_political_science':'/history-and-political-science-question-papers',
+      'geography':'/geography-question-papers',
+      'math_1':'/math-1-question-papers',
+      'math_2':'/math-2-question-papers',
+      'science_1':'/science-1-question-papers',
+      'science_2':'/science-2-question-papers',
+    }
+  
+    navigate(page_mapping[user_selected_option]);
+  }
+  
+    const fetchdata = async (url) => {
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        setSubject(data.data.subject)
+  
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  
+    useEffect(() => {
+      fetchdata(API_config);
+    }, [])
+  
+
+
     return (
         // <h1>This is Foooter...</h1>
         // <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
         // <!-- Footer container -->
         <>
-            <div className='flex mt-[125px] h-[250px]'>
+            <div className='flex flex-wrap mt-[125px]'>
                 <div className='w-1/3 bg-neutral-500 text-center pt-[20px]'>
                     <div className='text-xl py-[10px] text-white'>PadhaiPlanet</div>
                     <div className='text-xl py-[10px] text-white'>Company</div>
                     <div className='text-lg py-[10px] text-white'>About Us</div>
+                    <div className='text-lg py-[10px] text-white'>Blogs</div>
                 </div>
-                <div className='w-1/3 bg-neutral-500 text-white'>
-                    <div className='text-xl text-center pt-[20px]'>Our Products</div>
-                    <ol className='text-center pt-6'>
-                        <li className='pt-2'>Mathematics SSC</li>
-                        <li className='pt-2'>History SSC</li>
-                        <li className='pt-2'>Geography SSC</li>
-                        <li className='pt-2'>English SSC</li>
-                        <li className='pt-2'>Science1 SSC</li>
-                    </ol>
-                </div>
+                
                 <div className='w-1/3 bg-neutral-500'>
-                    <div className='text-xl pt-[20px] text-center text-white'>Community Blogs</div>
+                    <div className='text-xl pt-[20px] text-center text-white'></div>
                 </div>
+
+                <div className='w-1/3 flex-wrap pb-[2.5%] bg-neutral-500 text-white'>
+                    <div className='text-center text-xl pt-[20px]'>Our Products</div>
+                    {subject.map((subjects) =>
+                    <ol className='pt-4'>
+                        <button onClick={event => {handleClick(subjects.key)}} className='' key={subjects.key}>{subjects.value} SSC</button>
+                    </ol>)}
+                </div>
+
             </div>
             <div className='text-right bg-neutral-700 py-[20px]'>
 
