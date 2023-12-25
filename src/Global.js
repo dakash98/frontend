@@ -11,18 +11,23 @@
 // }
 
 
-// export async function fetchdata(props){
+ 
+// export async function fetchdata(url){
+
 //     try{
-//         const res = await fetch(props.url);
+//         // const res = fetch(url, {method: "GET"}).then((response) => response.json()).then((data) => data);
+//         const res = await fetch(url);
 //         const data = await res.json();
-//         console.log(typeof(data));
-//         console.log(data);   
+//         // console.log(res)
+//         // console.log(typeof(data));
+//         // console.log(data);   
 //         return data;
 //     }catch (e){
 //         console.log(e)
 //         return e;
 //     }
-    
 // }
+
+
 
 
