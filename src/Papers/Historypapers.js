@@ -113,7 +113,7 @@ function Historypapers() {
                     {item.papers.map((item1, index1) =>
                       <div className='flex ml-[15%]'>
                         <div className='block'>
-                          <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-lime-600' key={index}>{item.papers[index1]['name']} Q Paper</button>
+                          <button onClick={event => HandleClick("not_logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-lime-600' key={index}>{item.papers[index1]['name']} Q Paper</button>
                           <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-blue-500' key={index}>{item.papers[index1]['name']} Solution</a>
                         </div>
                       </div>)}
