@@ -35,7 +35,7 @@ function Homepage() {
             About Us
           </Link>
           <Link
-            to="/login"
+            to="/blogs"
             className="inline-block bg-gradient-to-r from-red-800 to-purple-200 text-transparent bg-clip-text btn float-left font-medium font-sans text-white w-40 text-2xl text-center pt-[32px] hover:bg-green-500"
           >
             {" "}
