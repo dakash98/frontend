@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Body from "./Body";
 import Footer from "./Footer";
 import { BreadcrumbProfile, Breadcrumbhome } from "./Breadcrumbs";
@@ -6,6 +6,7 @@ import Joiningoptions from "./Joiningoptions";
 import { Link } from "react-router-dom";
 import "../assets/style.css";
 import QuestionAnswer from "./QuestionAnswer";
+// import backgroundVideo from '../Static/background_video.mp4'
 
 function Homepage() {
   function openLogoutPage(event) {
@@ -20,9 +21,18 @@ function Homepage() {
     document.getElementById("home").classList.remove("hidden");
   }
 
+  // useEffect(() => {
+  //   var x =document.getElementById("video")
+  //   x.play();
+  // })
+
   return (
     <div>
-      <div className="sticky top-0 flex pl-[50px] pt-10 z-10">
+      {/* <video className="w-full embed-responsive-item h-screen" muted loop id="video" autoplay>
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video> */}
+      <div className="top-0 flex pl-[50px] pt-10 z-0">
         <div className="w-5/6 font-sans text-white text-6xl font-bold py-4">
           PadhaiPlanet
         </div>
@@ -35,7 +45,7 @@ function Homepage() {
             About Us
           </Link>
           <Link
-            to="/login"
+            to="/blogs"
             className="inline-block bg-gradient-to-r from-red-800 to-purple-200 text-transparent bg-clip-text btn float-left font-medium font-sans text-white w-40 text-2xl text-center pt-[32px] hover:bg-green-500"
           >
             {" "}
@@ -101,7 +111,7 @@ function Homepage() {
       <div className="z-2">
         <Footer />
       </div>
-    </div>
+    </div >
   );
 }
 
