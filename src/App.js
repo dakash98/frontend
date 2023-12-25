@@ -7,7 +7,6 @@ import AboutUs from './Components/AboutUs';
 import Contentscreen from './Components/Contentscreen';
 import Fetchdata from './Components/Fetchdata';
 import Blogs from './Components/Blogs';
-import ImageDetail from './Components/ImageDetail';
 import Englishpapers from '../src/Papers/Englishpapers'
 import HindiHalfpapers from '../src/Papers/HindiHalfpapers';
 import HindiFullpapers from '../src/Papers/HindiFullpapers';
@@ -19,6 +18,12 @@ import Math1papers from '../src/Papers/Math1papers';
 import Math2papers from '../src/Papers/Math2papers';
 import Science1 from '../src/Papers/Science1';
 import Science2 from '../src/Papers/Science2';
+import Blog1 from './Components/Blogs/Blog1';
+import Blog2 from './Components/Blogs/Blog2';
+import Blog3 from './Components/Blogs/Blog3';
+import Blog4 from './Components/Blogs/Blog4';
+import Blog5 from './Components/Blogs/Blog5';
+import Blog6 from './Components/Blogs/Blog6';
 
 function App() {
   return (
@@ -26,7 +31,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/blogs' element={<Blogs />} />
-          <Route path='/image-detail/:id' element={<ImageDetail />} />
           <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<Loginpage />} />
           <Route path='/history-and-political-science-question-papers' element={<Historypapers />} />
@@ -44,8 +48,16 @@ function App() {
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/content' element={<Contentscreen />} />
           <Route path='/test' element={<Fetchdata />} />
+          <Route path='/10th-Board-SSC-Exam-2024' element={<Blog1 />} />
+          <Route path='/SSC-Exam-Timetable-2024' element={<Blog2 />} />
+          <Route path='/10th-examination' element={<Blog3 />} />
+          <Route path='/Importance-of-10th' element={<Blog4 />} />
+          <Route path='/Importance-of-Planning' element={<Blog5 />} />
+          <Route path='/How-easy-is-it-to-crack-Class-10-examination?' element={<Blog6 />} />
         </Routes>
       </BrowserRouter>
+      
+     
     </>
   );
 }
