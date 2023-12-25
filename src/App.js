@@ -39,7 +39,7 @@ function App() {
           <Route path='/hindi-half-question-papers' element={<HindiHalfpapers />} />
           <Route path='/sanskrit-full-question-papers' element={<SanskritFullpapers />} />
           <Route path='/sanskrit-half-question-papers' element={<SanskritHalfpapers />} />
-          <Route path='marathi-question-papers' element={<Marathipapers />} />
+          <Route path='/marathi-question-papers' element={<Marathipapers />} />
           <Route path='/geography-question-papers' element={<Geographypapers />} />
           <Route path='/math-1-question-papers' element={<Math1papers />} />
           <Route path='/math-2-question-papers' element={<Math2papers />} />
