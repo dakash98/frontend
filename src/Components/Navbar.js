@@ -16,7 +16,7 @@ function Navbar() {
             <div className="flex w-[50%] mr-15% font-sans text-white text-6xl font-bold py-4">
                 PadhaiPlanet
             </div>
-            <div className="text-right flex pl-[95%]">
+            <div className="text-right flex pl-[42%]">
                 <Link
                     to="/about-us"
                     className="gradient-text btn float-right font-medium font-sans text-white w-40 text-2xl text-center pt-[32px]"
