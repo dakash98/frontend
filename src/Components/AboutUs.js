@@ -22,7 +22,7 @@ function AboutUs() {
                         <BreadcrumbProfile />
                     </div>
 
-                    <div className='w-[50%] h-fitml-[25%] ml-[25%]'>
+                
                         <div className='lg:px-24'>
                             {/* First Section */}
                             <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
@@ -42,15 +42,12 @@ function AboutUs() {
                                 </div>
                             </div>
 
-
-                            {/* Some spacing */}
                             <br />
                             <br />
                             <br />
                             <br />
                             <br />
 
-                            {/* Second Section */}
                             <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
                                 <div className="flex flex-col lg:flex-row">
                                     <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
@@ -74,8 +71,6 @@ function AboutUs() {
                             <br />
                             <br />
                         </div>
-
-                    </div>
                     <div className='mt-[75px]'>
                         <Joiningoptions />
                     </div>
