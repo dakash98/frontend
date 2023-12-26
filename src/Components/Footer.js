@@ -65,7 +65,7 @@ function Footer() {
                 <div className='w-1/3 flex-wrap pb-[2.5%] bg-neutral-500 text-white'>
                     <div className='text-center text-xl pt-[20px]'>Our Products</div>
                     {subject.map((subjects) =>
-                    <ol className='pt-4'>
+                    <ol className='pt-4 text-center'>
                         <button onClick={event => {handleClick(subjects.key)}} className='' key={subjects.key}>{subjects.value} SSC</button>
                     </ol>)}
                 </div>

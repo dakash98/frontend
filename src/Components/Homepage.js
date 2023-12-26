@@ -14,9 +14,10 @@ function Homepage() {
 
   return (
     <div>
-      <div className="sticky top-0 flex pl-[50px] pt-10 z-10">
+      <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
+      
       <div className="relative z-0">
         <div>
           <div id="home">
@@ -28,10 +29,9 @@ function Homepage() {
           <Body />
           <Joiningoptions />
         </div>
-
         <Profilepage />
-
       </div>
+
       <div>
         <QuestionAnswer />
       </div>
