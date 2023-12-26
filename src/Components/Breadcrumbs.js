@@ -25,7 +25,7 @@ export function BreadcrumbPages(props) {
   }
 
   function handleClick(u_choice){
-      navigate(page_map['home']);
+      navigate(page_map[u_choice]);
   }
 
   return (
