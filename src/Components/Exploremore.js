@@ -57,7 +57,7 @@ function Exploremore(props) {
       <div className='flex flex-wrap max-w-[100%]'>
       {subject.map((subjects) =>
       <div className='my-[5%] w-[50%] h-[50px]'> 
-        <button onClick={event => (handleClick(subjects.key))} className='w-[200px] h-[70px] bg-blue-600 rounded-xl text-xl text-center' key={subjects.key}>{subjects.value}</button>
+        <button onClick={event => (handleClick(subjects.key))} className='w-[300px] h-[70px] bg-blue-600 rounded-xl text-xl text-center font-semibold' key={subjects.key}>{subjects.value}</button>
       </div>)}
       </div>
     </div>
