@@ -32,7 +32,7 @@ function Navbar() {
                     Blogs
                 </Link>
                 <Link
-                    to="/login"
+                    to="/contact-us"
                     className="btn float-left font-medium font-sans text-white w-40 text-2xl text-center pt-[32px] hover:bg-green-500"
                 >
                     {" "}
