@@ -24,6 +24,7 @@ import Blog3 from './Components/Blogs/Blog3';
 import Blog4 from './Components/Blogs/Blog4';
 import Blog5 from './Components/Blogs/Blog5';
 import Blog6 from './Components/Blogs/Blog6';
+import ContactUs from './Components/ContactUs';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='/science-1-question-papers' element={<Science1 />} />
           <Route path='/science-2-question-papers' element={<Science2 />} />
           <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/content' element={<Contentscreen />} />
           <Route path='/test' element={<Fetchdata />} />
           <Route path='/10th-Board-SSC-Exam-2024' element={<Blog1 />} />

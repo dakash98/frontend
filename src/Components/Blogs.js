@@ -36,15 +36,13 @@ const Blogs = () => {
 
 
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                        <div className="p-4 md:p-8 lg:mb-10 flex items-center justify-center min-h-screen">
-                            <div className="rounded-lg p-4 md:p-8 lg:px-24">
+                            <div className="rounded-lg p-4 md:p-8 lg:mb-10 lg:px-32 ">
                                 <img
                                     src={myImage}
                                     alt="Description of the image"
                                     className="w-full h-auto max-w-full rounded-lg"
                                 />
                             </div>
-                        </div>
                         <div className='block'>
                             <div className="flex flex-wrap px-4 md:px-24">
                                 <div className="flex-grow p-8 xs:1/1 md:w-1/2 lg:w-1/3 xl:w-1/4">
