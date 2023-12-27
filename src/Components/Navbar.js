@@ -19,7 +19,7 @@ function Navbar() {
             <div className="text-right flex pl-[42%]">
                 <Link
                     to="/about-us"
-                    className="gradient-text btn float-right font-medium font-sans text-white w-40 text-2xl text-center pt-[32px]"
+                    className="btn float-right font-medium font-sans text-white w-40 text-2xl text-center pt-[32px]"
                 >
                     {" "}
                     About Us

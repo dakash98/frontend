@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
 import Contentscreen from '../Components/Contentscreen.js';
 import Profilepage from '../Components/Profilepage.js';
+import Loader from '../Components/Loader.js';
 
 function Englishpapers() {
 
@@ -17,15 +18,22 @@ function Englishpapers() {
   //API data hooks
   const [que_data, setQue_data] = useState([]);
 
-
   const [data, setData] = useState([])
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   //Assigning 
   const fetchdata = async (url) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
+      await sleep(3000);
       setData(data.data);
+      console.log("Hide the loader..")
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('whole_document').classList.remove('hidden');
     } catch (e) {
       console.log(e)
     }
@@ -38,6 +46,8 @@ function Englishpapers() {
 
 
   useEffect(() => {
+    // document.getElementById('loader').classList.remove('hidden');
+    // document.getElementById('whole_document').classList.add('hidden');
     fetchdata(API_hisory_paper);
   }, [])
 
@@ -56,8 +66,12 @@ function Englishpapers() {
 
 
   return (
+    <>
+    <div id='loader' className='w-[50%] h-[50%] ml-[25%] mt-[12.25%]'>
+        <Loader />
+      </div>
 
-    <div>
+    <div id='whole_document' className='hidden'>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
@@ -70,7 +84,7 @@ function Englishpapers() {
             <BreadcrumbProfile />
           </div>
       </div>
-      
+
       <div id='parent' className='relative'>
         <div id='go' className=' top-0 w-full mt-[50px]'>
           <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
@@ -123,6 +137,9 @@ function Englishpapers() {
       <Footer />
 
     </div >
+
+  </>
+
   )
 }
 
