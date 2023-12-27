@@ -43,8 +43,8 @@ function Loginpage() {
 
     return (
         <>
-            <div className='text-center w-[75%] bg-teal-300 mx-[12.5%] min-h-screen'>
-            <h1 className='text-4xl text-left py-[40px] pl-[100px]'>PadhaiPlanet</h1>
+            <div className='text-center w-[75%] bg-sky-300 mx-[12.5%] min-h-screen'>
+            <h1 className='text-4xl text-left py-[40px] pl-[100px]'></h1>
             <div className='flex w-[100%] mt-[5%] pl-[25%]'>
               <button onClick={event => (toggleSignUp('sign_up'))} className='float-left w-[25%] h-[50px] ml-[2.5%] text-white font-semibold bg-sky-600'>Sign Up</button>
               <button onClick={event => (toggleSignUp('sign_in'))} className='float-right w-[25%] h-[50px] ml-[10%] text-white font-semibold bg-sky-600'>Sign In</button>
