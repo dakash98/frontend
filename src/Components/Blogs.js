@@ -51,7 +51,7 @@ const Blogs = () => {
                                         <Link to="/10th-Board-SSC-Exam-2024">
                                             <img
                                                 src={myImage2}
-                                                alt="Image 2"
+                                                alt="10th Board SSC Exam 2024"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer"
                                                 style={{ width: "100%" }}
                                                 onClick={handleImageClick}
@@ -78,7 +78,7 @@ const Blogs = () => {
                                         <Link to="/SSC-Exam-Timetable-2024">
                                             <img
                                                 src={myImage3}
-                                                alt="Description of Image 3"
+                                                alt="SSC Exam Timetable 2024"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
                                                 style={{ width: "100%" }} />
                                         </Link>
@@ -99,44 +99,46 @@ const Blogs = () => {
 
                                 <div className="flex-grow p-8 xs:1/1 md:w-1/2 lg:w-1/3 xl:w-1/4">
                                     <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/10th-examination">
+                                        <Link to="/Importance-of-Planning">
                                             <img
                                                 src={myImage4}
-                                                alt="Description of Image 4"
+                                                alt="Importance of Planning"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
                                                 style={{ width: "100%" }} />
                                         </Link>
                                         <div>
                                             <br />
                                             <p style={{ marginBottom: '10px', color: "white" }}>
-                                                <b className='text-lg '>10th examination</b>
+                                                <b className='text-lg '>10th Examination</b>
                                                 <br />
-                                                From our earliest years, we've internalized the notion that conquering the 10th-grade exam.
-                                                <Link to="/10th-examination">
-                                                    <span className="text-red-600 hover:text-yellow-200 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110 ">
-                                                        ... <b>Read More</b>
+                                                From our earliest years,we've internalised the notion that conquering the 10th-grade exam.
+                                                <Link to="/Importance-of-Planning">
+                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
+                                                        ...
+                                                        <b>Read More</b>
                                                     </span></Link>
                                             </p>
                                         </div>
-                                        <br />
+
                                     </div>
                                     <br />
+                                    <br />
                                     <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/Importance-of-10th">
+                                        <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
                                             <img
                                                 src={myImage5}
-                                                alt="Description of Image 5"
+                                                alt="How easy is it to crack Class 10 examination?"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
                                                 style={{ width: "100%" }} />
                                         </Link>
                                         <div>
                                             <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}><b className='text-lg '>Importance of 10th </b>
+                                            <p style={{ marginBottom: '10px', color: "white" }}><b className='text-lg '>Importance of 10th</b>
                                                 <br />
                                                 It has been embedded in us since our very childhood that clearing the 10th exam is the biggest achievement.
-                                                <Link to="/Importance-of-10th">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
-                                                        ...<b>Read More</b></span></Link>
+                                                <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
+                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110"
+                                                    >...<b>Read More</b></span></Link>
                                             </p>
                                         </div>
 
@@ -148,7 +150,7 @@ const Blogs = () => {
                                         <Link to="/Importance-of-Planning">
                                             <img
                                                 src={myImage6}
-                                                alt="Description of Image 6"
+                                                alt="Importance of Planning"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
                                                 style={{ width: "100%" }} />
                                         </Link>
@@ -173,7 +175,7 @@ const Blogs = () => {
                                         <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
                                             <img
                                                 src={myImage7}
-                                                alt="Description of Image 7"
+                                                alt="How easy is it to crack Class 10 examination?"
                                                 className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
                                                 style={{ width: "100%" }} />
                                         </Link>

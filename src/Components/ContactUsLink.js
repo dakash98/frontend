@@ -8,7 +8,7 @@ const ContactUsLink = () => {
   const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return (
-    <a href={mailtoLink} className='text-white text-xl md:text-2xl lg:text-3xl mt-2 md:mt-0 text-center'>
+    <a href={mailtoLink} className='text-white text-xl lg:text-3xl mt-1 md:mt-0 text-center '>
       Write to us
     </a>
   );

@@ -37,7 +37,7 @@ function AboutUs() {
 
                                 <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
                                     <div className="p-4">
-                                        <p className='text-white paragraph text-lg'>PadhaiPlanet is an online platform created by students for students. The idea behind this initiative originated when the creators were pursuing their 10th examination. They found it challenging to familiarise themselves with the question papers for practice. Practising old question papers is as crucial as studying the syllabus when aiming for a good rank or marks. Currently, PadhaiPlanet provides Maharashtra Board 10th question papers, and there are further offerings that PadhaiPlanet plans to introduce in the near future.</p>
+                                        <p className='text-white paragraph text-xl'>PadhaiPlanet is an online platform created by students for students. The idea behind this initiative originated when the creators were pursuing their 10th examination. They found it challenging to familiarise themselves with the question papers for practice. Practising old question papers is as crucial as studying the syllabus when aiming for a good rank or marks. Currently, PadhaiPlanet provides Maharashtra Board 10th question papers, and there are further offerings that PadhaiPlanet plans to introduce in the near future.</p>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ function AboutUs() {
                                 <div className="flex flex-col lg:flex-row">
                                     <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
                                         <div className="p-4"> 
-                                            <p className='text-white paragraph text-lg'>PadhaiPlanet is developing a dynamic platform that aims to simplify students' studies and facilitate an informative journey by fostering connections with fellow students. Our creators believe in three core principles: Consistency, Collaboration, and Creativity (3Cs). Through the implementation of these 3Cs, we envision that PadhaiPlanet will elevate students to their highest potential.
+                                            <p className='text-white paragraph text-xl'>PadhaiPlanet is developing a dynamic platform that aims to simplify students' studies and facilitate an informative journey by fostering connections with fellow students. Our creators believe in three core principles: Consistency, Collaboration, and Creativity (3Cs). Through the implementation of these 3Cs, we envision that PadhaiPlanet will elevate students to their highest potential.
                                             </p>
                                         </div>
                                     </div>
