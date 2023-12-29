@@ -10,11 +10,11 @@ function Navbar() {
   }
 
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <div className="flex mr-15% font-sans text-white text-6xl font-bold py-4 gradient-bg">
         PadhaiPlanet
       </div>
-      <div className="flex justify-between text-right pl-[78%]  gradient-bg">
+      <div className="flex justify-between text-right 2xl:pl-[50%] xl:pl-[30%] gradient-bg">
         <Link
           to="/about-us"
           className=" btn float-right font-medium font-sans text-red-400 w-40 text-2xl text-center pt-[32px]"

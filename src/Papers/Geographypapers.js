@@ -1,12 +1,11 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import { BreadcrumbPages, BreadcrumbProfile } from '../Components/Breadcrumbs';
+import { BreadcrumbPages } from '../Components/Breadcrumbs';
 import Joiningoptions from '../Components/Joiningoptions';
 import Exploremore from '../Components/Exploremore';
 import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
-import Profilepage from '../Components/Profilepage.js';
 import Contentscreen from '../Components/Contentscreen.js';
 import Loader from '../Components/Loader.js';
 import { sleep, topFunction } from '../Global.js';
@@ -62,19 +61,12 @@ function Geographypapers() {
   return (
 
     <div>
-      <div className="sticky top-0 flex z-10">
+      <div className='sticky top-0 z-10'>
         <Navbar />
       </div>
 
-      <div className="relative z-0">
-        <div>
-          <div id="home">
-            <BreadcrumbPages sub={'Geography'} />
-          </div>
-          <div id="profile" className="hidden">
-            <BreadcrumbProfile />
-          </div>
-        </div>
+      <BreadcrumbPages sub={'Geography'} />
+ 
 
         <div id='parent' className='relative'>
           <div id='go' className=' top-0 w-full mt-[50px]'>
@@ -117,8 +109,6 @@ function Geographypapers() {
         <div className='mt-[150px]'>
           <Joiningoptions />
         </div>
-        <Profilepage />
-      </div>
       <div>
         <Exploremore sub_name={'geography'} />
       </div>

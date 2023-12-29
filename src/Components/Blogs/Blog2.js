@@ -3,8 +3,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import myImage2 from './image2.jpg';
 import Joiningoptions from '../Joiningoptions';
-import { BreadcrumbProfile, Breadcrumbhome } from '../Breadcrumbs';
-import Profilepage from '../Profilepage';
+import { BreadcrumbBlogs } from '../Breadcrumbs';
 
 const Blog2 = () => {
   useEffect(() => {
@@ -16,14 +15,7 @@ const Blog2 = () => {
         <Navbar />
       </div>
 
-      <div className="relative z-0">
-        <div>
-          <div id="home">
-            <Breadcrumbhome />
-          </div>
-          <div id="profile" className="hidden">
-            <BreadcrumbProfile />
-          </div>
+      <BreadcrumbBlogs />
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <div className="p-4 md:p-8 lg:mb-10 flex items-center justify-center min-h-screen">
               <div className="rounded-lg p-4 md:p-8 lg:px-24">
@@ -43,9 +35,6 @@ const Blog2 = () => {
             </div>
             <Joiningoptions />
           </div>
-          <Profilepage />
-        </div>
-      </div>
       <Footer />
     </div>
   );
