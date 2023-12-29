@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import Loginpage from './Components/Loginpage';
 import Homepage from './Components/Homepage';
 import Historypapers from './Papers/Historypapers';
@@ -25,6 +25,7 @@ import Blog4 from './Components/Blogs/Blog4';
 import Blog5 from './Components/Blogs/Blog5';
 import Blog6 from './Components/Blogs/Blog6';
 import ContactUs from './Components/ContactUs';
+import Loader from './Components/Loader';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/blogs' element={<Blogs />} />
+          <Route path='/loader' element={<Loader />} />
           <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<Loginpage />} />
           <Route path='/history-and-political-science-question-papers' element={<Historypapers />} />

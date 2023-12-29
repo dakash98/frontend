@@ -9,6 +9,7 @@ import Loginpage from '../Components/Loginpage.js';
 import Contentscreen from '../Components/Contentscreen.js';
 import Profilepage from '../Components/Profilepage.js';
 import Loader from '../Components/Loader.js';
+import { sleep, topFunction } from '../Global.js';
 
 function Englishpapers() {
 
@@ -20,10 +21,6 @@ function Englishpapers() {
 
   const [data, setData] = useState([])
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   //Assigning 
   const fetchdata = async (url) => {
     try {
@@ -31,9 +28,10 @@ function Englishpapers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
-      console.log("Hide the loader..")
       document.getElementById('loader').classList.add('hidden');
-      document.getElementById('whole_document').classList.remove('hidden');
+      document.getElementById('parent').classList.remove('hidden');
+      document.getElementById('explore').classList.remove('hidden')
+      document.getElementById('footer').classList.remove('hidden')
     } catch (e) {
       console.log(e)
     }
@@ -46,8 +44,7 @@ function Englishpapers() {
 
 
   useEffect(() => {
-    // document.getElementById('loader').classList.remove('hidden');
-    // document.getElementById('whole_document').classList.add('hidden');
+    topFunction();
     fetchdata(API_hisory_paper);
   }, [])
 
@@ -66,79 +63,82 @@ function Englishpapers() {
 
 
   return (
-    <>
-    <div id='loader' className='w-[50%] h-[50%] ml-[25%] mt-[12.25%]'>
-        <Loader />
-      </div>
 
-    <div id='whole_document' className='hidden'>
-      <div className="sticky top-0 flex z-10">
-        <Navbar />
-      </div>
-      <div className="relative z-0">
-        <div>
-          <div id="home">
-          <BreadcrumbPages sub={'English'} />
-          </div>
-          <div id="profile" className="hidden">
-            <BreadcrumbProfile />
-          </div>
-      </div>
+    <div className='relative z-0'>
 
-      <div id='parent' className='relative'>
-        <div id='go' className=' top-0 w-full mt-[50px]'>
-          <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
-            <h1 className='ml-[50%] text-3xl font-bold text-white'>English</h1>
-            <div className='w-[50%] ml-[15%]'>
-
-              {data_imp.map((item, index) =>
-                <div className='w-[50%] ml-[-5%] mt-[10%]'>
-                  <div className='w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>{item.year}</div>
-                  <div className='flex'>
-                    {item.papers.map((item1, index1) =>
-                      <div className='flex ml-[15%]'>
-                        <div className='block'>
-                          <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]' key={index}>{item.papers[index1]['name']} Q Paper</button>
-                          <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</a>
-                        </div>
-                      </div>)}
-                  </div>
-                </div>)}
+      <div>
+        <div className="sticky top-0 flex z-6">
+          <Navbar />
+        </div>
+        <div className="relative z-0">
+          <div>
+            <div id="home">
+              <BreadcrumbPages sub={'English'} />
+            </div>
+            <div id="profile" className="hidden">
+              <BreadcrumbProfile />
             </div>
           </div>
-        </div>
+
+          <div id='parent' className='relative'>
+            <div id='go' className=' top-0 w-full mt-[50px]'>
+              <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
+                <h1 className='ml-[55%] text-3xl font-bold text-white'>English</h1>
+                <div className='w-[50%] ml-[15%]'>
+
+                  {data_imp.map((item, index) =>
+                    <div className='w-[50%] ml-[5%] mt-[10%]'>
+                      <div className='w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>{item.year}</div>
+                      <div className='flex'>
+                        {item.papers.map((item1, index1) =>
+                          <div className='flex ml-[15%]'>
+                            <div className='block'>
+                              <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]' key={index}>{item.papers[index1]['name']} Q Paper</button>
+                              <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</a>
+                            </div>
+                          </div>)}
+                      </div>
+                    </div>)}
+                </div>
+              </div>
+            </div>
 
 
-        <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
+            <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
 
-          <Loginpage />
+              <Loginpage />
 
-        </div>
+            </div>
 
-        <div id="que_paper_screen" className='absolute top-0 w-full hidden pb-[20px]'>
-          <Contentscreen q_data={que_data} />
-          {/* <div className='bg-orange-400 w-[50%] ml-[25%] mt-[25px] text-center h-[1000px] overflow-scroll'>
+            <div id="que_paper_screen" className='absolute top-0 w-full hidden pb-[20px]'>
+              <Contentscreen q_data={que_data} />
+              {/* <div className='bg-orange-400 w-[50%] ml-[25%] mt-[25px] text-center h-[1000px] overflow-scroll'>
             <div className='w-100% h-[5%] float-right'><button onClick={closeQueWindow}><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" className='mt-[25%] ml-[-100%]'>
               <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"></path>
             </svg></button></div>
             <div><iframe className='w-[100%] h-screen' src={que_data} />
             </div>
           </div> */}
+            </div>
+          </div>
+          <div className='mt-[150px]'>
+            <Joiningoptions />
+          </div>
+          <Profilepage />
         </div>
-      </div>
-      <div className='mt-[150px]'>
-        <Joiningoptions />
+        <div id='explore' className='hidden'>
+          <Exploremore sub_name={'english'} />
         </div>
-        <Profilepage />
-      </div>
-      <div>
-        <Exploremore sub_name={'english'} />
-      </div>
-      <Footer />
+        <div id='footer' className='hidden'>
+        <Footer />
+        </div>
 
-    </div >
+      </div >
 
-  </>
+      <div id='loader' className='absolute top-0 w-full h-[100%] z-10'>
+        <Loader />
+      </div>
+    </div>
 
   )
 }
