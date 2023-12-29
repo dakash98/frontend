@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
 import Profilepage from '../Components/Profilepage.js';
 import Contentscreen from '../Components/Contentscreen.js';
+import Loader from '../Components/Loader.js';
+import { sleep, topFunction } from '../Global.js';
 
 function Science1() {
 
@@ -25,7 +27,10 @@ function Science1() {
     try {
       const res = await fetch(url);
       const data = await res.json();
+      await sleep(3000);
       setData(data.data);
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('parent').classList.remove('hidden');
     } catch (e) {
       console.log(e)
     }
@@ -36,8 +41,8 @@ function Science1() {
     data_imp.push(data[j])
   }
 
-
   useEffect(() => {
+    topFunction();
     fetchdata(API_hisory_paper);
   }, [])
 
@@ -75,7 +80,7 @@ function Science1() {
         <div id='parent' className='relative'>
           <div id='go' className=' top-0 w-full mt-[50px]'>
             <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
-              <h1 className='ml-[50%] text-3xl font-bold text-white'>Science 1</h1>
+              <h1 className='ml-[50%] text-3xl font-bold text-white'>Science and Technology 1</h1>
               <div className='w-[50%] ml-[15%]'>
 
                 {data_imp.map((item, index) =>
@@ -93,6 +98,10 @@ function Science1() {
                   </div>)}
               </div>
             </div>
+          </div>
+
+          <div id='loader' className='w-[50%] h-[50%] ml-[25%]'>
+            <Loader />
           </div>
 
 

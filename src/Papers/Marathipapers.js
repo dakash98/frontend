@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
 import Profilepage from '../Components/Profilepage.js';
 import Contentscreen from '../Components/Contentscreen.js';
+import Loader from '../Components/Loader.js';
+import { sleep, topFunction } from '../Global.js';
 
 function Marathipapers() {
 
@@ -25,7 +27,10 @@ function Marathipapers() {
     try {
       const res = await fetch(url);
       const data = await res.json();
+      await sleep(3000);
       setData(data.data);
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('parent').classList.remove('hidden');
     } catch (e) {
       console.log(e)
     }
@@ -36,11 +41,10 @@ function Marathipapers() {
     data_imp.push(data[j])
   }
 
-
   useEffect(() => {
+    topFunction();
     fetchdata(API_hisory_paper);
   }, [])
-
 
   function HandleClick(login_state, paper_no, year) {
     if (login_state === "not_logged_in") {
@@ -92,6 +96,10 @@ function Marathipapers() {
                   </div>)}
               </div>
             </div>
+          </div>
+
+          <div id='loader' className='w-[50%] h-[50%] ml-[25%]'>
+            <Loader />
           </div>
 
 

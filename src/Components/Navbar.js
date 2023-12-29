@@ -13,9 +13,9 @@ function Navbar() {
     return (
 
         <div className='flex'>
-            <div className="flex w-[50%] mr-15% font-sans text-white text-6xl font-bold py-4">
+            <Link to={'/'} className="flex w-[50%] hover:text-amber-400 mr-15% font-sans text-white text-6xl font-bold py-4">
                 PadhaiPlanet
-            </div>
+            </Link>
             <div className="text-right flex pl-[42%]">
                 <Link
                     to="/about-us"
