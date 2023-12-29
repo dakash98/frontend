@@ -1,53 +1,50 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+// import "../assets/style.css";
 
 function Navbar() {
+  function openLogoutPage(event) {
+    document.getElementById("gonow").classList.remove("hidden");
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("profile").classList.remove("hidden");
+  }
 
-    function openLogoutPage(event) {
-        document.getElementById("gonow").classList.remove("hidden");
-        document.getElementById("home").classList.add("hidden");
-        document.getElementById("profile").classList.remove("hidden");
-    }
-
-
-    return (
-
-        <div className='flex'>
-            <Link to={'/'} className="flex w-[50%] hover:text-amber-400 mr-15% font-sans text-white text-6xl font-bold py-4">
-                PadhaiPlanet
-            </Link>
-            <div className="text-right flex pl-[42%]">
-                <Link
-                    to="/about-us"
-                    className="btn float-right font-medium font-sans text-white w-40 text-2xl text-center pt-[32px]"
-                >
-                    {" "}
-                    About Us
-                </Link>
-                <Link
-                    to="/blogs"
-                    className="inline-block bg-gradient-to-r from-red-800 to-purple-200 text-transparent bg-clip-text btn float-left font-medium font-sans text-white w-40 text-2xl text-center pt-[32px] hover:bg-green-500"
-                >
-                    {" "}
-                    Blogs
-                </Link>
-                <Link
-                    to="/contact-us"
-                    className="btn float-left font-medium font-sans text-white w-40 text-2xl text-center pt-[32px] hover:bg-green-500"
-                >
-                    {" "}
-                    Contact Us
-                </Link>
-                <button
-                    onClick={(event) => openLogoutPage()}
-                    className="btn float-left font-medium font-sans text-white w-40 text-2xl text-center hover:bg-green-500"
-                >
-                    Profile
-                </button>
-            </div>
-
-        </div>
-    )
+  return (
+    <div className="flex">
+      <div className="flex mr-15% font-sans text-white text-6xl font-bold py-4 gradient-bg">
+        PadhaiPlanet
+      </div>
+      <div className="flex justify-between text-right pl-[78%]  gradient-bg">
+        <Link
+          to="/about-us"
+          className=" btn float-right font-medium font-sans text-red-400 w-40 text-2xl text-center pt-[32px]"
+        >
+          {" "}
+          About Us
+        </Link>
+        <Link
+          to="/blogs"
+          className=" btn float-left font-medium font-sans text-red-400 w-40 text-2xl text-center pt-[32px]"
+        >
+          {" "}
+          Blogs
+        </Link>
+        <Link
+          to="/login"
+          className="btn float-left font-medium font-sans text-red-400 w-40 text-2xl text-center pt-[32px]"
+        >
+          {" "}
+          Contact Us
+        </Link>
+        <button
+          onClick={(event) => openLogoutPage()}
+          className="btn float-left font-medium font-sans text-red-400 w-40 text-2xl text-center"
+        >
+          Profile
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;

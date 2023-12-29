@@ -3,6 +3,10 @@
 #gonnow {
   transition: 0.5s;
 }
+/* .main-content {
+ margin-left:  3.33333%;
+ margin-right: 3.33333%;
+} */
 
 body {
   margin-left: 3.33333%; 
@@ -21,7 +25,7 @@ body {
   position: relative;
   display: inline-block;
   font-size: 24px;
-  color: #333; /* Set your desired text color */
+  color: #333; 
 }
 
 .gradient-text::before {
@@ -55,3 +59,9 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* gradient with fade*/
+.gradient-bg {
+  background: linear-gradient(to bottom, #010202, rgba(8, 2, 2, 0)); /* #e7dddd */
+}
+
