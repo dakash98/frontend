@@ -2,18 +2,18 @@ import React from 'react';
 
 const QuestionAnswer = () => {
   return (
-    <div className="bg-gray-200 rounded-lg min-h-screen flex flex-col items-center justify-center">
-      <div className="max-w-96 mx-auto px-10 py-8">
-        <div className="text-center mb-8">
+    <div className="bg-gray-200 flex flex-col items-center justify-center">
+      <div className="max-w-96 mx-auto px-10 py-28">
+        <div className="text-center mb-2">
           <h1 className="text-4xl font-bold mb-4">Welcome to PadhaiPlanet</h1>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-12">
             Your premier destination for 10th SSC question papers and exam preparation.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 ">
           <div>
             <h2 className="text-2xl font-bold mb-4">What is Padhaiplanet?</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 pr-4">
               PadhaiPlanet is your go-to online resource for 10th class students looking for SSC
               question papers and comprehensive solutions. Our platform is meticulously designed to
               cater to the specific needs of students preparing for their 10th class examinations.
@@ -35,7 +35,7 @@ const QuestionAnswer = () => {
           </div>
           <div>
             <h2 className="text-2xl font-bold mb-4">Single station for all important question banks.</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 pr-4">
               One of the key features of PadhaiPlanet is its user-friendly interface, making it easy
               for students to navigate and access the educational material they need. We believe in
               empowering students with the right tools to excel in their examinations, and our
