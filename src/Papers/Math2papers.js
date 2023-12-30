@@ -30,6 +30,8 @@ function Math2papers() {
       setData(data.data);
       document.getElementById('loader').classList.add('hidden');
       document.getElementById('parent').classList.remove('hidden');
+      document.getElementById('explore').classList.remove('hidden');
+      document.getElementById('footer').classList.remove('hidden');
     } catch (e) {
       console.log(e)
     }
@@ -61,59 +63,63 @@ function Math2papers() {
 
   return (
 
-    <div>
-      <div className="sticky top-0 z-10">
-        <Navbar />
-      </div>
-
-      <BreadcrumbPages sub={'Mathematics 2'} />
-
-      <div id='parent' className='relative'>
-        <div id='go' className=' top-0 w-full mt-[50px]'>
-          <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
-            <h1 className='ml-[45%] text-3xl font-bold text-white'>Mathematics 2</h1>
-            <div className='w-[50%] ml-[15%]'>
-
-              {data_imp.map((item, index) =>
-                <div className='w-[50%] ml-[-5%] mt-[10%]'>
-                  <div className='w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>{item.year}</div>
-                  <div className='flex'>
-                    {item.papers.map((item1, index1) =>
-                      <div className='flex ml-[15%]'>
-                        <div className='block'>
-                          <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]' key={index}>{item.papers[index1]['name']} Q Paper</button>
-                          <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</a>
-                        </div>
-                      </div>)}
-                  </div>
-                </div>)}
-            </div>
-          </div>
-        </div>
-
-        <div id='loader' className='w-[50%] h-[50%] ml-[25%]'>
-          <Loader />
-        </div>
-
-
-        <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
-          <Loginpage />
-        </div>
-
-        <div id="que_paper_screen" className='absolute top-0 w-full hidden pb-[20px]'>
-          <Contentscreen q_data={que_data} />
-        </div>
-      </div>
-      <div className='mt-[150px]'>
-        <Joiningoptions />
-      </div>
+    <div className='relative z-0'>
 
       <div>
-        <Exploremore sub_name={'math_2'} />
-      </div>
-      <Footer />
+        <div className="sticky top-0 z-10">
+          <Navbar />
+        </div>
 
-    </div >
+        <BreadcrumbPages sub={'Mathematics 2'} />
+
+        <div id='parent' className='relative'>
+          <div id='go' className=' top-0 w-full mt-[50px]'>
+            <div className='w-[50%] ml-[25%] pb-[5%] pr-[10%]'>
+              <h1 className='ml-[47%] text-3xl font-bold text-white'>Mathematics 2</h1>
+              <div className='w-[50%] ml-[15%]'>
+
+                {data_imp.map((item, index) =>
+                  <div className='w-[50%] ml-[5%] mt-[10%]'>
+                    <div className='w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>{item.year}</div>
+                    <div className='flex'>
+                      {item.papers.map((item1, index1) =>
+                        <div className='flex ml-[15%]'>
+                          <div className='block'>
+                            <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]' key={index}>{item.papers[index1]['name']} Q Paper</button>
+                            <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</a>
+                          </div>
+                        </div>)}
+                    </div>
+                  </div>)}
+              </div>
+            </div>
+          </div>
+
+          <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
+            <Loginpage />
+          </div>
+
+          <div id="que_paper_screen" className='absolute top-0 w-full hidden pb-[20px]'>
+            <Contentscreen q_data={que_data} />
+          </div>
+        </div>
+        <div className='mt-[150px]'>
+          <Joiningoptions />
+        </div>
+
+        <div id='explore' className='hidden'>
+          <Exploremore sub_name={'math_2'} />
+        </div>
+        <div id='footer' className='hidden'>
+          <Footer />
+        </div>
+
+      </div >
+
+      <div id='loader' className='absolute top-0 w-full h-[100%] z-10'>
+        <Loader />
+      </div>
+    </div>
   )
 }
 

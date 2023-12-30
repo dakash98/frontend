@@ -52,7 +52,7 @@ function Exploremore(props) {
 
 
   return (
-    <div className='w-[50%] ml-[28%] mt-[150px]'>
+    <div className='w-[50%] ml-[30%] mt-[150px]'>
       <h2 className='text-3xl w-[85%] text-center mb-[30px] font-semibold text-white'>Explore more question papers</h2>
       <div className='flex flex-wrap max-w-[100%]'>
       {subject.map((subjects) =>
