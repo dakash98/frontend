@@ -158,7 +158,7 @@ function Body() {
                 onClick={(event) => {
                   handleSubmit();
                 }}
-                className="text-center rounded-lg text-white bg-indigo-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60"
+                className="text-center rounded-lg text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60"
                 type="button"
               >
                 Submit
