@@ -30,6 +30,8 @@ function Geographypapers() {
       setData(data.data);
       document.getElementById('loader').classList.add('hidden');
       document.getElementById('parent').classList.remove('hidden');
+      document.getElementById('explore').classList.remove('hidden');
+      document.getElementById('footer').classList.remove('hidden');
     } catch (e) {
       console.log(e)
     }
@@ -60,13 +62,15 @@ function Geographypapers() {
 
   return (
 
-    <div>
-      <div className='sticky top-0 z-10'>
-        <Navbar />
-      </div>
+    <div className='relative z-0'>
 
-      <BreadcrumbPages sub={'Geography'} />
- 
+      <div>
+        <div className='sticky top-0 z-10'>
+          <Navbar />
+        </div>
+
+        <BreadcrumbPages sub={'Geography'} />
+
 
         <div id='parent' className='relative'>
           <div id='go' className=' top-0 w-full mt-[50px]'>
@@ -75,7 +79,7 @@ function Geographypapers() {
               <div className='w-[50%] ml-[15%]'>
 
                 {data_imp.map((item, index) =>
-                  <div className='w-[50%] ml-[-5%] mt-[10%]'>
+                  <div className='w-[50%] ml-[5%] mt-[10%]'>
                     <div className='w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400'>{item.year}</div>
                     <div className='flex'>
                       {item.papers.map((item1, index1) =>
@@ -91,11 +95,6 @@ function Geographypapers() {
             </div>
           </div>
 
-          <div id='loader' className='w-[50%] h-[50%] ml-[25%]'>
-            <Loader />
-          </div>
-
-
           <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
 
             <Loginpage />
@@ -109,12 +108,19 @@ function Geographypapers() {
         <div className='mt-[150px]'>
           <Joiningoptions />
         </div>
-      <div>
-        <Exploremore sub_name={'geography'} />
-      </div>
-      <Footer />
+        <div id='explore' className='hidden'>
+          <Exploremore sub_name={'geography'} />
+        </div>
+        <div id='footer' className='hidden'>
+          <Footer />
+        </div>
 
-    </div >
+      </div >
+
+      <div id='loader' className='absolute top-0 w-full h-[100%] z-10'>
+        <Loader />
+      </div>
+    </div>
   )
 }
 

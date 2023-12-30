@@ -7,7 +7,6 @@ import Exploremore from '../Components/Exploremore';
 import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
 import Contentscreen from '../Components/Contentscreen.js';
-import Profilepage from '../Components/Profilepage.js';
 import Loader from '../Components/Loader.js';
 import { sleep, topFunction } from '../Global.js';
 
