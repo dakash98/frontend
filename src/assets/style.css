@@ -70,3 +70,13 @@ body {
   background: linear-gradient(to right, #d14881, #ca6931); 
 }
 
+.zoom-effect {
+  transition: font-size 0.3s ease-in-out; 
+}
+
+.zoom-effect:hover {
+  font-size: 110%; 
+}
+
+
+
