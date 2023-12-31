@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from './Navbar';
 import { BreadcrumbContactUs, BreadcrumbProfile } from './Breadcrumbs';
 import Footer from './Footer';
-import Profilepage from './Profilepage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
@@ -40,8 +39,6 @@ function ContactUs() {
                             <ContactUsLink />
                         </div>
                         </div>
-                    
-                    <Profilepage />
                 </div>
             </div>
             <Footer />

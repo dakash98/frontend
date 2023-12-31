@@ -138,8 +138,8 @@ export function BreadcrumbBlogs() {
 
   return (
     <div>
-      <nav aria-label="breadcrumb" className="w-max">
-        <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
+      <nav aria-label="breadcrumb" className="w-max h-[68px]">
+        <ol className=" flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
           <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="pb-20 text-red-400">
               Home

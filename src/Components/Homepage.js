@@ -6,11 +6,9 @@ import Joiningoptions from "./Joiningoptions";
 import "../assets/style.css";
 import QuestionAnswer from "./QuestionAnswer";
 import Navbar from "./Navbar";
-import Profilepage from "./Profilepage";
+
 
 function Homepage() {
-
-
   return (
     <div>
       <div className="sticky top-0 z-10">
