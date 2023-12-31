@@ -17,7 +17,6 @@ function Homepage() {
       <Breadcrumbhome />
       <Body />
       <Joiningoptions />
-      <Profilepage />
       <QuestionAnswer />
       <Footer />
     </div >
