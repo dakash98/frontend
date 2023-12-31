@@ -13,11 +13,11 @@ function Navbar() {
 
   return (
     <div className="flex w-full">
-      <div className="flex items-center pl-4 mr-15% font-sans text-white text-6xl font-bold py-4 gradient-bg">
+      <div className="flex items-center pl-4  pr-20 mr-15% font-sans text-white text-6xl font-bold py-4 gradient-bg">
         <img src={logo} alt="Logo" className="h-16 mr-4" /> {/* Logo */}
         PadhaiPlanet
       </div>
-      <div className="flex justify-between text-right lg:pl-[35%] gradient-bg pr-20">
+      <div className="flex justify-between text-right pl-96 gradient-bg pr-60">
         <Link
           to="/about-us"
           className="zoom-effect btn float-right font-medium font-sans text-red-400 w-40 text-2xl text-center pt-[32px]"
