@@ -26,6 +26,7 @@ import Blog5 from './Components/Blogs/Blog5';
 import Blog6 from './Components/Blogs/Blog6';
 import ContactUs from './Components/ContactUs';
 import Loader from './Components/Loader';
+import Profilepage from './Components/Profilepage';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path='/Importance-of-10th' element={<Blog4 />} />
           <Route path='/Importance-of-Planning' element={<Blog5 />} />
           <Route path='/How-easy-is-it-to-crack-Class-10-examination?' element={<Blog6 />} />
+          <Route path='/profile' element={<Profilepage />} />
         </Routes>
       </BrowserRouter>
       

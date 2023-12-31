@@ -17,3 +17,6 @@ body {
   background-color: rgb(224 242 254);
   }
   
+  .placeholder-blue-custom::placeholder {
+    color: #1152bc; /* Adjust the color code as needed */;
+  }
