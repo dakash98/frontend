@@ -65,3 +65,18 @@ body {
   background: linear-gradient(to bottom, #010202, rgba(8, 2, 2, 0)); /* #e7dddd */
 }
 
+/* select input submit button */
+.button-bg {
+  background: linear-gradient(to right, #d14881, #ca6931); 
+}
+
+.zoom-effect {
+  transition: font-size 0.3s ease-in-out; 
+}
+
+.zoom-effect:hover {
+  font-size: 110%; 
+}
+
+
+
