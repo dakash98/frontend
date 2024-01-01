@@ -1,12 +1,11 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import { BreadcrumbPages, BreadcrumbProfile } from '../Components/Breadcrumbs';
+import { BreadcrumbPages } from '../Components/Breadcrumbs';
 import Joiningoptions from '../Components/Joiningoptions';
 import Exploremore from '../Components/Exploremore';
 import { useState, useEffect } from 'react'
 import Loginpage from '../Components/Loginpage.js';
-import Profilepage from '../Components/Profilepage.js';
 import Contentscreen from '../Components/Contentscreen.js';
 import Loader from '../Components/Loader.js';
 import { sleep, topFunction } from '../Global.js';
