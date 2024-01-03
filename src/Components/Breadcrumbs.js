@@ -5,14 +5,14 @@ export function Breadcrumbhome() {
 
   return (
     <div>
-      <nav aria-label="breadcrumb" className="w-max">
-        <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px]  font-bold">
-            <p className="pb-20 text-red-400">Home</p>
-          </li>
-        </ol>
-      </nav>
-    </div>
+  <nav aria-label="breadcrumb" className="">
+    <ol className="flex flex-row py-1 rounded-md bg-blue-gray-50 bg-opacity-60">
+      <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold">
+        <p className=" text-red-400">Home</p>
+      </li>
+    </ol>
+  </nav>
+</div>
   );
 }
 
@@ -32,7 +32,7 @@ export function BreadcrumbPages(props) {
     <div>
       <nav aria-label="breadcrumb" className="w-max">
         <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
+          <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="text-red-400">
               Home
             </button>
@@ -68,7 +68,7 @@ export function BreadcrumbAboutUs() {
     <div>
       <nav aria-label="breadcrumb" className="w-max">
         <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
+          <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="pb-20 text-red-400">
               Home
             </button>
@@ -104,7 +104,7 @@ export function BreadcrumbProfile() {
     <div>
       <nav aria-label="breadcrumb" className="w-max">
         <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
+          <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="pb-20 text-red-400">
               Home
             </button>
@@ -140,7 +140,7 @@ export function BreadcrumbBlogs() {
     <div>
       <nav aria-label="breadcrumb" className="w-max h-[68px]">
         <ol className=" flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
+          <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="pb-20 text-red-400">
               Home
             </button>
@@ -176,7 +176,7 @@ export function BreadcrumbContactUs() {
     <div>
       <nav aria-label="breadcrumb" className="w-max">
         <ol className="flex flex-wrap items-center w-full py-2 rounded-md bg-blue-gray-50 bg-opacity-60">
-          <li className="flex items-center font-sans text-2xl antialiased pl-[50px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
+          <li className="flex items-center font-sans text-2xl antialiased pl-[28px] font-bold leading-normal transition-colors duration-300 cursor-pointer text-gray-800 hover:text-sky-300">
             <button onClick={event => { handleClick('home') }} className="pb-20 text-red-400">
               Home
             </button>
