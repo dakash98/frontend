@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuestionAnswer = () => {
   return (
-    <div className="bg-gray-200 flex flex-col items-center justify-center">
+    <div className="bg-gray-200 flex flex-col items-center justify-center mx-12">
       <div className="max-w-96 mx-auto px-10 py-28">
         <div className="text-center mb-2">
           <h1 className="text-4xl font-bold mb-4">Welcome to PadhaiPlanet</h1>
