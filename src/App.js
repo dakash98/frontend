@@ -59,7 +59,7 @@ function App() {
           <Route path='/Importance-of-10th' element={<Blog4 />} />
           <Route path='/Importance-of-Planning' element={<Blog5 />} />
           <Route path='/How-easy-is-it-to-crack-Class-10-examination?' element={<Blog6 />} />
-          <Route path='/profile' element={<Profilepage />} />
+          <Route path='/Login' element={<Profilepage />} />
         </Routes>
       </BrowserRouter>
       

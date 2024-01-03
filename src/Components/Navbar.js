@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../Static/logo.png";
+// import { NavLink, useLocation } from "react-router-dom";
 // import logo from "../Static/logo-black.png";
 
 function Navbar() {
+  // const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -32,42 +34,47 @@ function Navbar() {
   const navigate = useNavigate();
 
   const redirectToProfilePage = () => {
-    navigate("/profile");
+    navigate("/Login");
   };
 
+ 
+
+
   return (
-    <div className="flex items-center justify-between w-full px-4 md:px-8 py-4 gradient-bg">
+    <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-16 mr-4" />
-        <h1 className="text-white md:text-6xl text-3xl font-bold">
+        <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
           PadhaiPlanet
         </h1>
       </div>
       {/* Navigation Links for Wider Screens */}
-      <div className="hidden md:flex md:items-center">
-        <Link
+      <div className="hidden lg:flex lg:items-center">
+        <NavLink
           to="/about-us"
-          className="zoom-effect nav-link"
+          className="zoom-effect nav-link text-red-200"
           onClick={closeMenu}
+          activeClassName="selected active-nav-link"
+          activeStyle={{ color: "green" }}
         >
           About Us
-        </Link>
-        <Link to="/blogs" className="zoom-effect nav-link" onClick={closeMenu}>
+        </NavLink>
+        <NavLink to="/blogs" className="zoom-effect nav-link" onClick={closeMenu}>
           Blogs
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/contact-us"
           className="zoom-effect nav-link"
           onClick={closeMenu}
         >
           Contact Us
-        </Link>
-        <Link to="/profile" className="nav-link" onClick={closeMenu}>
+        </NavLink>
+        <NavLink to="/Login" className="zoom-effect nav-link" onClick={closeMenu}>
           Login
-        </Link>
+        </NavLink>
       </div>
       {/* Hamburger Icon for Smaller Screens */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <button onClick={toggleMenu}>
           <svg
             className="w-8 h-8 cursor-pointer text-white"
@@ -89,25 +96,25 @@ function Navbar() {
       <div
         className={`absolute top-full right-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black p-4 rounded-md shadow-lg ${
           showMenu ? "block" : "hidden"
-        } md:hidden`}
+        } lg:hidden`}
       >
-        <Link
+        <NavLink
           to="/about-us"
           className="nav-link block mb-2"
           onClick={closeMenu}
         >
           About Us
-        </Link>
-        <Link to="/blogs" className="nav-link block mb-2" onClick={closeMenu}>
+        </NavLink>
+        <NavLink to="/blogs" className="nav-link block mb-2 text-2xl" onClick={closeMenu}>
           Blogs
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/contact-us"
           className="nav-link block mb-2"
           onClick={closeMenu}
         >
           Contact Us
-        </Link>
+        </NavLink>
         <button className="nav-link block" onClick={redirectToProfilePage}>
           Login
         </button>
