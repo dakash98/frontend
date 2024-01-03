@@ -1,205 +1,127 @@
-import React from 'react'
-import Navbar from './Navbar'
-import { BreadcrumbBlogs, BreadcrumbProfile } from './Breadcrumbs'
-import Joiningoptions from './Joiningoptions'
-import { useNavigate, Link } from 'react-router-dom'
-import Footer from './Footer'
-import myImage from './images/banner2.jpg'
-import myImage2 from './Blogs/image1.jpg'
-import myImage3 from './Blogs/image2.jpg'
-import myImage4 from './Blogs/image3.jpg'
-import myImage5 from './Blogs/image4.jpg'
-import myImage6 from './Blogs/image5.jpg'
-import myImage7 from './Blogs/image6.jpg'
-
-
+import React from "react";
+import Navbar from "./Navbar";
+import { BreadcrumbBlogs, BreadcrumbProfile } from "./Breadcrumbs";
+import Joiningoptions from "./Joiningoptions";
+import { useNavigate, Link } from "react-router-dom";
+import Footer from "./Footer";
+import myImage from "./images/banner2.jpg";
+import myImage2 from "./Blogs/image1.jpg";
+import myImage3 from "./Blogs/image2.jpg";
+import myImage4 from "./Blogs/image3.jpg";
+import myImage5 from "./Blogs/image4.jpg";
+import myImage6 from "./Blogs/image5.jpg";
+import myImage7 from "./Blogs/image6.jpg";
 
 const Blogs = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleImageClick = () => {
-        navigate('');
-    };
-    return (
+  const handleImageClick = () => {
+    navigate("");
+  };
+
+  const blogItems = [
+    {
+      url: "/10th-Board-SSC-Exam-2024",
+      image: myImage2,
+      heading: "10th Board SSC Exam 2024",
+      content:
+        "Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024",
+    },
+    {
+      url: "/SSC-Exam-Timetable-2024",
+      image: myImage3,
+      heading: "SSC Exam Timetable 2024",
+      content:
+        "The Maharashtra board timetable has been published already on the website www.mahahsscboard.in.",
+    },
+    {
+      url: "/10th-examination",
+      image: myImage4,
+      heading: "10th Examination",
+      content:
+        "From our earliest years, we've internalized the notion that conquering the 10th-grade exam.",
+    },
+    {
+      url: "/Importance-of-10th",
+      image: myImage5,
+      heading: "Importance of 10th",
+      content:
+        "It has been embedded in us since our very childhood that clearing the 10th exam is the biggest achievement.",
+    },
+    {
+      url: "/Importance-of-Planning",
+      image: myImage6,
+      heading: "Importance of Planning",
+      content:
+        "The ease or difficulty of securing good marks in any examination relies entirely on consistency.",
+    },
+    {
+      url: "/How-easy-is-it-to-crack-Class-10-examination",
+      image: myImage7,
+      heading: "How easy is it to crack Class 10 examination?",
+      content:
+        "How easy or hard it is to get good marks in any examination is purely based on consistency.",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="sticky top-0 flex z-10">
+        <Navbar />
+      </div>
+      <div className="relative z-0">
         <div>
-            <div className="sticky top-0 flex z-10">
-                <Navbar />
+          <div id="home">
+            <BreadcrumbBlogs />
+          </div>
+          <div id="profile" className="hidden">
+            <BreadcrumbProfile />
+          </div>
+
+          <div className="flex flex-col items-center justify-center">
+            <div className=" mb-4 rounded-lg lg:mb-10 lg:px-28">
+              <img
+                src={myImage}
+                alt="Description of the image"
+                className="w-full h-auto max-w-full rounded-lg border-4 border-white"
+              />
             </div>
-            <div className="relative z-0">
-                <div>
-                    <div id="home">
-                        <BreadcrumbBlogs />
-                    </div>
-                    <div id="profile" className="hidden">
-                        <BreadcrumbProfile />
-                    </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                        <div className="rounded-lg p-4 md:p-1 lg:mb-10 lg:px-32">
-                            <img
-                                src={myImage}
-                                alt="Description of the image"
-                                className="w-full h-auto max-w-full rounded-lg border-4 border-white"
-                            />
-                        </div>
-
-                        <div className='block'>
-                            <div className="flex flex-wrap px-4 md:px-24">
-                                <div className="flex-grow p-8 xs:1/1 md:w-1/2 lg:w-1/3 xl:w-1/4">
-
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/10th-Board-SSC-Exam-2024">
-                                            <img
-                                                src={myImage2}
-                                                alt="10th Board SSC Exam 2024"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer"
-                                                style={{ width: "100%" }}
-                                                onClick={handleImageClick}
-
-                                            />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}>
-                                                <b className='text-xl '>10th Board SSC Exam 2024 </b>
-                                                <br />
-                                                Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024
-                                                <Link to="/10th-Board-SSC-Exam-2024">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
-                                                        ...<b>Read More</b></span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105"
-                                        style={{ maxWidth: "400px" }}>
-                                        <Link to="/SSC-Exam-Timetable-2024">
-                                            <img
-                                                src={myImage3}
-                                                alt="SSC Exam Timetable 2024"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
-                                                style={{ width: "100%" }} />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}>
-                                                <b className='text-xl '>SSC Exam Timetable 2024</b>
-                                                <br />
-                                                The Maharashtra board timetable has been published already on the website www.mahahsscboard.in.
-                                                <Link to="/SSC-Exam-Timetable-2024">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
-                                                        ...<b>Read More</b></span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div className="flex-grow p-8 xs:1/1 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/Importance-of-Planning">
-                                            <img
-                                                src={myImage4}
-                                                alt="Importance of Planning"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
-                                                style={{ width: "100%" }} />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}>
-                                                <b className='text-xl '>10th Examination</b>
-                                                <br />
-                                                From our earliest years,we've internalised the notion that conquering the 10th-grade exam.
-                                                <Link to="/Importance-of-Planning">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
-                                                        ...
-                                                        <b>Read More</b>
-                                                    </span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
-                                            <img
-                                                src={myImage5}
-                                                alt="How easy is it to crack Class 10 examination?"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
-                                                style={{ width: "100%" }} />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}><b className='text-xl '>Importance of 10th</b>
-                                                <br />
-                                                It has been embedded in us since our very childhood that clearing the 10th exam is the biggest achievement.
-                                                <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110"
-                                                    >...<b>Read More</b></span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div className="flex-grow p-8 xs:1/1 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/Importance-of-Planning">
-                                            <img
-                                                src={myImage6}
-                                                alt="Importance of Planning"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
-                                                style={{ width: "100%" }} />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}>
-                                                <b className='text-xl '>Importance of Planning</b>
-                                                <br />
-                                                The ease or difficulty of securing good marks in any examination relies entirely on consistency.
-                                                <Link to="/Importance-of-Planning">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110" >
-                                                        ...
-                                                        <b>Read More</b>
-                                                    </span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div className="mb-4 flex-grow p-15 transform transition duration-300 hover:scale-105" style={{ maxWidth: "400px" }}>
-                                        <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
-                                            <img
-                                                src={myImage7}
-                                                alt="How easy is it to crack Class 10 examination?"
-                                                className="w-full h-60 object-cover rounded-lg cursor-pointer transition duration-300"
-                                                style={{ width: "100%" }} />
-                                        </Link>
-                                        <div>
-                                            <br />
-                                            <p style={{ marginBottom: '10px', color: "white" }}><b className='text-xl '>How easy is it to crack Class 10 examination? </b>
-                                                <br />
-                                                How easy or hard it is to get good marks in any examination is purely based on consistency.
-                                                <Link to="/How-easy-is-it-to-crack-Class-10-examination? ">
-                                                    <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110"
-                                                    >...<b>Read More</b></span></Link>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <Joiningoptions />
+            <div className="block px-4 md:px-8 lg:px-28 xl:px-16 2xl:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="mb-8 transform transition duration-300 hover:scale-105"
+                >
+                  <Link to={item.url}>
+                    <img
+                      src={item.image}
+                      alt={`Blog ${index + 1}`}
+                      className="w-full h-60 object-cover rounded-lg cursor-pointer"
+                    />
+                  </Link>
+                  <div className="mt-4">
+                    <p className="text-white">
+                      <b className="text-xl">{item.heading}</b>
+                      <br />
+                      {item.content}
+                      <Link to={item.url}>
+                        <span className="text-red-600 hover:text-yellow-200 cursor-pointer transition duration-300 transform hover:scale-110">
+                          ...<b>Read More</b>
+                        </span>
+                      </Link>
+                    </p>
+                  </div>
                 </div>
+              ))}
             </div>
-            <Footer />
+          </div>
+          <Joiningoptions />
         </div>
-    );
+      </div>
+      <Footer />
+    </div>
+  );
 };
+
 export default Blogs;
