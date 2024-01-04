@@ -60,6 +60,17 @@ function Geographypapers() {
     }
   }
 
+  function handleSolution(login_state, paper_no, year) {
+    if (login_state === "not_logged_in") {
+      document.getElementById("forms_window").classList.remove('hidden');
+      document.getElementById("forms_window").classList.add('opacity-90');
+    }
+    else {
+      window.open(data_imp[year].papers[paper_no].solution_url)
+      console.log("year: " + year + "paper_number" + paper_no);
+    }
+  }
+
   return (
 
     <div className='relative z-0'>
@@ -86,7 +97,7 @@ function Geographypapers() {
                         <div className='flex ml-[15%]'>
                           <div className='block'>
                             <button onClick={event => HandleClick("logged_in", index1, index)} type='submit' className='rounded-2xl w-[300px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]' key={index}>{item.papers[index1]['name']} Q Paper</button>
-                            <a href={item.papers[index1]['solution_url']} target='_blank' type='button' className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium pt-[4%] mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</a>
+                            <button onClick={event => handleSolution("logged_in", index1, index)}  className='rounded-xl w-[300px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]' key={index}>{item.papers[index1]['name']} Solution</button>
                           </div>
                         </div>)}
                     </div>
