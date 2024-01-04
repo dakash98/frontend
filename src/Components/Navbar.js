@@ -33,6 +33,10 @@ function Navbar() {
 
   const navigate = useNavigate();
 
+  const redirectHome = () => {
+    navigate('/');
+  }
+
   const redirectToProfilePage = () => {
     navigate("/Login");
   };
@@ -43,7 +47,7 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-16 mr-4" />
+        <button onClick={event => (redirectHome())}><img src={logo} alt="Logo" className="h-16 mr-4" /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
           PadhaiPlanet
         </h1>
