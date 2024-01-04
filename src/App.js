@@ -53,13 +53,13 @@ function App() {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/content' element={<Contentscreen />} />
           <Route path='/test' element={<Fetchdata />} />
-          <Route path='/10th-Board-SSC-Exam-2024' element={<Blog1 />} />
-          <Route path='/SSC-Exam-Timetable-2024' element={<Blog2 />} />
+          <Route path='/10th-board-ssc-exam-2024' element={<Blog1 />} />
+          <Route path='/ssc-exam-timetable-2024' element={<Blog2 />} />
           <Route path='/10th-examination' element={<Blog3 />} />
-          <Route path='/Importance-of-10th' element={<Blog4 />} />
-          <Route path='/Importance-of-Planning' element={<Blog5 />} />
-          <Route path='/How-easy-is-it-to-crack-Class-10-examination?' element={<Blog6 />} />
-          <Route path='/Login' element={<Profilepage />} />
+          <Route path='/importance-of-10th' element={<Blog4 />} />
+          <Route path='/importance-of-planning' element={<Blog5 />} />
+          <Route path='/how-easy-is-it-to-crack-class-10-examination?' element={<Blog6 />} />
+          <Route path='/login' element={<Profilepage />} />
         </Routes>
       </BrowserRouter>
       

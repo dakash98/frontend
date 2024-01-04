@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import myImageLogin from "../Static/login1.jpg";
+import Joiningoptions from "./Joiningoptions";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function Loginpage() {
   const [name, setName] = useState("");
@@ -70,31 +73,33 @@ function Loginpage() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row mt-[2%]">
-        <div className="md:ml-44 text-left w-full md:w-[70%] bg-white mx-2 md:mx-[10%] h-auto md:h-[650px] relative rounded-lg">
-          <div className="md:absolute top-1/2 left-10 md:transform md:-translate-y-1/2 w-full md:w-[40%]">
-            <img
-              src={myImageLogin}
-              alt="Description"
-              className="w-full h-auto md:h-[600px] object-cover rounded-xl"
-            />
-          </div>
+      <Navbar />
+      <div className="md:ml-44 text-left w-full md:w-[70%] bg-gray-200 mx-2 md:mx-[10%] h-auto md:h-[600px] relative">
+        <div className="md:absolute top-1/2  md:transform md:-translate-y-1/2 w-full md:w-[53%]">
+          <img
+            src={myImageLogin}
+            alt="Description"
+            className="w-full h-auto md:h-[600px] object-cover"
+          />
+        </div>
 
-          <div className="border-2 border-gray-800 border-solid p-6 ml-2 md:ml-[50%] mr-2 md:mr-[5%] mt-2 md:mt-[2%] md:mb-[10%] h-auto md:h-[620px]">
-            <div className="flex w-full md:ml-[-2%] mr-2 md:mr-[30%]">
+        <div className="border border-gray-200 border-solid md:ml-[450px] w-[402px] md:mr-[5%] md:mt-[6%] h-auto md:h-[500px]">
+          <p className="text-center mt-2 text-lg">PLease Login to continue</p>
+          <div className="mt-[3%] inner-content bg-white">
+            <div className="flex w-full ">
               <button
                 onClick={() => toggleSignUp("sign_up")}
-                className={`w-full h-12 ml-5 text-white font-semibold ${
-                  activeForm === "sign_up" ? "bg-blue-700" : "bg-gray-400"
-                } border border-black`}
+                className={`w-full h-12 text-black font-semibold ${
+                  activeForm === "sign_up" ? "bg-blue-600" : "bg-white"
+                } `}
               >
                 Sign Up
               </button>
               <button
                 onClick={() => toggleSignUp("sign_in")}
-                className={`w-full h-12 text-white font-semibold ${
-                  activeForm === "sign_in" ? "bg-blue-700" : "bg-gray-400"
-                } border border-black`}
+                className={`w-full h-12 text-black font-semibold ${
+                  activeForm === "sign_in" ? "bg-blue-600" : "bg-white"
+                } `}
               >
                 Sign In
               </button>
@@ -109,82 +114,101 @@ function Loginpage() {
               id="signup"
               className={`${activeForm === "sign_up" ? "" : "hidden"}`}
             >
-              <div className="w-[90%] pl-[5%] mt-[5%]">
-                <div className="ml-[15%] w-[80%] relative mb-5">
+              <div className="w-[90%] pl-[10%] mt-[8%]">
+                <div className="relative mb-6">
                   <label htmlFor="uname">{name ? "" : ""}</label>
                   <input
                     type="text"
                     name="uname"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Name*"
+                    className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={name}
                     onChange={handleInputChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Name*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className="ml-[15%] w-[80%] relative mb-5">
+
+                <div className="relative mb-6">
                   <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                   <input
                     type="text"
                     name="phone"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Phone Number* "
+                    className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={phoneNumber}
                     onChange={handlePhoneNumberChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Phone Number*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className="ml-[15%] w-[80%] relative mb-5">
+
+                <div className="relative mb-5">
                   <label htmlFor="email">{email ? "" : ""}</label>
                   <input
                     type="text"
                     name="email"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Email* "
+                    className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={email}
                     onChange={handleEmailChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Email*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className="ml-[15%] w-[80%] relative mb-5">
+
+                <div className="relative mb-5">
                   <label htmlFor="role">{role ? "" : ""}</label>
                   <select
                     name="role"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold text-blue-700"
+                    className=" text-4sm text-gray-900 w-[320px] h-[54px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                     value={role}
                     onChange={handleRoleChange}
                   >
-                    <option value="" disabled hidden>
-                      Select Role*
-                    </option>
+                    <option value="" disabled hidden></option>
                     <option value="student">Student</option>
                     <option value="parent">Parent</option>
                     <option value="teacher">Teacher</option>
                   </select>
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Select Role
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className="ml-[15%] w-[80%] relative mb-5">
+
+                <div className="relative mb-2">
                   <label htmlFor="password">{password ? "" : ""}</label>
                   <input
                     type="password"
                     name="password"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Password* "
+                    className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={password}
                     onChange={handlePasswordChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Password*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className="text-xs ml-[15%] mt-[2%] ">
-                  * Password must contain a Capital letter, a small letter,
-                  character(eg. @), and a number.
+                <div>
+                  <button
+                    className="w-[320px] ml-[1%] rounded-sm text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg py-2.5  inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="submit"
+                  >
+                    <span className="mx-auto">Sign Up</span>
+                  </button>
                 </div>
-
-                <button
-                  className="mb-2 md:mb-[20px] mt-2 md:mt-[20px] md:ml-[15px] px-4 md:px-[30px]  sm:w-[250px] md:w-[250px] h-[50px] bg-green-500 text-xl border border-gray-800"
-                  type="submit"
-                >
-                  Sign In
-                </button>
               </div>
             </form>
 
@@ -198,47 +222,59 @@ function Loginpage() {
               className={`${activeForm === "sign_in" ? "" : "hidden"}`}
             >
               <div className="w-full pl-[5%]  mt-[10%] mr-[3%]">
-                <div className=" w-[80%] relative mb-5 ml-[10%]">
+                <div className=" w-[80%] relative mb-8 ml-[5%]">
                   <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                   <input
                     type="text"
                     name="phone"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Phone Number/Email* "
+                    className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={phoneNumber}
                     onChange={handlePhoneNumberChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Phone Number/Email*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
 
-                <div className="w-[80%] relative mb-5 ml-[10%]">
+                <div className="w-[80%] relative mb-5 ml-[5%]">
                   <label htmlFor="password">{password ? "" : ""}</label>
                   <input
                     type="password"
                     name="password"
-                    className="w-full h-[50px] border border-gray-800 rounded-lg pl-10 placeholder-blue-custom font-bold"
-                    placeholder="Password* "
+                    className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-sm border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                    placeholder=""
                     value={password}
                     onChange={handlePasswordChange}
                     required
                   />
+                  <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-600 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
+                    Password*
+                  </span>
+                  <div className="absolute top-0 left-0 w-full h-full border-2 border-gray-300 pointer-events-none"></div>
                 </div>
-                <div className='text-sm ml-[10%] mt-[2%]'>
+                <div className="text-sm ml-[5%] mt-[2%]">
                   * Password must contain a Capital letter, a small letter,
                   character(eg. @), and a number.
                 </div>
 
-                <button
-                  className="mb-2 md:mb-[20px] mt-2 md:mt-[20px] md:ml-[15px] px-4 md:px-[30px]  sm:w-[250px] md:w-[250px] h-[50px] bg-green-500 text-xl border border-gray-800"
-                  type="submit"
-                >
-                  Sign up
-                </button>
+                <div>
+                  <button
+                    className="w-[320px] ml-[5%] rounded-sm text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg py-2.5 mb-[20px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="submit"
+                  >
+                    <span className="mx-auto">Sign In</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <Joiningoptions />
+      <Footer />
     </>
   );
 }

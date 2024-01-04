@@ -38,7 +38,7 @@ function Navbar() {
   }
 
   const redirectToProfilePage = () => {
-    navigate("/Login");
+    navigate("/login");
   };
 
  
@@ -73,7 +73,7 @@ function Navbar() {
         >
           Contact Us
         </NavLink>
-        <NavLink to="/Login" className="zoom-effect nav-link" onClick={closeMenu}>
+        <NavLink to="/login" className="zoom-effect nav-link" onClick={closeMenu}>
           Login
         </NavLink>
       </div>

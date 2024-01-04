@@ -21,14 +21,14 @@ const Blogs = () => {
 
   const blogItems = [
     {
-      url: "/10th-Board-SSC-Exam-2024",
+      url: "/10th-board-ssc-exam-2024",
       image: myImage2,
       heading: "10th Board SSC Exam 2024",
       content:
         "Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024",
     },
     {
-      url: "/SSC-Exam-Timetable-2024",
+      url: "/ssc-exam-timetable-2024",
       image: myImage3,
       heading: "SSC Exam Timetable 2024",
       content:
@@ -42,21 +42,21 @@ const Blogs = () => {
         "From our earliest years, we've internalized the notion that conquering the 10th-grade exam.",
     },
     {
-      url: "/Importance-of-10th",
+      url: "/importance-of-10th",
       image: myImage5,
       heading: "Importance of 10th",
       content:
         "It has been embedded in us since our very childhood that clearing the 10th exam is the biggest achievement.",
     },
     {
-      url: "/Importance-of-Planning",
+      url: "/importance-of-planning",
       image: myImage6,
       heading: "Importance of Planning",
       content:
         "The ease or difficulty of securing good marks in any examination relies entirely on consistency.",
     },
     {
-      url: "/How-easy-is-it-to-crack-Class-10-examination",
+      url: "/how-easy-is-it-to-crack-class-10-examination",
       image: myImage7,
       heading: "How easy is it to crack Class 10 examination?",
       content:
