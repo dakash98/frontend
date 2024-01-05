@@ -2,8 +2,8 @@ import React from "react";
 
 const QuestionAnswer = () => {
   return (
-    <div className="bg-gray-200 flex flex-col items-center justify-center mx-12">
-      <div className="px-10 py-28">
+    <div className="bg-gray-200 flex flex-col items-center justify-center mx-6">
+      <div className="px-10 py-12">
         <div className="text-center mb-2">
           <h1 className="text-4xl font-bold mb-4">
             Welcome to PadhaiPlanet
@@ -15,10 +15,10 @@ const QuestionAnswer = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           <div>
-            <h2 className="text-2xl font-bold mb-4 mt-4">
+            <h2 className="text-2xl font-bold mb-4 mt-4 px-4">
               What is Padhaiplanet?
             </h2>
-            <p className="text-gray-700 pr-4 text-justify">
+            <p className="text-gray-700 px-4 text-justify">
               PadhaiPlanet is your go-to online resource for 10th class students
               looking for SSC question papers and comprehensive solutions. Our
               platform is meticulously designed to cater to the specific needs
@@ -29,10 +29,10 @@ const QuestionAnswer = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4 mt-4">
+            <h2 className="text-2xl font-bold mb-4 mt-4 px-4">
               Where do I get all SSC question papers?
             </h2>
-            <p className="text-gray-700 text-justify">
+            <p className="text-gray-700 text-justify px-4">
               At PadhaiPlanet, we prioritize student-oriented content, ensuring
               that our resources are tailored to meet the educational
               requirements of 10th class students. Our team is dedicated to the
@@ -44,10 +44,10 @@ const QuestionAnswer = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4 mt-4">
-              Single station for all important question banks.
+            <h2 className="text-2xl font-bold px-4 mb-4 mt-4">
+              Single station for all important question banks-
             </h2>
-            <p className="text-gray-700 pr-4 text-justify">
+            <p className="text-gray-700 px-4 text-justify">
               One of the key features of PadhaiPlanet is its user-friendly
               interface, making it easy for students to navigate and access the
               educational material they need. We believe in empowering students
@@ -59,10 +59,10 @@ const QuestionAnswer = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-justify mt-4">
+            <h2 className="text-2xl font-bold mb-4 text-justify mt-4 px-4">
               What content would one get in the future?
             </h2>
-            <p className="text-gray-700 text-justify">
+            <p className="text-gray-700 text-justify px-4">
               In addition to SSC question papers, PadhaiPlanet also offers
               supplementary educational content, including study guides, tips
               for effective exam preparation, and valuable insights into exam
@@ -75,7 +75,7 @@ const QuestionAnswer = () => {
             </p>
           </div>
         </div>
-        <p className="mt-8 text-gray-700 text-center md:text-justify">
+        <p className="mt-8 text-gray-700 text-center">
           Join PadhaiPlanet today and experience a transformative approach to
           10th class education that goes beyond traditional learning.
         </p>

@@ -24,17 +24,17 @@ function AboutUs() {
 
                     <div className='lg:px-24'>
 
-                        <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
+                        <div className=" mx-4 flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
 
-                            <div className="flex w-full lg:w-1/2 mb-4 lg:mb-0">
+                            <div className="flex w-full lg:w-1/2 m-4 ">
                             <img
                   src={myAboutImage2}
                   alt="Your Image Alt Text"
-                  className="w-full h-auto object-cover rounded-lg  md:w-auto md:h-auto" // Added responsive classes for images
+                  className="w-full h-auto object-cover rounded-lg  md:w-auto md:h-auto pr-8" // Added responsive classes for images
                 />
                             </div>
 
-                            <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
+                            <div className="flex-grow w-full lg:w-1/2 p-2 content-container animate-fade-in">
                                 <div className="p-4">
                                     <p className='text-white paragraph text-xl text-justify'>
                                         PadhaiPlanet is an online platform created by students for students.
@@ -54,17 +54,17 @@ function AboutUs() {
                         <br />
                         <br />
 
-                        <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
+                        <div className="mx-4 flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
                             <div className="flex flex-col lg:flex-row">
 
-                            <div className="flex w-full lg:w-1/2  mb-4 mr-4">
+                            <div className="flex w-full lg:w-1/2  m-4 mr-4">
                                     <img
                                         src={myAboutImage1}
                                         alt="Your Image Alt Text"
-                                        className="w-full h-auto object-cover rounded-lg"
+                                        className="w-full h-auto object-cover rounded-lg pr-8"
                                     />
                                 </div>
-                                <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
+                                <div className="flex-grow w-full lg:w-1/2 p-2 content-container animate-fade-in">
                                     <div className="p-4">
                                         <p className='text-white paragraph text-xl text-justify'>PadhaiPlanet is developing a dynamic platform that aims to simplify students' studies and facilitate an informative journey by fostering connections with fellow students.
                                             Our creators believe in three core principles: Consistency, Collaboration, and Creativity (3Cs).
@@ -79,7 +79,7 @@ function AboutUs() {
                         <br />
                         <br />
                     </div>
-                    <div className='mt-[75px]'>
+                    <div className='mt-[45px]'>
                         <Joiningoptions />
                     </div>
                 </div>
