@@ -68,7 +68,7 @@ function Footer() {
         </div>
         {/* <!-- logo - end --> */}
 
-        <p class="mb-6 text-gray-400 sm:pr-8">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+        <p class="mb-6 text-gray-400 sm:pr-8">One vision, one mission, question papers at single station. One vision, one mission, question papers at single station.</p>
 
         {/* <!-- social - start --> */}
         <div class="flex gap-4">
