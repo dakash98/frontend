@@ -61,19 +61,21 @@ function Body() {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
-    <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
-      <img src={readingImage} alt="Reading" className="w-full h-auto" />
-    </div>
+    {!isSmallScreen && (
+  <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
+    <img src={readingImage} alt="Reading" className="w-full h-auto" />
+  </div>
+)}
     <form id="form" className="md:order-1 md:ml-4 mt-8 lg:mt-0">
         <div className="">
           <div className="text-center h-fit sm:mx-4">
-            <p className="sm:mx-4 flex text-3xl lg:text-3xl text-white font-semibold my-6 lg:my-10 pt-2.5">
+            <p className="md:mx-4 flex text-3xl lg:text-3xl text-white font-semibold my-6 lg:my-10 pt-2.5">
               Please select the relevant options
             </p>
             <div>
               <select
                 name="std"
-                className="mx-4 animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full lg:w-[450px]"
+                className="md:w-96 animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80 lg:w-[450px]"
                 type="button"
               >
                 <option>
@@ -104,7 +106,7 @@ function Body() {
             <div>
               <select
                 name="med"
-                className="mx-4 animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full lg:w-[450px]"
+                className="md:w-96  animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80 lg:w-[450px]"
                 type="button"
               >
                 <option>
@@ -135,7 +137,7 @@ function Body() {
             <div>
               <select
                 name="sub"
-                className="mx-4 animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full lg:w-[450px]"
+                className="md:w-96 animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80 lg:w-[450px]"
                 type="button"
               >
                 <option>
