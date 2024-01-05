@@ -61,7 +61,7 @@ function Body() {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
-    <div className={isSmallScreen ? "w-[50%] md:w-[30%] md:order-2 mt-8 lg:mt-0" : "lg:w-[30%] md:order-2 lg:mt-0"}>
+    <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
       <img src={readingImage} alt="Reading" className="w-full h-auto" />
     </div>
     <form id="form" className="md:order-1 md:ml-4 mt-8 lg:mt-0">
