@@ -27,11 +27,11 @@ function AboutUs() {
                         <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
 
                             <div className="flex w-full lg:w-1/2 mb-4 lg:mb-0">
-                                <img
-                                    src={myAboutImage2}
-                                    alt="Your Image Alt Text"
-                                    className="w-full h-96 object-cover rounded-lg m-4"
-                                />
+                            <img
+                  src={myAboutImage2}
+                  alt="Your Image Alt Text"
+                  className="w-full h-auto object-cover rounded-lg  md:w-auto md:h-auto" // Added responsive classes for images
+                />
                             </div>
 
                             <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
@@ -56,6 +56,14 @@ function AboutUs() {
 
                         <div className="flex flex-col lg:flex-row border border-gray-300 rounded-md overflow-hidden">
                             <div className="flex flex-col lg:flex-row">
+
+                            <div className="flex w-full lg:w-1/2  mb-4 mr-4">
+                                    <img
+                                        src={myAboutImage1}
+                                        alt="Your Image Alt Text"
+                                        className="w-full h-auto object-cover rounded-lg"
+                                    />
+                                </div>
                                 <div className="flex-grow w-full lg:w-1/2 p-12 content-container animate-fade-in">
                                     <div className="p-4">
                                         <p className='text-white paragraph text-xl text-justify'>PadhaiPlanet is developing a dynamic platform that aims to simplify students' studies and facilitate an informative journey by fostering connections with fellow students.
@@ -63,14 +71,6 @@ function AboutUs() {
                                             Through the implementation of these 3Cs, we envision that PadhaiPlanet will elevate students to their highest potential.
                                         </p>
                                     </div>
-                                </div>
-
-                                <div className="flex w-full lg:w-1/2 mt-4 mb-4 mr-4">
-                                    <img
-                                        src={myAboutImage1}
-                                        alt="Your Image Alt Text"
-                                        className="w-full h-96 object-cover rounded-lg"
-                                    />
                                 </div>
                             </div>
                         </div>

@@ -3,10 +3,9 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../Static/logo.png";
 // import { NavLink, useLocation } from "react-router-dom";
-// import logo from "../Static/logo-black.png";
+// import logoo from "../Static/logo-no-background.png";
 
 function Navbar() {
-  // const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -45,7 +44,7 @@ function Navbar() {
 
 
   return (
-    <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg">
+    <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg sm:mx-4">
       <div className="flex items-center">
         <button onClick={event => (redirectHome())}><img src={logo} alt="Logo" className="h-16 mr-4" /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
@@ -78,7 +77,7 @@ function Navbar() {
         </NavLink>
       </div>
       {/* Hamburger Icon for Smaller Screens */}
-      <div className="lg:hidden">
+      <div className="lg:hidden mx-4">
         <button onClick={toggleMenu}>
           <svg
             className="w-8 h-8 cursor-pointer text-white"
@@ -96,7 +95,7 @@ function Navbar() {
           </svg>
         </button>
       </div>
-      {/* Navigation Links Positioned on Right */}
+      {/* Navigation Links Positioned on Right side */}
       <div
         className={`absolute top-full right-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black p-4 rounded-md shadow-lg ${
           showMenu ? "block" : "hidden"

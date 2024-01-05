@@ -11,6 +11,7 @@ function Body() {
   const [standard, setStandard] = useState([]);
   const [medium, setMedium] = useState([]);
   const [subject, setSubject] = useState([]);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const fetchdata = async (url) => {
     try {
@@ -27,6 +28,12 @@ function Body() {
 
   useEffect(() => {
     fetchdata(API_config);
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640); 
+    };
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   function handleSubmit() {
@@ -54,13 +61,13 @@ function Body() {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
-      <div className="lg:w-[30%] md:order-2">
-        <img src={readingImage} alt="Reading" className="w-full h-auto" />
-      </div>
-      <form id="form" className="md:order-1 md:ml-4">
+    <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
+      <img src={readingImage} alt="Reading" className="w-full h-auto" />
+    </div>
+    <form id="form" className="md:order-1 md:ml-4 mt-8 lg:mt-0">
         <div className="">
-          <div className="text-center h-fit my-10">
-            <p className="flex text-3xl lg:text-5xl text-white font-semibold my-6 lg:my-10 pt-2.5">
+          <div className="text-center h-fit sm:mx-4">
+            <p className="sm:mx-4 flex text-3xl lg:text-3xl text-white font-semibold my-6 lg:my-10 pt-2.5">
               Please select the relevant options
             </p>
             <div>
@@ -72,7 +79,7 @@ function Body() {
                 <option>
                   Standard{" "}
                   <svg
-                    className="w-2.5 h-2.5 ms-[19.75rem]"
+                    className=" h-2.5 ms-[19.75rem]"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

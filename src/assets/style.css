@@ -81,7 +81,8 @@ body {
 .nav-link {
   text-decoration: none;
   color: rgb(233, 169, 169) ;
-  margin: 8px; /* Adjust the margin to add spacing between the navigation items */
+  margin: 12px; /* Adjust the margin to add spacing between the navigation items */
+  /* margin-right: 20px; */
   font-size: 24px; /* Adjust the font size as needed */
   transition: all 0.3s ease;
   }
