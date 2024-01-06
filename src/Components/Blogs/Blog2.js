@@ -24,12 +24,11 @@ const Blog2 = () => {
                   alt="Description of the image"
                   className="w-full h-auto max-w-full rounded-lg"
                 />
-                <div className="mt-4"> {/* Add margin to separate image and text */}
+                <div className="mt-4">
                   <h2 className="text-3xl font-bold mb-4 text-white">SSC Exam Timetable 2024</h2>
                   <p className="text-lg mb-4 text-white">
                     The Maharashtra board timetable has been published already on the website www.mahahsscboard.in. It contains all the details such as Time, Date, Subjects and the duration. It also comes with the requisites and the needed protocols which are to be followed while appearing for the examination. Students can download the timetable from the above link. All the best for the examination!
                   </p>
-                  {/* Add more content as needed */}
                 </div>
               </div>
             </div>
