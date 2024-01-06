@@ -25,12 +25,12 @@ const Blog1 = () => {
               alt="Description of the image"
               className="w-full h-auto max-w-full rounded-lg"
             />
-            <div className="mt-4"> {/* Add margin to separate image and text */}
+            <div className="mt-4"> 
               <h2 className="text-3xl font-bold mb-4 text-white">10th Board SSC Exam 2024</h2>
               <p className="text-lg mb-4 text-white">
                 Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024. When there are only three months left for the examination, students should be focusing more on practicing the syllabus now which includes a revision and practicing the previous year question papers as much as possible. Time management can reduce stress easily and help you achieve the goal as well.
               </p>
-              {/* Add more content as needed */}
+              
             </div>
           </div>
         </div>
