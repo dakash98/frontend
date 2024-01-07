@@ -87,7 +87,7 @@ const Blogs = () => {
               />
             </div>
 
-            <div className="block px-4 md:px-8 lg:px-28 xl:px-16 2xl:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="block px-4 md:px-28 lg:px-28 xl:px-28 2xl:px-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogItems.map((item, index) => (
                 <div
                   key={index}

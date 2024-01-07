@@ -35,7 +35,7 @@ function ContactUs() {
                         </div>
 
                         <div className="flex flex-col items-center justify-center w-full h-[95px] md:flex-row md:w-3/4 lg:w-1/2 border-2 border-gray-300 rounded-md overflow-hidden p-4 transform transition duration-300 hover:scale-105">
-                            <FontAwesomeIcon icon={faPen} className="text-white text-4xl md:text-3xl lg:text-4xl " style={{ marginRight: '2em' }} />
+                            <FontAwesomeIcon icon={faPen} className="text-white text-2xl md:text-2xl lg:text-6xl " style={{ marginRight: '1em' }} />
                             <ContactUsLink />
                         </div>
                     </div>
