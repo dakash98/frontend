@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import myImageLogin from "../Static/login1.jpg";
 import Joiningoptions from "./Joiningoptions";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Breadcrumbhome } from "./Breadcrumbs";
+import { BreadcrumbLogin, BreadcrumbProfile } from "./Breadcrumbs";
 
 function Loginpage() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -72,22 +73,41 @@ function Loginpage() {
       });
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <div className="sticky top-0 flex z-10">
+        <Navbar />
+      </div>
       <div id="home">
-        <Breadcrumbhome />
+        <BreadcrumbLogin />
+      </div>
+      <div id="profile" className="hidden">
+        <BreadcrumbProfile />
       </div>
       <div className="flex flex-col md:flex-row ">
-        <img
-          src={myImageLogin}
-          alt="Your Image Alt Text"
-          className="w-full md:w-[402px] h-auto md:h-[650px] mx-auto md:ml-[20%] md:mr-0 mt-[6%]"
-        />
+        {screenWidth >= 768 && (
+          <img
+            src={myImageLogin}
+            alt="Your Image Alt Text"
+            className="w-full md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%]  mt-[6%]"
+          />
+        )}
         <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
           <div className="border border-gray-200 border-solid w-full md:w-[402px] md:mr-[5%] md:mt-[2%] h-auto md:h-[500px]">
             <p className="text-center text-lg">Please Login to continue</p>
-            <div className="mt-[3%] inner-content h-[600px] bg-white">
+            <div className="mt-[3%] inner-content h-[600px] bg-white ">
               <div className="flex w-full">
                 <button
                   onClick={() => toggleSignUp("sign_up")}
@@ -97,7 +117,7 @@ function Loginpage() {
                 >
                   Sign Up
                   {activeForm === "sign_up" && (
-                    <span className="absolute w-full h-1 left-0"></span>
+                    <span className="absolute w-full h-1"></span>
                   )}
                 </button>
                 <button
@@ -108,7 +128,7 @@ function Loginpage() {
                 >
                   Sign In
                   {activeForm === "sign_in" && (
-                    <span className="absolute w-full h-1 left-0"></span>
+                    <span className="absolute w-full h-2 "></span>
                   )}
                 </button>
               </div>
