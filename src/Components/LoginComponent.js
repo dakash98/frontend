@@ -1,77 +1,74 @@
 import React, { useState, useEffect } from "react";
-import Joiningoptions from "./Joiningoptions";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { BreadcrumbLogin, BreadcrumbProfile } from "./Breadcrumbs";
-import LoginComponent from './LoginComponent'
-import StaticTag from "./StaticTag";
+import axios from "axios";
+import myImageLogin from "../Static/login1.jpg";
 
-function Loginpage() {
-   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  // const [name, setName] = useState("");
-  // const [phoneNumber, setPhoneNumber] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [role, setRole] = useState("");
-  // const [activeForm, setActiveForm] = useState("sign_up");
 
-  // const handleInputChange = (event) => {
-  //   setName(event.target.value);
-  // };
+function LoginComponent() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [activeForm, setActiveForm] = useState("sign_up");
 
-  // const handlePhoneNumberChange = (event) => {
-  //   setPhoneNumber(event.target.value);
-  // };
+  const handleInputChange = (event) => {
+    setName(event.target.value);
+  };
 
-  // const handleEmailChange = (event) => {
-  //   setEmail(event.target.value);
-  // };
+  const handlePhoneNumberChange = (event) => {
+    setPhoneNumber(event.target.value);
+  };
 
-  // const handlePasswordChange = (event) => {
-  //   setPassword(event.target.value);
-  // };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-  // const handleRoleChange = (event) => {
-  //   setRole(event.target.value);
-  // };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-  // const toggleSignUp = (user_choice) => {
-  //   if (user_choice === "sign_up") {
-  //     setActiveForm("sign_up");
-  //   } else if (user_choice === "sign_in") {
-  //     setActiveForm("sign_in");
-  //   }
-  // };
+  const handleRoleChange = (event) => {
+    setRole(event.target.value);
+  };
 
-  // const submitHandlerSignIn = (event) => {
-  //   event.preventDefault();
-  //   document.getElementById("forms_window").classList.add("hidden");
-  // };
+  const toggleSignUp = (user_choice) => {
+    if (user_choice === "sign_up") {
+      setActiveForm("sign_up");
+    } else if (user_choice === "sign_in") {
+      setActiveForm("sign_in");
+    }
+  };
 
-  // const submitHandlerSignUp = (event) => {
-  //   event.preventDefault();
-  //   document.getElementById("forms_window").classList.add("hidden");
-  //   const userName = event.target.uname.value;
-  //   const userPhnNumber = event.target.uphnnum.value;
-  //   const userEmail = event.target.uemail.value;
-  //   const userPass = event.target.upass.value;
-  //   const userRole = event.target.urole.value;
+  const submitHandlerSignIn = (event) => {
+    event.preventDefault();
+    document.getElementById("forms_window").classList.add("hidden");
+  };
 
-  //   axios
-  //     .post("https://padhaiplanet-backend.onrender.com/v1/signup", {
-  //       name: userName,
-  //       email: userEmail,
-  //       phone: userPhnNumber,
-  //       password: userPass,
-  //       role: userRole,
-  //     })
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+  const submitHandlerSignUp = (event) => {
+    event.preventDefault();
+    document.getElementById("forms_window").classList.add("hidden");
+    const userName = event.target.uname.value;
+    const userPhnNumber = event.target.uphnnum.value;
+    const userEmail = event.target.uemail.value;
+    const userPass = event.target.upass.value;
+    const userRole = event.target.urole.value;
+
+    axios
+      .post("https://padhaiplanet-backend.onrender.com/v1/signup", {
+        name: userName,
+        email: userEmail,
+        phone: userPhnNumber,
+        password: userPass,
+        role: userRole,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -87,25 +84,12 @@ function Loginpage() {
 
   return (
     <>
-      <div className="sticky top-0 flex z-10">
-        <Navbar />
-      </div>
-      <div className="mr-4 md:mr-[4%] lg:mr-[4%] sm:ml-[-60%]">
-        <StaticTag/>
-      </div>
-      <div id="home">
-        <BreadcrumbLogin />
-      </div>
-      <div id="profile" className="hidden">
-        <BreadcrumbProfile />
-      </div>
-      <LoginComponent/>
-      {/* <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row ">
         {screenWidth >= 768 && (
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%]  mt-[6%]"
+            className="w-full w-[40%] md:w-[403px]  h-auto md:h-[650px] mx-auto lg:ml-[20%]  mt-[6%]"
           />
         )}
         <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
@@ -297,11 +281,10 @@ function Loginpage() {
             </div>
           </div>
         </div>
-      </div> */}
-      <Joiningoptions />
-      <Footer />
+      </div>
+      
     </>
   );
 }
 
-export default Loginpage;
+export default LoginComponent;
