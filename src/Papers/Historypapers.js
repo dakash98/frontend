@@ -9,6 +9,7 @@ import Loginpage from '../Components/Loginpage.js';
 import Contentscreen from '../Components/Contentscreen.js';
 import Loader from '../Components/Loader.js';
 import { sleep, topFunction } from '../Global.js';
+import LoginComponent from '../Components/LoginComponent.js';
 
 function Historypapers() {
 
@@ -107,7 +108,7 @@ function Historypapers() {
           </div>
 
           <div id="forms_window" className='absolute top-0 w-full hidden pb-[20px]'>
-            <Loginpage />
+            <LoginComponent />
           </div>
 
           <div id="que_paper_screen" className='absolute top-0 w-full hidden pb-[20px]'>
