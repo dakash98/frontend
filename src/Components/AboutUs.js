@@ -30,7 +30,7 @@ function AboutUs() {
                             <img
                   src={myAboutImage2}
                   alt="Your Image Alt Text"
-                  className="w-full h-auto object-cover rounded-lg  md:w-auto md:h-auto pr-8" // Added responsive classes for images
+                  className="w-full h-auto object-cover rounded-md  md:w-auto md:h-auto pr-8" // Added responsive classes for images
                 />
                             </div>
 
@@ -61,7 +61,7 @@ function AboutUs() {
                                     <img
                                         src={myAboutImage1}
                                         alt="Your Image Alt Text"
-                                        className="w-full h-auto object-cover rounded-lg pr-8"
+                                        className="w-full h-auto object-cover pr-8"
                                     />
                                 </div>
                                 <div className="flex-grow w-full lg:w-1/2 p-2 content-container animate-fade-in">
