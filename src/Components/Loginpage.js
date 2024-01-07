@@ -90,7 +90,7 @@ function Loginpage() {
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
-      <div className="mr-4 md:mr-[4%] lg:mr-[4%] sm:ml-[-60%]">
+      <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
         <StaticTag/>
       </div>
       <div id="home">

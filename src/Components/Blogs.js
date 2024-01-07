@@ -11,6 +11,7 @@ import myImage4 from "./Blogs/image3.jpg";
 import myImage5 from "./Blogs/image4.jpg";
 import myImage6 from "./Blogs/image5.jpg";
 import myImage7 from "./Blogs/image6.jpg";
+import StaticTag from "./StaticTag";
 
 const Blogs = () => {
   const navigate = useNavigate();
@@ -68,6 +69,9 @@ const Blogs = () => {
     <div>
       <div className="sticky top-0 flex z-10">
         <Navbar />
+      </div>
+      <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
+        <StaticTag />
       </div>
       <div className="relative z-0">
         <div>
