@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { BreadcrumbBlogs, BreadcrumbProfile } from "./Breadcrumbs";
 import Joiningoptions from "./Joiningoptions";
@@ -15,6 +15,8 @@ import StaticTag from "./StaticTag";
 
 const Blogs = () => {
   const navigate = useNavigate();
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleImageClick = () => {
     navigate("");
@@ -63,7 +65,29 @@ const Blogs = () => {
       content:
         "How easy or hard it is to get good marks in any examination is purely based on consistency.",
     },
+    {
+      url: "/10th-board-ssc-exam-2024",
+      image: myImage2,
+      heading: "10th Board SSC Exam 2024",
+      content:
+        "Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024",
+    },
+    {
+      url: "/ssc-exam-timetable-2024",
+      image: myImage3,
+      heading: "SSC Exam Timetable 2024",
+      content:
+        "The Maharashtra board timetable has been published already on the website www.mahahsscboard.in.",
+    },
   ];
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBlogItems = blogItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div>
@@ -92,7 +116,7 @@ const Blogs = () => {
             </div>
 
             <div className="block px-4 md:px-28 lg:px-28 xl:px-28 2xl:px-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogItems.map((item, index) => (
+              {currentBlogItems.map((item, index) => (
                 <div
                   key={index}
                   className="mb-8 transform transition duration-300 hover:scale-105"
@@ -117,6 +141,20 @@ const Blogs = () => {
                     </p>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-4">
+              {Array.from({ length: Math.ceil(blogItems.length / itemsPerPage) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => paginate(index + 1)}
+                  className={`mx-2 px-4 py-2 rounded-full ${
+                    currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"
+                  }`}
+                >
+                  {index + 1}
+                </button>
               ))}
             </div>
           </div>

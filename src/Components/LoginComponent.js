@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import myImageLogin from "../Static/login1.jpg";
 
-
 function LoginComponent() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [name, setName] = useState("");
@@ -89,7 +88,7 @@ function LoginComponent() {
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full w-[40%] md:w-[403px]  h-auto md:h-[650px] mx-auto lg:ml-[20%]  mt-[6%]"
+            className="w-full  md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[20%] 2xl:ml-[35%] mt-[6%]"
           />
         )}
         <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
@@ -236,7 +235,7 @@ function LoginComponent() {
                 id="signin"
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
-                <div className="w-full pl-[5%]  mt-[10%] mr-[3%]">
+                <div className="w-full pl-[5%]  mt-[35%] mr-[3%]">
                   <div className=" w-[80%] relative mb-8 ml-[5%]">
                     <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                     <input
@@ -282,7 +281,6 @@ function LoginComponent() {
           </div>
         </div>
       </div>
-      
     </>
   );
 }
