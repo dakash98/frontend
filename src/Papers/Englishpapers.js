@@ -46,6 +46,26 @@ function Englishpapers() {
     data_imp.push(data[j]);
   }
 
+
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1280) {
+        
+      }
+      else {
+        
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     topFunction();
     fetchdata(API_hisory_paper);
@@ -86,19 +106,19 @@ function Englishpapers() {
 
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
-            <div className="w-[50%] ml-[25%] pb-[5%] pr-[10%]">
-              <h1 className="ml-[55%] text-3xl font-bold text-white">
+            <div className="w-[50%] m-auto pb-[5%] pr-[10%]">
+              <h1 className="lg:ml-[18%] sm:ml-[15%] text-center text-3xl font-bold text-white">
                 English
               </h1>
-              <div className="w-[50%] ml-[15%]">
+              <div className="w-[50%]">
                 {data_imp.map((item, index) => (
-                  <div className="w-[50%] ml-[5%] mt-[10%]">
-                    <div className="w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400">
+                  <div className="w-[50%] m-auto mt-[10%]">
+                    <div className="w-[100px] h-[50px] rounded-lg text-center m-auto pt-[12.5px] text-xl font-semibold bg-amber-400">
                       {item.year}
                     </div>
-                    <div className="flex">
+                    <div  className="lg:flex md:block lg:pl-[28%]">
                       {item.papers.map((item1, index1) => (
-                        <div className="flex ml-[15%]">
+                        <div className="flex m-[15%]">
                           <div className="block">
                             <button
                               onClick={(event) =>

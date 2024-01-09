@@ -54,10 +54,10 @@ function Exploremore(props) {
   return (
     <div className='w-[50%] ml-[30%] mt-[150px]'>
       <h2 className='text-3xl w-[85%] text-center mb-[30px] font-semibold text-white'>Explore more question papers</h2>
-      <div className='flex flex-wrap max-w-[100%]'>
+      <div className='lg:flex lg:flex-wrap lg:ml-[0%] md:ml-[15%] md:block max-w-[100%]'>
       {subject.map((subjects) =>
-      <div className='my-[5%] w-[50%] h-[50px]'> 
-        <button onClick={event => (handleClick(subjects.key))} className='w-[300px] h-[70px] bg-blue-600 rounded-xl text-xl text-center font-semibold' key={subjects.key}>{subjects.value}</button>
+      <div className='my-[5%] lg:mb-[5%] mb-[15%] md:mb-[10%] lg:w-[50%] h-[50px]'> 
+        <button onClick={event => (handleClick(subjects.key))} className='lg:w-[275px] md:w-[200px] w-[170px] h-[70px] bg-blue-600 rounded-xl text-xl text-center font-semibold' key={subjects.key}>{subjects.value}</button>
       </div>)}
       </div>
     </div>
