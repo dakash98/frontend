@@ -92,7 +92,7 @@ function HindiFullpapers() {
                     <div className="w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400">
                       {item.year}
                     </div>
-                    <div className="flex">
+                    <div className="lg:flex md:block lg:pl-[28%]">
                       {item.papers.map((item1, index1) => (
                         <div className="flex ml-[15%]">
                           <div className="block">
