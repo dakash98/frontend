@@ -244,11 +244,11 @@ function Loginpage() {
               </form>
 
               <form
-                onSubmit={
-                  activeForm === "sign_in"
-                    ? submitHandlerSignIn
-                    : submitHandlerSignUp
-                }
+                // onSubmit={
+                //   activeForm === "sign_in"
+                //     ? submitHandlerSignIn
+                //     : submitHandlerSignUp
+                // }
                 id="signin"
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
