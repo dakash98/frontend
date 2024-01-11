@@ -81,30 +81,34 @@ function Science1Papers() {
           <StaticTag />
         </div>
 
-        <BreadcrumbPages sub={"Science 1"} />
+        <BreadcrumbPages sub={"Science and Technology 1"} />
 
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
-            <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]">
-              <h1 className="xl:ml-[25%] lg:ml-[80%] md:ml-[25%] ml-[30%] xl:mb-[0%] lg:mb-[0%] md:mb-[0%] mb-[50%] text-center text-3xl font-bold text-white">
+            {/* <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]"> */}
+            <div className="pb-[5%]">
+              {/* <h1 className="xl:ml-[25%] lg:ml-[80%] md:ml-[25%] ml-[30%] xl:mb-[0%] lg:mb-[0%] md:mb-[0%] mb-[50%] text-center text-3xl font-bold text-white"> */}
+              <h1 className="text-center text-3xl font-bold text-white">
                 Science and Technology 1
               </h1>
-              <div className="w-[100%] xl:ml-[0%] lg:ml-[0%] md:ml-[25%] ml-[0%]">
+              {/* <div className="w-[100%] xl:ml-[0%] lg:ml-[0%] md:ml-[25%] ml-[0%]"> */}
+              <div className="w-full items-center">
                 {data_imp.map((item, index) => (
-                  <div className="w-[50%] mt-[10%]">
-                    <div className="w-[100px] h-[50px] rounded-lg text-center  pt-[12.5px] text-xl font-semibold bg-amber-400">
+                  <div className="w-[50%] inset-0 m-auto text-center mt-[10%]">
+                    <div className="w-[100px] h-[50px] rounded-lg text-center pt-[12.5px] text-xl font-semibold bg-amber-400">
                       {item.year}
                     </div>
-                    <div className="lg:flex md:block lg:pl-[28%]">
+                    {/* <div className="lg:flex md:block lg:pl-[28%]"> */}
+                    <div className="lg:flex w-full md:block">
                       {item.papers.map((item1, index1) => (
-                        <div className="flex xl:mx-[15%] lg:mx-[15%] md:mx-[0%] m-[0%]">
+                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">       
                           <div className="block">
                             <button
                               onClick={(event) =>
                                 HandleClick("logged_in", index1, index)
                               }
                               type="submit"
-                              className="rounded-2xl lg:w-[300px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
+                              className="rounded-2xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
                               key={index}
                             >
                               {item.papers[index1]["name"]} Q Paper
@@ -113,7 +117,7 @@ function Science1Papers() {
                               onClick={(event) =>
                                 handleSolution("logged_in", index1, index)
                               }
-                              className="rounded-xl lg:w-[300px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
+                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
                               key={index}
                             >
                               {item.papers[index1]["name"]} Solution
