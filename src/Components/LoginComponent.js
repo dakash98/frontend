@@ -129,13 +129,13 @@ function LoginComponent() {
                 id="signup"
                 className={`${activeForm === "sign_up" ? "" : "hidden"}`}
               >
-                <div className="w-[90%] pl-[10%] mt-[8%]">
-                  <div className="relative mb-6">
+                <div className="w-[90%] pl-[7%] md:pl-[10%] lg:pl-[10%] mt-[8%]">
+                  <div className="relative mb-6 sm:mr-[5%]">
                     <label htmlFor="uname">{name ? "" : ""}</label>
                     <input
                       type="text"
                       name="uname"
-                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 sm:mr-4"
                       placeholder=""
                       value={name}
                       onChange={handleInputChange}

@@ -65,20 +65,6 @@ const Blogs = () => {
       content:
         "How easy or hard it is to get good marks in any examination is purely based on consistency.",
     },
-    {
-      url: "/10th-board-ssc-exam-2024",
-      image: myImage2,
-      heading: "10th Board SSC Exam 2024",
-      content:
-        "Maharashtra board exam is scheduled on March 1, 2024, and will be over by March 25, 2024",
-    },
-    {
-      url: "/ssc-exam-timetable-2024",
-      image: myImage3,
-      heading: "SSC Exam Timetable 2024",
-      content:
-        "The Maharashtra board timetable has been published already on the website www.mahahsscboard.in.",
-    },
   ];
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -87,8 +73,11 @@ const Blogs = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+
+  
   return (
     <div>
       <div className="sticky top-0 flex z-10">
