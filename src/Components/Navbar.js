@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../Static/logo.png";
+// import logo from "../Static/logo.png";
 // import { NavLink, useLocation } from "react-router-dom";
-// import logoo from "../Static/logo-no-background.png";
+import logoo from "../Static/Padhaiplanet-logo.png";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -46,9 +46,9 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg sm:mx-4">
       <div className="flex items-center">
-        <button onClick={event => (redirectHome())}><img src={logo} alt="Logo" className="h-16 mr-4" /></button>
+        <button onClick={event => (redirectHome())}><img src={logoo} alt="Logo" className="h-20 " /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
-          PadhaiPlanet
+          adhaiPlanet
         </h1>
       </div>
       {/* Navigation Links for Wider Screens */}
