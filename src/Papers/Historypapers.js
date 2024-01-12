@@ -88,7 +88,7 @@ function HistoryPapers() {
             {/* <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]"> */}
             <div className="pb-[5%]">
               {/* <h1 className="xl:ml-[25%] lg:ml-[80%] md:ml-[25%] ml-[30%] xl:mb-[0%] lg:mb-[0%] md:mb-[0%] mb-[50%] text-center text-3xl font-bold text-white"> */}
-              <h1 className="text-center text-3xl font-bold text-white">
+              <h1 className="text-center xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl text-2xl font-bold text-white">
                 History and Political Science
               </h1>
               {/* <div className="w-[100%] xl:ml-[0%] lg:ml-[0%] md:ml-[25%] ml-[0%]"> */}
@@ -105,7 +105,7 @@ function HistoryPapers() {
                           <div className="block">
                             <button
                               onClick={(event) =>
-                                HandleClick("logged_in", index1, index)
+                                HandleClick("not_logged_in", index1, index)
                               }
                               type="submit"
                               className="rounded-2xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
@@ -115,7 +115,7 @@ function HistoryPapers() {
                             </button>
                             <button
                               onClick={(event) =>
-                                handleSolution("logged_in", index1, index)
+                                handleSolution("not_logged_in", index1, index)
                               }
                               className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
                               key={index}

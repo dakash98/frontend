@@ -88,7 +88,7 @@ function MarathiPapers() {
             {/* <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]"> */}
             <div className="pb-[5%]">
               {/* <h1 className="xl:ml-[25%] lg:ml-[80%] md:ml-[25%] ml-[30%] xl:mb-[0%] lg:mb-[0%] md:mb-[0%] mb-[50%] text-center text-3xl font-bold text-white"> */}
-              <h1 className="text-center text-3xl font-bold text-white">
+              <h1 className="text-center xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl text-2xl font-bold text-white">
                 Marathi
               </h1>
               {/* <div className="w-[100%] xl:ml-[0%] lg:ml-[0%] md:ml-[25%] ml-[0%]"> */}
