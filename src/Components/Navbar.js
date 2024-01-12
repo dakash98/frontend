@@ -36,10 +36,20 @@ function Navbar() {
     navigate('/');
   }
 
-  const redirectToProfilePage = () => {
-    navigate("/login");
-  };
+  // const redirectToProfilePage = () => {
+  //   navigate("/login");
+  // };
 
+
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "1"
+  );
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+    navigate('/');
+  };
  
 
 
@@ -72,9 +82,19 @@ function Navbar() {
         >
           Contact Us
         </NavLink>
-        <NavLink to="/login" className="zoom-effect nav-link" onClick={closeMenu}>
-          Login
-        </NavLink>
+        {isLoggedIn ? (
+          <button className="zoom-effect nav-link" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="zoom-effect nav-link"
+            onClick={closeMenu}
+          >
+            Login
+          </NavLink>
+        )}
       </div>
       {/* Hamburger Icon for Smaller Screens */}
       <div className="lg:hidden mx-4">
@@ -118,9 +138,19 @@ function Navbar() {
         >
           Contact Us
         </NavLink>
-        <button className="nav-link block" onClick={redirectToProfilePage}>
-          Login
-        </button>
+        {isLoggedIn ? (
+          <button className="zoom-effect nav-link" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="zoom-effect nav-link"
+            onClick={closeMenu}
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );
