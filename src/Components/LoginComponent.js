@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import myImageLogin from "../Static/login1.jpg";
 
 function LoginComponent() {
@@ -10,6 +11,7 @@ function LoginComponent() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [activeForm, setActiveForm] = useState("sign_up");
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setName(event.target.value);
@@ -38,20 +40,16 @@ function LoginComponent() {
       setActiveForm("sign_in");
     }
   };
-
-  const submitHandlerSignIn = (event) => {
-    event.preventDefault();
-    document.getElementById("forms_window").classList.add("hidden");
-  };
+  
 
   const submitHandlerSignUp = (event) => {
     event.preventDefault();
-    document.getElementById("forms_window").classList.add("hidden");
-    const userName = event.target.uname.value;
-    const userPhnNumber = event.target.uphnnum.value;
-    const userEmail = event.target.uemail.value;
-    const userPass = event.target.upass.value;
-    const userRole = event.target.urole.value;
+    // document.getElementById("forms_window").classList.add("hidden");
+    const userName = name;
+    const userPhnNumber = phoneNumber;
+    const userEmail = email;
+    const userPass = password;
+    const userRole = role;
 
     axios
       .post("https://padhaiplanet-backend.onrender.com/v1/signup", {
@@ -63,11 +61,34 @@ function LoginComponent() {
       })
       .then((response) => {
         console.log(response);
+        localStorage.setItem("isLoggedIn", 1);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
       });
-  };
+    };
+
+  const submitHandlerSignIn = (event) => {
+    event.preventDefault();
+
+    const userIdentifier = phoneNumber; 
+    const userPass = password;
+
+    axios
+      .post("https://padhaiplanet-backend.onrender.com/v1/login", {
+        identifier: userIdentifier,
+        password: userPass,
+      })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("isLoggedIn", 1);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    };
 
   useEffect(() => {
     const handleResize = () => {
@@ -121,7 +142,7 @@ function LoginComponent() {
               </div>
 
               <form
-                onSubmit={
+               onSubmit={
                   activeForm === "sign_up"
                     ? submitHandlerSignUp
                     : submitHandlerSignIn
@@ -227,11 +248,7 @@ function LoginComponent() {
               </form>
 
               <form
-                onSubmit={
-                  activeForm === "sign_in"
-                    ? submitHandlerSignIn
-                    : submitHandlerSignUp
-                }
+                onSubmit={submitHandlerSignIn}
                 id="signin"
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
@@ -280,7 +297,7 @@ function LoginComponent() {
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </>
   );
 }

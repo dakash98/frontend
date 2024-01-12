@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import { NavLink } from "react-router-dom";
 // import logo from "../Static/logo.png";
 // import { NavLink, useLocation } from "react-router-dom";
@@ -7,39 +9,39 @@ import logoo from "../Static/Padhaiplanet-logo.png";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "1");
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1280) {
-        setShowMenu(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const closeMenu = () => {
     setShowMenu(false);
   };
 
-  const navigate = useNavigate();
-
   const redirectHome = () => {
     navigate('/');
-  }
-
-  const redirectToProfilePage = () => {
-    navigate("/login");
   };
 
+  // const redirectToProfilePage = () => {
+  //   navigate("/login");
+  // };
+
+  const handleLogout = () => {
+    axios
+      .post("https://padhaiplanet-backend.onrender.com/v1/logout")
+      .then((response) => {
+        console.log(response);
+        localStorage.removeItem("isLoggedIn");
+        setIsLoggedIn(false);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error("Logout error:", error);
+        console.error("Error response:", error.response); // Log the response object
+     });
+  };
  
 
 
@@ -72,9 +74,19 @@ function Navbar() {
         >
           Contact Us
         </NavLink>
-        <NavLink to="/login" className="zoom-effect nav-link" onClick={closeMenu}>
-          Login
-        </NavLink>
+        {isLoggedIn ? (
+          <button className="zoom-effect nav-link" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="zoom-effect nav-link"
+            onClick={closeMenu}
+          >
+            Login
+          </NavLink>
+        )}
       </div>
       {/* Hamburger Icon for Smaller Screens */}
       <div className="lg:hidden mx-4">
@@ -118,9 +130,19 @@ function Navbar() {
         >
           Contact Us
         </NavLink>
-        <button className="nav-link block" onClick={redirectToProfilePage}>
-          Login
-        </button>
+        {isLoggedIn ? (
+          <button className="zoom-effect nav-link" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="zoom-effect nav-link"
+            onClick={closeMenu}
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );
