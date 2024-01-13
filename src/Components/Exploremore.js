@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ConfigData } from './ConfigData';
 
 function Exploremore(props) {
 
   const navigate = useNavigate();
 
-  const API_config = 'https://padhaiplanet-backend.onrender.com/v1/config';
+  // const API_config = 'https://padhaiplanet-backend.onrender.com/v1/config';
 
   const [subject, setSubject] = useState([]);
 
@@ -28,27 +29,28 @@ function Exploremore(props) {
   navigate(page_mapping[user_selected_option]);
 }
 
-  const fetchdata = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      setSubject(data.data.subject)
+  // const fetchdata = async (url) => {
+  //   try {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+  //     setSubject(data.data.subject)
 
-    } catch (e) {
-      console.log(e)
-    }
-  }
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 
   useEffect(() => {
-    fetchdata(API_config);
+    // fetchdata(API_config);
+    setSubject(ConfigData[0].subject);
   }, [])
 
 
-  for (var i=0; i< subject.length; i++){
-    if (subject[i].key === props.sub_name){
-      subject.splice(i, 1);
-    }
-  }
+  // for (var i=0; i< subject.length; i++){
+  //   if (subject[i].key === props.sub_name){
+  //     subject.splice(i, 1);
+  //   }
+  // }
 
 
   return (

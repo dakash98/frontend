@@ -2,9 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import readingImage from "../Static/astronut-book.png";
+import { ConfigData } from "./ConfigData";
 
 function Body() {
-  const API_config = "https://padhaiplanet-backend.onrender.com/v1/config";
+  // const API_config = "https://padhaiplanet-backend.onrender.com/v1/config";
 
   const navigate = useNavigate();
 
@@ -13,21 +14,24 @@ function Body() {
   const [subject, setSubject] = useState([]);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  const fetchdata = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log(data.data);
-      setStandard(data.data.standard);
-      setMedium(data.data.medium);
-      setSubject(data.data.subject);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const fetchdata = async (url) => {
+  //   try {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+  //     console.log(data.data);
+  //     setStandard(data.data.standard);
+  //     setMedium(data.data.medium);
+  //     setSubject(data.data.subject);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   useEffect(() => {
-    fetchdata(API_config);
+    // fetchdata(API_config);
+    setStandard(ConfigData[1].standard);
+    setMedium(ConfigData[2].medium);
+    setSubject(ConfigData[0].subject);
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 640); 
     };

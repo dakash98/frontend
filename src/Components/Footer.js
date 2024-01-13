@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ConfigData } from "./ConfigData";
 
 function Footer() {
   const navigate = useNavigate();
 
-  const API_config = "https://padhaiplanet-backend.onrender.com/v1/config";
+  // const API_config = "https://padhaiplanet-backend.onrender.com/v1/config";
 
   const [subject, setSubject] = useState([]);
 
+  // useEffect(() => {
+  //   // Fetch subject data from the API_config
+  //   // Update the setSubject state with the fetched data
+  //   fetch(API_config)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setSubject(data.subjects || []);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, [API_config]);
+
   useEffect(() => {
-    // Fetch subject data from the API_config
-    // Update the setSubject state with the fetched data
-    fetch(API_config)
-      .then((response) => response.json())
-      .then((data) => {
-        setSubject(data.subjects || []);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, [API_config]);
+    setSubject(ConfigData[0].subject);
+  },[])
 
   function handleClick(user_selected_option) {
     const page_mapping = {
@@ -41,19 +46,19 @@ function Footer() {
     navigate(page_mapping[user_selected_option]);
   }
 
-  const fetchdata = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      setSubject(data.data.subject);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const fetchdata = async (url) => {
+  //   try {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+  //     setSubject(data.data.subject);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchdata(API_config);
-  }, []);
+  // useEffect(() => {
+  //   fetchdata(API_config);
+  // }, []);
 
   const redirectHome = () => {
     navigate("/");
