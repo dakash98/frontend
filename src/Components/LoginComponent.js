@@ -104,12 +104,12 @@ function LoginComponent() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row">
         {screenWidth >= 768 && (
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full  md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[20%] 2xl:ml-[35%] mt-[6%]"
+            className="w-full md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[15%] 2xl:ml-[30%] mt-[6%]"
           />
         )}
         <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
