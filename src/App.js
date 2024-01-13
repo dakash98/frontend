@@ -27,6 +27,8 @@ import Blog6 from './Components/Blogs/Blog6';
 import ContactUs from './Components/ContactUs';
 import Loader from './Components/Loader';
 import Profilepage from './Components/Profilepage';
+import TermsNConditions from './Components/Terms&Conditions';
+import PrivacyNPolicy from './Components/Privacy&Policy';
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
           <Route path='/importance-of-planning' element={<Blog5 />} />
           <Route path='/how-easy-is-it-to-crack-class-10-examination?' element={<Blog6 />} />
           <Route path='/login' element={<Profilepage />} />
+          <Route path='/terms-&-conditions' element={<TermsNConditions/>}/>
+          <Route path='/privacy-&-policy' element={<PrivacyNPolicy/>}/>
         </Routes>
       </BrowserRouter>
       
