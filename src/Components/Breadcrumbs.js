@@ -7,7 +7,7 @@ export function Breadcrumbhome() {
       <nav aria-label="breadcrumb" className="">
         <ol className="flex flex-row py-1 rounded-md bg-blue-gray-50 bg-opacity-60">
           <li className="flex items-center font-sans xl:text-2xl lg:text-xl md:text-xl text-lg antialiased pl-[15px] font-bold">
-            <p className="opacity-60 text-white">Home</p>
+            <p className="opacity-60 text-white lg:px-8 py-4 sm:mx-4">Home</p>
           </li>
         </ol>
       </nav>
