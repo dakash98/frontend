@@ -8,6 +8,19 @@ function Footer() {
 
   const [subject, setSubject] = useState([]);
 
+  useEffect(() => {
+    // Fetch subject data from the API_config
+    // Update the setSubject state with the fetched data
+    fetch(API_config)
+      .then((response) => response.json())
+      .then((data) => {
+        setSubject(data.subjects || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [API_config]);
+
   function handleClick(user_selected_option) {
     const page_mapping = {
       english: "/english-question-papers-10th-ssc",
@@ -149,47 +162,58 @@ function Footer() {
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                   </a>
+                  
                 </div>
                 {/* <!-- social - end --> */}
               </div>
 
-              {/* <!-- nav - start --> */}
-              <div>
-                <div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Products
-                </div>
+              <div className="mb-4 tracking-widest text-gray-100">
+                <p className="font-bold mb-4">PRODUCT</p>
 
-                <nav class="flex flex-col gap-4">
-                  <div>
-                    {subject.map((subjects) => (
-                      <ol className="pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600">
+                <div className="flex flex-wrap lg:flex-nowrap">
+                  <nav className="flex flex-col lg:gap-4">
+                    {subject.slice(0, 6).map((subjects) => (
+                      <ol
+                        className="w-[140px] sm:w-[100px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
+                        key={subjects.key}
+                      >
                         <button
-                          onClick={(event) => {
-                            handleClick(subjects.key);
-                          }}
+                          onClick={() => handleClick(subjects.key)}
                           className=""
-                          key={subjects.key}
                         >
                           {subjects.value} SSC
                         </button>
                       </ol>
                     ))}
-                  </div>
-                </nav>
+                  </nav>
+
+                  <nav className="flex flex-col lg:gap-4 ml-0 lg:ml-1">
+                    {subject.slice(6).map((subjects) => (
+                      <ol
+                        className="w-[140px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
+                        key={subjects.key}
+                      >
+                        <button
+                          onClick={() => handleClick(subjects.key)}
+                          className=""
+                        >
+                          {subjects.value} SSC
+                        </button>
+                      </ol>
+                    ))}
+                  </nav>
+                </div>
               </div>
               {/* <!-- nav - end --> */}
 
               {/* <!-- nav - start --> */}
-              <div>
-                <div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Company
-                </div>
-
-                <nav class="flex flex-col gap-4">
-                  <div>
+              <div className="ml-0 lg:ml-[330px] mb-4 tracking-widest text-gray-100">
+                <p className="font-bold mb-4"> COMPANY</p>
+                <nav className="flex flex-col lg:gap-4">
+                  <div className="w-full lg:w-[100px]">
                     <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      href="about-us"
+                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
                       About Us
                     </a>
@@ -197,8 +221,8 @@ function Footer() {
 
                   <div>
                     <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      href="blogs"
+                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
                       Blogs
                     </a>
@@ -208,86 +232,20 @@ function Footer() {
               {/* <!-- nav - end --> */}
 
               {/* <!-- nav - start --> */}
-              <div>
-                <div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Support
-                </div>
-
-                <nav class="flex flex-col gap-4">
-                  <div>
+              <div className="ml-0 lg:ml-[280px] mb-4 tracking-widest text-gray-100">
+                <p className="font-bold mb-4">SUPPORT</p>
+                <nav className="flex flex-col lg:gap-4">
+                  <div className="w-full lg:w-[100px]">
                     <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      href="contact-us"
+                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
                       Contact Us
                     </a>
                   </div>
-
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Documentation
-                    </a>
-                  </div>
-
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Chat
-                    </a>
-                  </div>
-
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      FAQ
-                    </a>
-                  </div>
                 </nav>
               </div>
-              {/* <!-- nav - end --> */}
 
-              {/* <!-- nav - start --> */}
-              <div>
-                <div class="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Legal
-                </div>
-
-                <nav class="flex flex-col gap-4">
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Terms of Service
-                    </a>
-                  </div>
-
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Privacy Policy
-                    </a>
-                  </div>
-
-                  <div>
-                    <a
-                      href="#"
-                      class="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Cookie settings
-                    </a>
-                  </div>
-                </nav>
-              </div>
               {/* <!-- nav - end --> */}
             </div>
 
