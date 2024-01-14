@@ -6,14 +6,14 @@ function PrivacyNPolicy() {
   return (
     <>
       <Navbar />
-      <h2 className="text-white mx-28 text-3xl font-bold">Privacy and Policy</h2>
-      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-28">
+      <h2 className="text-white mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28 text-3xl font-bold">Privacy and Policy</h2>
+      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28">
         Welcome to PadhaiPlanet's Privacy Policy. This document explains how we
         collect, use, and protect your personal information. By using
         PadhaiPlanet, you consent to the practices outlined in this policy.
       </p>
 
-      <div className="text-white mx-28">
+      <div className="md:mx-28 mx-8 lg:mx-28 xl:mx-28 2xl:mx-28 text-white">
         <h4 className="font-bold underline">Information We Collect:</h4>
         <p className="mb-4">
           <ol>
@@ -91,7 +91,7 @@ function PrivacyNPolicy() {
           please contact us at [contact@padhaiplanet.com].
         </p>
       </div>
-      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-28">
+      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 md:mx-28 mx-8 lg:mx-28 xl:mx-28 2xl:mx-28">
         By using PadhaiPlanet, you acknowledge that you have read and understood
         these terms and conditions, as well as our Privacy Policy
       </p>

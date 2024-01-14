@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import myImageLogin from "../Static/login1.jpg";
@@ -10,23 +10,32 @@ function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [activeForm, setActiveForm] = useState("sign_up");
   const navigate = useNavigate();
+
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleInputChange = (event) => {
     setName(event.target.value);
   };
 
   const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
+    const numericValue = event.target.value.replace(/[^0-9]/g, "");
+    setPhoneNumber(numericValue);
   };
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+    const enteredEmail = event.target.value;
+    setEmail(enteredEmail);
+    setEmailError(isValidEmail(enteredEmail) ? "" : "Invalid email format");
   };
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    const newPassword = event.target.value;
+    if (newPassword.length <= 8) {
+      setPassword(newPassword);
+    }
   };
 
   const handleRoleChange = (event) => {
@@ -123,7 +132,7 @@ function LoginComponent() {
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full md:w-[403px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[15%] 2xl:ml-[30%] mt-[6%]"
+            className="w-full w-[450px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[15%] 2xl:ml-[30%] mt-[6%]"
           />
         )}
         <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
@@ -202,7 +211,9 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="email"
-                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className={`text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${
+                        emailError ? "border-red-500" : ""
+                      }`}
                       placeholder=""
                       value={email}
                       onChange={handleEmailChange}
@@ -211,6 +222,9 @@ function LoginComponent() {
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
                       Email*
                     </span>
+                    {emailError && (
+                      <p className="text-red-500 text-sm mt-1">{emailError}</p>
+                    )}
                   </div>
 
                   <div className="relative mb-5">
