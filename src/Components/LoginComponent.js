@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import myImageLogin from "../Static/login1.jpg";
@@ -9,6 +9,8 @@ function LoginComponent() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
   const [role, setRole] = useState("");
   const [emailError, setEmailError] = useState("");
   const [activeForm, setActiveForm] = useState("sign_up");
@@ -33,9 +35,13 @@ function LoginComponent() {
 
   const handlePasswordChange = (event) => {
     const newPassword = event.target.value;
-    if (newPassword.length <= 8) {
-      setPassword(newPassword);
-    }
+
+    setPassword(newPassword);
+    setPasswordError(
+      newPassword.length >= 8
+        ? ""
+        : "Password must be at least 8 characters long"
+    );
   };
 
   const handleRoleChange = (event) => {
@@ -250,7 +256,7 @@ function LoginComponent() {
                     <input
                       type="password"
                       name="password"
-                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={password}
                       onChange={handlePasswordChange}
@@ -259,11 +265,17 @@ function LoginComponent() {
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
                       Password*
                     </span>
+                    {passwordError && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {passwordError}
+                      </p>
+                    )}
                   </div>
-                  <div className="text-sm ml-[5%] mt-[2%]">
+
+                  {/* <div className="text-sm ml-[5%] mt-[2%]">
                     * Password must contain a Capital letter, a small letter,
                     character(eg. @), and a number.
-                  </div>
+                  </div> */}
                   <div>
                     <button
                       className="w-[200px] ml-[18%] rounded-lg text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg py-2.5 mb-[20px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -302,7 +314,7 @@ function LoginComponent() {
                     <input
                       type="password"
                       name="password"
-                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={password}
                       onChange={handlePasswordChange}
@@ -311,6 +323,11 @@ function LoginComponent() {
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
                       Password*
                     </span>
+                    {passwordError && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {passwordError}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <button

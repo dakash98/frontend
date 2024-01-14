@@ -5,8 +5,12 @@ import Footer from "./Footer";
 function PrivacyNPolicy() {
   return (
     <>
-      <Navbar />
-      <h2 className="text-white mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28 text-3xl font-bold">Privacy and Policy</h2>
+      <div className="sticky top-0 flex z-10">
+        <Navbar />
+      </div>
+      <h2 className="text-white mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28 text-3xl font-bold">
+        Privacy and Policy
+      </h2>
       <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28">
         Welcome to PadhaiPlanet's Privacy Policy. This document explains how we
         collect, use, and protect your personal information. By using
