@@ -6,15 +6,15 @@ function TermsNConditions() {
   return (
     <>
       <Navbar />
-      <h2 className="text-white mx-28 text-3xl font-bold">Terms and Conditions</h2>
-      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-28">
+      <h2 className="text-white mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28 text-3xl font-bold">Terms and Conditions</h2>
+      <p className="text-white paragraph text-lg text-justify mt-6 mb-6 mx-8 md:mx-28 lg:mx-28 xl:mx-28 2xl:mx-28">
         Welcome to PadhaiPlanet! Before you start using our services, please
         read the following terms and conditions carefully. By accessing and
         using the PadhaiPlanet website, you agree to comply with and be bound by
         these terms. If you do not agree with any part of these terms, please do
         not use our website.
       </p>
-      <div className="mx-28 text-white">
+      <div className="md:mx-28 mx-8 lg:mx-28 xl:mx-28 2xl:mx-28 text-white">
         <h4 className="font-bold underline">Acceptance of Terms: </h4>
         <p className="mb-4">
           By accessing or using the PadhaiPlanet website, you agree to be bound
