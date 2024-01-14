@@ -125,7 +125,7 @@ function LoginComponent() {
                 >
                   Sign Up
                   {activeForm === "sign_up" && (
-                    <span className="absolute w-full h-1"></span>
+                    <span className="w-full h-1"></span>
                   )}
                 </button>
                 <button
@@ -136,7 +136,7 @@ function LoginComponent() {
                 >
                   Sign In
                   {activeForm === "sign_in" && (
-                    <span className="absolute w-full h-2 "></span>
+                    <span className=" w-full h-2 "></span>
                   )}
                 </button>
               </div>
