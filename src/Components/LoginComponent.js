@@ -40,7 +40,6 @@ function LoginComponent() {
       setActiveForm("sign_in");
     }
   };
-  
 
   const submitHandlerSignUp = (event) => {
     event.preventDefault();
@@ -59,36 +58,51 @@ function LoginComponent() {
         password: userPass,
         role: userRole,
       })
+      // .then((response) => {
+      // console.log(response);
+      // localStorage.setItem("isLoggedIn", 1);
+      // navigate("/");
+
       .then((response) => {
         console.log(response);
-        localStorage.setItem("isLoggedIn", 1);
-        navigate("/");
+        if (!response.data.success) {
+          localStorage.setItem("isLoggedIn", 1);
+          navigate("/");
+        } else {
+          console.log("SignUp failed");
+        }
       })
+
       .catch((error) => {
         console.log(error);
       });
-    };
+  };
 
   const submitHandlerSignIn = (event) => {
     event.preventDefault();
 
-    const userIdentifier = phoneNumber; 
+    const userPhnNumber = phoneNumber;
     const userPass = password;
 
     axios
       .post("https://padhaiplanet-backend.onrender.com/v1/login", {
-        identifier: userIdentifier,
+        email_or_phone: userPhnNumber,
         password: userPass,
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("isLoggedIn", 1);
-        navigate("/");
+        if (response.data.meta.message === "User logged in") {
+          // console.log("logggin", response.data.meta.message);
+          localStorage.setItem("user_id", response.data.data.user_id);
+          navigate("/");
+        } else {
+          console.log("Login failed");
+        }
       })
       .catch((error) => {
         console.log(error);
       });
-    };
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -142,7 +156,7 @@ function LoginComponent() {
               </div>
 
               <form
-               onSubmit={
+                onSubmit={
                   activeForm === "sign_up"
                     ? submitHandlerSignUp
                     : submitHandlerSignIn
@@ -238,7 +252,7 @@ function LoginComponent() {
                   </div>
                   <div>
                     <button
-                      className="w-[200px] ml-[18%] rounded-lg text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg py-2.5 mb-[20px]  inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="w-[200px] ml-[18%] rounded-lg text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg py-2.5 mb-[20px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       type="submit"
                     >
                       <span className="mx-auto">Sign Up</span>
@@ -252,11 +266,11 @@ function LoginComponent() {
                 id="signin"
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
-                <div className="w-full pl-[5%]  mt-[35%] mr-[3%]">
+                <div className="w-full pl-[5%] mt-[35%] mr-[3%]">
                   <div className=" w-[80%] relative mb-8 ml-[5%]">
                     <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                     <input
-                      type="text"
+                      type="tel"
                       name="phone"
                       className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
@@ -297,7 +311,7 @@ function LoginComponent() {
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </>
   );
 }

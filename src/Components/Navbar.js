@@ -9,7 +9,8 @@ import logoo from "../Static/Padhaiplanet-logo.png";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "1");
+  // console.log("local", localStorage.getItem("user_id"))
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("user_id") === "10201");
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -24,29 +25,26 @@ function Navbar() {
     navigate('/');
   };
 
-  // const redirectToProfilePage = () => {
-  //   navigate("/login");
-  // };
 
   const handleLogout = () => {
     axios
-      .post("https://padhaiplanet-backend.onrender.com/v1/logout")
+      .post("https://padhaiplanet-backend.onrender.com/v1/logout", {"user_id": "1"})
       .then((response) => {
         console.log(response);
-        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("user_id");
         setIsLoggedIn(false);
         navigate('/');
       })
       .catch((error) => {
         console.error("Logout error:", error);
-        console.error("Error response:", error.response); // Log the response object
+        console.error("Error response:", error.response); 
      });
   };
  
 
 
   return (
-    <div className="flex items-center justify-between w-full  lg:px-8 py-4 gradient-bg sm:mx-4">
+    <div className="flex items-center justify-between lg:px-8 py-4 gradient-bg sm:mx-4">
       <div className="flex items-center">
         <button onClick={event => (redirectHome())}><img src={logoo} alt="Logo" className="h-20 " /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
