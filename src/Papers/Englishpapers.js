@@ -23,6 +23,7 @@ function EnglishPapers() {
 
   const [data, setData] = useState([]);
 
+
   //Assigning
   const fetchdata = async (url) => {
     try {
@@ -50,8 +51,8 @@ function EnglishPapers() {
     fetchdata(API_hisory_paper);
   }, []);
 
-  function HandleClick(login_state, paper_no, year) {
-    if (login_state === "not_logged_in") {
+  function HandleClick(paper_no, year) {
+    if (!localStorage.getItem("user_id")) {
       document.getElementById("forms_window").classList.remove("hidden");
       document.getElementById("forms_window").classList.add("opacity-90");
     } else {
@@ -61,8 +62,8 @@ function EnglishPapers() {
     }
   }
 
-  function handleSolution(login_state, paper_no, year) {
-    if (login_state === "not_logged_in") {
+  function handleSolution(paper_no, year) {
+    if (!localStorage.getItem("user_id")) {
       document.getElementById("forms_window").classList.remove("hidden");
       document.getElementById("forms_window").classList.add("opacity-90");
     } else {
@@ -105,7 +106,7 @@ function EnglishPapers() {
                           <div className="block">
                             <button
                               onClick={(event) =>
-                                HandleClick("logged_in", index1, index)
+                                HandleClick(index1, index)
                               }
                               type="submit"
                               className="rounded-2xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
@@ -115,7 +116,7 @@ function EnglishPapers() {
                             </button>
                             <button
                               onClick={(event) =>
-                                handleSolution("logged_in", index1, index)
+                                handleSolution(index1, index)
                               }
                               className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
                               key={index}
