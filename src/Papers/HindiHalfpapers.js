@@ -30,6 +30,7 @@ function HindiHalfPapers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
+      localStorage.setItem("data_hindi_half", JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -39,16 +40,64 @@ function HindiHalfPapers() {
     }
   };
 
+
+  useEffect(() => {
+    topFunction();
+
+    const timestamp = localStorage.getItem('timestamp_hindi_half');
+    console.log(timestamp)
+
+    if (timestamp) {
+
+      const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+
+      if (check) {
+
+        localStorage.removeItem('timestamp_hindi_half');
+
+        //Adding timestamp
+        const date = new Date().setDate(new Date().getDate() + 6);
+
+        // console.log(date);
+        // console.log(new Date(date));
+
+        localStorage.setItem('timestamp_hindi_half', JSON.stringify({
+          value: "string",
+          expDate: date,
+        }))
+
+        fetchdata(API_hisory_paper);
+      } else if(localStorage.getItem('data_hindi_half')) {
+        const object = JSON.parse(localStorage.getItem('data_hindi_half'))
+        setData(object.data)
+        document.getElementById("loader").classList.add("hidden");
+        document.getElementById("parent").classList.remove("hidden");
+        document.getElementById("explore").classList.remove("hidden");
+        document.getElementById("footer").classList.remove("hidden");
+      }
+
+    } else {
+
+      //Adding timestamp
+      const date = new Date().setDate(new Date().getDate() + 6);
+
+      // console.log(date);
+      // console.log(new Date(date));
+
+      localStorage.setItem('timestamp_hindi_half', JSON.stringify({
+        value: "string",
+        expDate: date,
+      }))
+
+      fetchdata(API_hisory_paper);
+    }
+
+  }, []);
+
   const data_imp = [];
   for (var j = 0; j < data["length"]; j++) {
     data_imp.push(data[j]);
   }
-
-
-  useEffect(() => {
-    topFunction();
-    fetchdata(API_hisory_paper);
-  }, []);
 
   function HandleClick(paper_no, year) {
     if (!localStorage.getItem("user_id")) {
