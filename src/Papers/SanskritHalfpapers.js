@@ -80,9 +80,9 @@ function SanskritHalfPapers() {
         <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
           <StaticTag />
         </div>
-
-        <BreadcrumbPages sub={"Sanskrit(Half)"} />
-
+        <div className="lg:px-8 md:px-6 sm:mx-4">
+          <BreadcrumbPages sub={"Sanskrit(Half)"} />
+        </div>
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
             {/* <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]"> */}

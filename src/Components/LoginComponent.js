@@ -6,6 +6,7 @@ import myImageLogin from "../Static/login1.jpg";
 function LoginComponent() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [name, setName] = useState("");
+  const [signinname, signinName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +21,10 @@ function LoginComponent() {
 
   const handleInputChange = (event) => {
     setName(event.target.value);
+  };
+
+  const handlesignInputChange = (event) => {
+    signinName(event.target.value);
   };
 
   const handlePhoneNumberChange = (event) => {
@@ -138,10 +143,10 @@ function LoginComponent() {
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full w-[450px] h-auto md:h-[650px] mx-auto lg:ml-[20%] xl:ml-[15%] 2xl:ml-[30%] mt-[6%]"
+            className="w-full w-[450px] h-auto md:h-[650px]  lg:ml-[280px] xl:ml-[300px] 2xl:ml-[350px] mt-[6%]"
           />
         )}
-        <div className="w-full md:w-[402px] md:mr-[55%] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
+        <div className="w-full md:w-[430px]  mr:ml-[200px] md:mr-[350px] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
           <div className="border border-gray-200 border-solid w-full md:w-[402px] md:mr-[5%] md:mt-[2%] h-auto md:h-[500px]">
             <p className="text-center text-lg">Please Login to continue</p>
             <div className="mt-[3%] inner-content h-[600px] bg-white ">
@@ -179,7 +184,7 @@ function LoginComponent() {
                 id="signup"
                 className={`${activeForm === "sign_up" ? "" : "hidden"}`}
               >
-                <div className="w-[90%] pl-[7%] md:pl-[10%] lg:pl-[10%] mt-[8%]">
+                <div className="w-[90%] pl-[5%] md:pl-[10%] lg:pl-[10%] mt-[8%]">
                   <div className="relative mb-6 sm:mr-[5%]">
                     <label htmlFor="uname">{name ? "" : ""}</label>
                     <input
@@ -293,15 +298,15 @@ function LoginComponent() {
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
                 <div className="w-full pl-[5%] mt-[35%] mr-[3%]">
-                  <div className=" w-[80%] relative mb-8 ml-[5%]">
+                  <div className=" w-[80%] relative mb-8 lg:ml-4">
                     <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                     <input
-                      type="tel"
+                      type="text"
                       name="phone"
                       className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
-                      value={phoneNumber}
-                      onChange={handlePhoneNumberChange}
+                      value={signinname}
+                      onChange={handlesignInputChange}
                       required
                     />
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
@@ -309,7 +314,7 @@ function LoginComponent() {
                     </span>
                   </div>
 
-                  <div className="w-[80%] relative mb-5 ml-[5%]">
+                  <div className="w-[80%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password ? "" : ""}</label>
                     <input
                       type="password"

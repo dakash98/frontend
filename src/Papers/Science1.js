@@ -80,9 +80,9 @@ function Science1Papers() {
         <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
           <StaticTag />
         </div>
-
-        <BreadcrumbPages sub={"Science and Technology 1"} />
-
+        <div className="lg:px-8 md:px-6 sm:mx-4">
+          <BreadcrumbPages sub={"Science and Technology 1"} />
+        </div>
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
             {/* <div className="w-[50%] xl:ml-[24%] lg:ml-[15%] md:ml-[25%] ml-[28%] pb-[5%] pr-[10%]"> */}
@@ -101,7 +101,7 @@ function Science1Papers() {
                     {/* <div className="lg:flex md:block lg:pl-[28%]"> */}
                     <div className="lg:flex w-full md:block">
                       {item.papers.map((item1, index1) => (
-                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">       
+                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
                           <div className="block">
                             <button
                               onClick={(event) =>

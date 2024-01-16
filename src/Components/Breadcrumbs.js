@@ -7,7 +7,7 @@ export function Breadcrumbhome() {
       <nav aria-label="breadcrumb" className="">
         <ol className="flex flex-row py-1 rounded-md bg-blue-gray-50 bg-opacity-60">
           <li className="flex items-center font-sans xl:text-2xl lg:text-xl md:text-xl text-lg antialiased pl-[15px] font-bold">
-            <p className="opacity-60 text-white lg:px-8 py-4 sm:mx-4">Home</p>
+            <p className="opacity-60 text-white py-4 lg:px-8 md:px-6 sm:mx-4">Home</p>
           </li>
         </ol>
       </nav>
@@ -81,7 +81,7 @@ export function BreadcrumbAboutUs() {
               onClick={(event) => {
                 handleClick("home");
               }}
-              className="pb-20 text-red-400"
+              className="pb-20 text-red-400 lg:pl-8 md:ml-6 sm:ml-4"
             >
               Home
             </button>
@@ -121,7 +121,7 @@ export function BreadcrumbProfile() {
               onClick={(event) => {
                 handleClick("home");
               }}
-              className="pb-20 text-red-400"
+              className="pb-20 text-red-400  lg:pl-8 md:ml-6 sm:ml-4"
             >
               Home
             </button>
@@ -161,7 +161,7 @@ export function BreadcrumbBlogs() {
               onClick={(event) => {
                 handleClick("home");
               }}
-              className="pb-20 text-red-400"
+              className="pb-20 text-red-400  lg:pl-8 md:ml-6 sm:ml-4"
             >
               Home
             </button>
@@ -201,7 +201,7 @@ export function BreadcrumbContactUs() {
               onClick={(event) => {
                 handleClick("home");
               }}
-              className="pb-20 text-red-400"
+              className="pb-20 text-red-400  lg:pl-8 md:ml-6 sm:ml-4"
             >
               Home
             </button>
@@ -241,7 +241,7 @@ export function BreadcrumbLogin() {
               onClick={(event) => {
                 handleClick("home");
               }}
-              className="pb-20 text-red-400"
+              className="pb-20 text-red-400  lg:pl-8 md:ml-6 sm:ml-4"
             >
               Home
             </button>
