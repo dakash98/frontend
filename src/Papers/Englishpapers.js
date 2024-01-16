@@ -14,6 +14,7 @@ import StaticTag from "../Components/StaticTag.js";
 import LoginComponent from "../Components/LoginComponent.js";
 
 function EnglishPapers() {
+
   //For fetching data
   const API_hisory_paper =
     "https://padhaiplanet-backend.onrender.com/v1/get-question?subject=english&medium=a&standard=10 ";
@@ -23,7 +24,6 @@ function EnglishPapers() {
 
   const [data, setData] = useState([]);
 
-
   //Assigning
   const fetchdata = async (url) => {
     try {
@@ -31,6 +31,7 @@ function EnglishPapers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
+      localStorage.setItem("data_english", JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -40,16 +41,61 @@ function EnglishPapers() {
     }
   };
 
-  const data_imp = [];
-  for (var j = 0; j < data["length"]; j++) {
-    data_imp.push(data[j]);
-  }
-
 
   useEffect(() => {
     topFunction();
-    fetchdata(API_hisory_paper);
+
+    const timestamp = localStorage.getItem('timestamp_english');
+    console.log(timestamp)
+
+    if (timestamp) {
+
+      const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+
+      if (check) {
+
+        localStorage.removeItem('timestamp_english');
+
+        //Adding timestamp
+        const date = new Date().setDate(new Date().getDate() + 6);
+
+        // console.log(date);
+        // console.log(new Date(date));
+
+        localStorage.setItem('timestamp_english', JSON.stringify({
+          value: "string",
+          expDate: date,
+        }))
+
+        fetchdata(API_hisory_paper);
+      } else if(localStorage.getItem('data_english')) {
+        const object = JSON.parse(localStorage.getItem('data_english'))
+        setData(object.data)
+        document.getElementById("loader").classList.add("hidden");
+        document.getElementById("parent").classList.remove("hidden");
+        document.getElementById("explore").classList.remove("hidden");
+        document.getElementById("footer").classList.remove("hidden");
+      }
+
+    } else {
+
+      //Adding timestamp
+      const date = new Date().setDate(new Date().getDate() + 6);
+
+      // console.log(date);
+      // console.log(new Date(date));
+
+      localStorage.setItem('timestamp_english', JSON.stringify({
+        value: "string",
+        expDate: date,
+      }))
+
+      fetchdata(API_hisory_paper);
+    }
+
   }, []);
+
+
 
   function HandleClick(paper_no, year) {
     if (!localStorage.getItem("user_id")) {
@@ -71,6 +117,12 @@ function EnglishPapers() {
       console.log("year: " + year + "paper_number" + paper_no);
     }
   }
+
+  const data_imp = [];
+  for (var j = 0; j < data["length"]; j++) {
+    data_imp.push(data[j]);
+  }
+  console.log(data_imp)
 
   return (
     <div className="relative z-0">
