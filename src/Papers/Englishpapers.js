@@ -81,8 +81,9 @@ function EnglishPapers() {
         <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
           <StaticTag />
         </div>
-
-        <BreadcrumbPages sub={"English"} />
+        <div className="lg:px-8 md:px-6 sm:mx-4">
+          <BreadcrumbPages sub={"English"} />
+        </div>
 
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
@@ -102,7 +103,7 @@ function EnglishPapers() {
                     {/* <div className="lg:flex md:block lg:pl-[28%]"> */}
                     <div className="lg:flex w-full md:block">
                       {item.papers.map((item1, index1) => (
-                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">       
+                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
                           <div className="block">
                             <button
                               onClick={(event) =>
