@@ -101,7 +101,7 @@ function LoginComponent() {
   const submitHandlerSignIn = (event) => {
     event.preventDefault();
 
-    const userPhnNumber = phoneNumber;
+    const userPhnNumber = signinname;
     const userPass = password;
 
     axios
@@ -143,10 +143,10 @@ function LoginComponent() {
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full w-[450px] h-auto md:h-[650px]  lg:ml-[280px] xl:ml-[300px] 2xl:ml-[350px] mt-[6%]"
+            className="w-full w-[450px] h-auto md:h-[650px] md:ml-[5px] lg:ml-[150px] xl:ml-[300px] 2xl:ml-[350px] mt-[6%]"
           />
         )}
-        <div className="w-full md:w-[430px]  mr:ml-[200px] md:mr-[350px] md:mt-[6%] bg-gray-200 h-auto md:h-[650px] relative">
+        <div className="w-full md:w-[430px] sm:pr-1 mr:ml-[100px] md:mr-[350px] md:mt-[6%] 2xl:mr-[400px] bg-gray-200 h-auto md:h-[650px] relative">
           <div className="border border-gray-200 border-solid w-full md:w-[402px] md:mr-[5%] md:mt-[2%] h-auto md:h-[500px]">
             <p className="text-center text-lg">Please Login to continue</p>
             <div className="mt-[3%] inner-content h-[600px] bg-white ">
@@ -184,13 +184,13 @@ function LoginComponent() {
                 id="signup"
                 className={`${activeForm === "sign_up" ? "" : "hidden"}`}
               >
-                <div className="w-[90%] pl-[5%] md:pl-[10%] lg:pl-[10%] mt-[8%]">
-                  <div className="relative mb-6 sm:mr-[5%]">
+                <div className="w-[90%] pl-[8%] md:pl-[10%] lg:pl-[10%]  mt-[8%]">
+                  <div className="relative mb-6 ">
                     <label htmlFor="uname">{name ? "" : ""}</label>
                     <input
                       type="text"
                       name="uname"
-                      className=" text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 sm:mr-4"
+                      className=" text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 sm:mr-4"
                       placeholder=""
                       value={name}
                       onChange={handleInputChange}
@@ -206,7 +206,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="phone"
-                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
@@ -222,7 +222,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="email"
-                      className={`text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${
+                      className={`text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${
                         emailError ? "border-red-500" : ""
                       }`}
                       placeholder=""
@@ -242,7 +242,7 @@ function LoginComponent() {
                     <label htmlFor="role">{role ? "" : ""}</label>
                     <select
                       name="role"
-                      className=" text-4sm text-gray-900 w-[320px] h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className=" text-4sm text-gray-900 w-full h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       value={role}
                       onChange={handleRoleChange}
                     >
@@ -261,7 +261,7 @@ function LoginComponent() {
                     <input
                       type="password"
                       name="password"
-                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={password}
                       onChange={handlePasswordChange}
@@ -297,13 +297,13 @@ function LoginComponent() {
                 id="signin"
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
-                <div className="w-full pl-[5%] mt-[35%] mr-[3%]">
-                  <div className=" w-[80%] relative mb-8 lg:ml-4">
+                <div className="w-full pl-[8%] mt-[35%] mr-[3%]">
+                  <div className=" w-[90%] relative mb-8 lg:ml-4 ">
                     <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                     <input
                       type="text"
                       name="phone"
-                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={signinname}
                       onChange={handlesignInputChange}
@@ -314,12 +314,12 @@ function LoginComponent() {
                     </span>
                   </div>
 
-                  <div className="w-[80%] relative mb-5 lg:ml-4">
+                  <div className="w-[90%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password ? "" : ""}</label>
                     <input
                       type="password"
                       name="password"
-                      className="text-4sm text-gray-900 w-[320px] h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       value={password}
                       onChange={handlePasswordChange}
