@@ -101,6 +101,7 @@ function HindiFullPapers() {
 
 
   function HandleClick(paper_no, year) {
+    topFunction();
     if (!localStorage.getItem("user_id")) {
       document.getElementById("forms_window").classList.remove("hidden");
       document.getElementById("forms_window").classList.add("opacity-90");
