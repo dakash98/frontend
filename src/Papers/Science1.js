@@ -191,7 +191,7 @@ function Science1Papers() {
 
           <div
             id="que_paper_screen"
-            className="absolute top-0 w-full hidden pb-[20px]"
+            className="absolute top-0 md:w-[100%] sm:w-[100%] w-[100%] hidden pb-[20px]"
           >
             <Contentscreen q_data={que_data} />
           </div>
