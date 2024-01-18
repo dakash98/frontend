@@ -17,6 +17,18 @@ function LoginComponent() {
   const [emailError, setEmailError] = useState("");
   const [activeForm, setActiveForm] = useState("sign_up");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPasswordSignIn] = useState(false);
+
+  // ... (previous functions)
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const togglePasswordVisibility1 = () => {
+    setShowPasswordSignIn(!showPassword1);
+  };
 
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -89,7 +101,7 @@ function LoginComponent() {
     const userRole = role;
 
     axios
-      .post("https://padhaiplanet-backend.onrender.com/v1/signup", {
+      .post("http://13.127.101.77/api/v1/signup", {
         name: userName,
         email: userEmail,
         phone: userPhnNumber,
@@ -102,9 +114,9 @@ function LoginComponent() {
       // navigate("/");
 
       .then((response) => {
-        console.log(response);
-        if (!response.data.success) {
-          localStorage.setItem("isLoggedIn", 1);
+        console.log(response, "========== ", response.data.meta.success);
+        if (response.data.meta.success) {
+          localStorage.setItem("user_id", response.data.data.user_id);
           navigate("/");
         } else {
           console.log("SignUp failed");
@@ -123,7 +135,7 @@ function LoginComponent() {
     const userPass = password1;
 
     axios
-      .post("https://padhaiplanet-backend.onrender.com/v1/login", {
+      .post("http://13.127.101.77/api/v1/login", {
         email_or_phone: userPhnNumber,
         password: userPass,
       })
@@ -273,24 +285,34 @@ function LoginComponent() {
 
                   <div className="relative mb-2">
                     <label htmlFor="password">{password ? "" : ""}</label>
-                    <input
-                      type="password"
-                      name="password"
-                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
-                      placeholder=""
-                      value={password}
-                      onChange={handlePasswordChange}
-                      required
-                    />
+                    <div className="relative">
+                      <button
+                        type="button"
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 text-black focus:outline-none"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? "Hide" : "Show"}
+                      </button>
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
+                        placeholder=""
+                        value={password}
+                        onChange={handlePasswordChange}
+                        required
+                      />
+                    </div>
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
                       Password*
                     </span>
                     {passwordError && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {passwordError}
-                      </p>
+                      <p className="text-red-500 text-sm mt-1">{passwordError}</p>
                     )}
                   </div>
+
+
+
 
                   {/* <div className="text-sm ml-[5%] mt-[2%]">
                     * Password must contain a Capital letter, a small letter,
@@ -331,15 +353,24 @@ function LoginComponent() {
 
                   <div className="w-[90%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password1 ? "" : ""}</label>
-                    <input
-                      type="password"
-                      name="password"
-                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
-                      placeholder=""
-                      value={password1}
-                      onChange={handleSignInPasswordChange}
-                      required
-                    />
+                    <div className="relative">
+                      <button
+                        type="button"
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 text-black focus:outline-none"
+                        onClick={togglePasswordVisibility1}
+                      >
+                        {showPassword1 ? "Hide" : "Show"}
+                      </button>
+                      <input
+                        type={showPassword1 ? "text" : "password"}
+                        name="password"
+                        className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
+                        placeholder=""
+                        value={password}
+                        onChange={handlePasswordChange}
+                        required
+                      />
+                    </div>
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">
                       Password*
                     </span>
