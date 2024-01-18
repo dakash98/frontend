@@ -10,7 +10,7 @@ import logoo from "../Static/Padhaiplanet-logo.png";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   // console.log("local", localStorage.getItem("user_id"))
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("user_id") === "10201");
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("user_id"));
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -28,7 +28,7 @@ function Navbar() {
 
   const handleLogout = () => {
     axios
-      .post("https://padhaiplanet-backend.onrender.com/v1/logout", {"user_id": "1"})
+      .post("http://13.127.101.77/api/v1/logout", {"user_id": localStorage.getItem("user_id")})
       .then((response) => {
         console.log(response);
         localStorage.removeItem("user_id");
