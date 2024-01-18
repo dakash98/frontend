@@ -45,15 +45,16 @@ function SanskritHalfPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_sanskrit_half');
-    console.log(timestamp)
+    const data_sanskrit_half = localStorage.getItem('data_sanskrit_half');
 
-    if (timestamp) {
+    if (timestamp && data_sanskrit_half) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_sanskrit_half');
+        localStorage.removeItem('data_sanskrit_half');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

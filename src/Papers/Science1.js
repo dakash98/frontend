@@ -45,15 +45,16 @@ function Science1Papers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_science_1');
-    console.log(timestamp)
+    const data_science_1 = localStorage.getItem('data_science_1');
 
-    if (timestamp) {
+    if (timestamp && data_science_1) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_science_1');
+        localStorage.removeItem('data_science_1');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

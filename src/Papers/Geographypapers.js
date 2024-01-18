@@ -45,15 +45,16 @@ function GeographyPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_geography');
-    console.log(timestamp)
+    const data_geography = localStorage.getItem('data_geography');
 
-    if (timestamp) {
+    if (timestamp && data_geography) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_geography');
+        localStorage.removeItem('data_geography');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

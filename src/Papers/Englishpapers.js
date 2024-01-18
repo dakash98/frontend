@@ -46,15 +46,18 @@ function EnglishPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_english');
-    console.log(timestamp)
+    const data_english = localStorage.getItem('data_english');
+    // console.log(timestamp)
+    // console.log(data_english)
 
-    if (timestamp) {
+    if (timestamp && data_english) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_english');
+        localStorage.removeItem('data_english');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

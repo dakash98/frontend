@@ -45,15 +45,16 @@ function MarathiPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_marathi');
-    console.log(timestamp)
+    const data_marathi = localStorage.getItem('data_marathi');
 
-    if (timestamp) {
+    if (timestamp && data_marathi) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_marathi');
+        localStorage.removeItem('data_marathi');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);
