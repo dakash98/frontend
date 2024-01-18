@@ -442,8 +442,8 @@ function Footer() {
               {/* <!-- nav - end --> */}
 
               {/* <!-- nav - start --> */}
-              <div className="ml-16">
-                <div className="ml-0 lg:ml-[330px] mb-20 tracking-widest text-gray-100">
+              <div className="ml-[10px] lg:ml-[350px]">
+                <div className="ml-0 lg:ml-[30px] mb-20 tracking-widest text-gray-100">
                   <p className="font-bold mb-4"> COMPANY</p>
                   <nav className="flex flex-col lg:gap-4">
                     <div className="w-full lg:w-[100px]">
@@ -468,7 +468,7 @@ function Footer() {
                 {/* <!-- nav - end --> */}
 
                 {/* <!-- nav - start --> */}
-                <div className="ml-0 lg:ml-[330px] mb-4 tracking-widest text-gray-100">
+                <div className="ml-0 lg:ml-[30px] mb-4 tracking-widest text-gray-100">
                   <p className="font-bold mb-4">SUPPORT</p>
                   <nav className="flex flex-col lg:gap-4">
                     <div className="w-full lg:w-[100px]">

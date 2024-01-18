@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import myImageLogin from "../Static/login1.jpg";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 function LoginComponent() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -74,13 +76,7 @@ function LoginComponent() {
   };
 
   const handleRoleChange = (event) => {
-    const selectedRole = event.target.value;
-    const roleValues = {
-      student: 1,
-      parent: 2,
-      teacher: 3,
-    };
-    setRole(roleValues[selectedRole]);
+    setRole(event.target.value);
   };
 
   const toggleSignUp = (user_choice) => {
@@ -94,11 +90,16 @@ function LoginComponent() {
   const submitHandlerSignUp = (event) => {
     event.preventDefault();
     // document.getElementById("forms_window").classList.add("hidden");
+    const roleValues = {
+      student: 1,
+      parent: 2,
+      teacher: 3,
+    };
     const userName = name;
     const userPhnNumber = phoneNumber;
     const userEmail = email;
     const userPass = password;
-    const userRole = role;
+    const userRole = roleValues[role];
 
     axios
       .post("http://13.127.101.77/api/v1/signup", {
@@ -114,7 +115,6 @@ function LoginComponent() {
       // navigate("/");
 
       .then((response) => {
-        console.log(response, "========== ", response.data.meta.success);
         if (response.data.meta.success) {
           localStorage.setItem("user_id", response.data.data.user_id);
           navigate("/");
@@ -284,17 +284,17 @@ function LoginComponent() {
                   </div>
 
                   <div className="relative mb-2">
-                    <label htmlFor="password">{password ? "" : ""}</label>
+                    <label htmlFor="password">{password ? '' : ''}</label>
                     <div className="relative">
                       <button
                         type="button"
                         className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 text-black focus:outline-none"
                         onClick={togglePasswordVisibility}
                       >
-                        {showPassword ? "Hide" : "Show"}
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
                       </button>
                       <input
-                        type={showPassword ? "text" : "password"}
+                        type={showPassword ? 'text' : 'password'}
                         name="password"
                         className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
                         placeholder=""
@@ -310,8 +310,6 @@ function LoginComponent() {
                       <p className="text-red-500 text-sm mt-1">{passwordError}</p>
                     )}
                   </div>
-
-
 
 
                   {/* <div className="text-sm ml-[5%] mt-[2%]">
@@ -354,20 +352,20 @@ function LoginComponent() {
                   <div className="w-[90%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password1 ? "" : ""}</label>
                     <div className="relative">
-                      <button
+                    <button
                         type="button"
                         className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 text-black focus:outline-none"
                         onClick={togglePasswordVisibility1}
                       >
-                        {showPassword1 ? "Hide" : "Show"}
+                        {showPassword1 ? <FaEyeSlash /> : <FaEye />}
                       </button>
                       <input
                         type={showPassword1 ? "text" : "password"}
                         name="password"
                         className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
                         placeholder=""
-                        value={password}
-                        onChange={handlePasswordChange}
+                        value={password1}
+                        onChange={handleSignInPasswordChange}
                         required
                       />
                     </div>
