@@ -10,6 +10,7 @@ function LoginComponent() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password1, setSignInPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
   const [role, setRole] = useState("");
@@ -49,8 +50,25 @@ function LoginComponent() {
     );
   };
 
+  const handleSignInPasswordChange = (event) => {
+    const newPassword = event.target.value;
+
+    setSignInPassword(newPassword);
+    setPasswordError(
+      newPassword.length >= 8
+        ? ""
+        : "Password must be at least 8 characters long"
+    );
+  };
+
   const handleRoleChange = (event) => {
-    setRole(event.target.value);
+    const selectedRole = event.target.value;
+    const roleValues = {
+      student: 1,
+      parent: 2,
+      teacher: 3,
+    };
+    setRole(roleValues[selectedRole]);
   };
 
   const toggleSignUp = (user_choice) => {
@@ -102,7 +120,7 @@ function LoginComponent() {
     event.preventDefault();
 
     const userPhnNumber = signinname;
-    const userPass = password;
+    const userPass = password1;
 
     axios
       .post("https://padhaiplanet-backend.onrender.com/v1/login", {
@@ -153,9 +171,8 @@ function LoginComponent() {
               <div className="flex w-full">
                 <button
                   onClick={() => toggleSignUp("sign_up")}
-                  className={`relative w-full h-12 text-black font-semibold ${
-                    activeForm === "sign_up" ? "bg-blue-600" : "bg-white"
-                  } `}
+                  className={`relative w-full h-12 text-black font-semibold ${activeForm === "sign_up" ? "bg-blue-600" : "bg-white"
+                    } `}
                 >
                   Sign Up
                   {activeForm === "sign_up" && (
@@ -164,9 +181,8 @@ function LoginComponent() {
                 </button>
                 <button
                   onClick={() => toggleSignUp("sign_in")}
-                  className={`relative w-full h-12 text-black font-semibold ${
-                    activeForm === "sign_in" ? "bg-blue-600" : "bg-white"
-                  } `}
+                  className={`relative w-full h-12 text-black font-semibold ${activeForm === "sign_in" ? "bg-blue-600" : "bg-white"
+                    } `}
                 >
                   Sign In
                   {activeForm === "sign_in" && (
@@ -222,9 +238,8 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="email"
-                      className={`text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${
-                        emailError ? "border-red-500" : ""
-                      }`}
+                      className={`text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${emailError ? "border-red-500" : ""
+                        }`}
                       placeholder=""
                       value={email}
                       onChange={handleEmailChange}
@@ -242,7 +257,7 @@ function LoginComponent() {
                     <label htmlFor="role">{role ? "" : ""}</label>
                     <select
                       name="role"
-                      className=" text-4sm text-gray-900 w-full h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       value={role}
                       onChange={handleRoleChange}
                     >
@@ -315,14 +330,14 @@ function LoginComponent() {
                   </div>
 
                   <div className="w-[90%] relative mb-5 lg:ml-4">
-                    <label htmlFor="password">{password ? "" : ""}</label>
+                    <label htmlFor="password">{password1 ? "" : ""}</label>
                     <input
                       type="password"
                       name="password"
                       className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
-                      value={password}
-                      onChange={handlePasswordChange}
+                      value={password1}
+                      onChange={handleSignInPasswordChange}
                       required
                     />
                     <span className="placeholder absolute top-0 left-4 px-1 font-sans text-gray-400 flex items-center text-2sm -translate-y-1/2 bg-white pointer-events-none z-20 transition-all duration-200">

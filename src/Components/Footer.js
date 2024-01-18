@@ -69,7 +69,7 @@ function Footer() {
     <>
       <div className="flex flex-wrap">
         <div class="bg-gray-900">
-          <footer class="mx-auto max-w-screen-3xl px-4 md:px-8">
+          <footer class="mx-auto max-w-screen-3xl w-full px-4 md:px-8">
             <div class="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
               <div class="col-span-full lg:col-span-2">
                 {/* <!-- logo - start --> */}
@@ -422,7 +422,7 @@ function Footer() {
                     ))}
                   </nav>
 
-                  <nav className="flex flex-col lg:gap-4 ml-0 lg:ml-1">
+                  <nav className="flex flex-col lg:gap-4 ml-0 lg:ml-8">
                     {subject.slice(6).map((subjects) => (
                       <ol
                         className="w-[140px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
@@ -442,43 +442,45 @@ function Footer() {
               {/* <!-- nav - end --> */}
 
               {/* <!-- nav - start --> */}
-              <div className="ml-0 lg:ml-[330px] mb-4 tracking-widest text-gray-100">
-                <p className="font-bold mb-4"> COMPANY</p>
-                <nav className="flex flex-col lg:gap-4">
-                  <div className="w-full lg:w-[100px]">
-                    <a
-                      href="about-us"
-                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      About Us
-                    </a>
-                  </div>
+              <div className="ml-16">
+                <div className="ml-0 lg:ml-[330px] mb-20 tracking-widest text-gray-100">
+                  <p className="font-bold mb-4"> COMPANY</p>
+                  <nav className="flex flex-col lg:gap-4">
+                    <div className="w-full lg:w-[100px]">
+                      <a
+                        href="about-us"
+                        className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      >
+                        About Us
+                      </a>
+                    </div>
 
-                  <div>
-                    <a
-                      href="blogs"
-                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Blogs
-                    </a>
-                  </div>
-                </nav>
-              </div>
-              {/* <!-- nav - end --> */}
+                    <div>
+                      <a
+                        href="blogs"
+                        className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      >
+                        Blogs
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+                {/* <!-- nav - end --> */}
 
-              {/* <!-- nav - start --> */}
-              <div className="ml-0 lg:ml-[280px] mb-4 tracking-widest text-gray-100">
-                <p className="font-bold mb-4">SUPPORT</p>
-                <nav className="flex flex-col lg:gap-4">
-                  <div className="w-full lg:w-[100px]">
-                    <a
-                      href="contact-us"
-                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      Contact Us
-                    </a>
-                  </div>
-                </nav>
+                {/* <!-- nav - start --> */}
+                <div className="ml-0 lg:ml-[330px] mb-4 tracking-widest text-gray-100">
+                  <p className="font-bold mb-4">SUPPORT</p>
+                  <nav className="flex flex-col lg:gap-4">
+                    <div className="w-full lg:w-[100px]">
+                      <a
+                        href="contact-us"
+                        className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      >
+                        Contact Us
+                      </a>
+                    </div>
+                  </nav>
+                </div>
               </div>
             </div>
 
