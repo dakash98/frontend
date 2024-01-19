@@ -1,5 +1,6 @@
 import React from 'react'
 import '../index.css';
+// import style from './assets/style.css'
 
 
 //React pdf Viewer
@@ -34,9 +35,9 @@ function Contentscreen(props) {
 
   // return (
   //   <>
-  //     <div className='h-[5%] xl:mr-[23%] lg:mr-[23%] md:mr-[10%] sm:mr-[9%] mr-[8%] float-right'><button className='bg-white rounded-full scale-130 hover:scale-150 duration-300' onClick={closeQueWindow}><img className='text-white' width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="multiply" /></button></div>
-  //     <div>
-  //       <div>
+      // <div className='h-[5%] xl:mr-[23%] lg:mr-[23%] md:mr-[10%] sm:mr-[9%] mr-[8%] float-right'><button className='bg-white rounded-full scale-130 hover:scale-150 duration-300' onClick={closeQueWindow}><img className='text-white' width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="multiply" /></button></div>
+      // <div>
+      //   <div>
 
   // <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
   //   <div
@@ -63,17 +64,18 @@ function Contentscreen(props) {
         height: '100%',
       }}
     >
-      <div className='2xl:ml-[25%] xl:ml-[25%] lg:ml-[15%] md:ml-[10%] sm:ml-[10%] ml-[5%] text-center'>
+      <div className='2xl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[80%] sm:w-[80%] w-[90%] flex 2xl:ml-[25%] xl:ml-[25%] lg:ml-[15%] md:ml-[10%] sm:ml-[10%] ml-[5%] text-center'>
         <div
-          style={{
-            alignItems: 'center',
-            backgroundColor: '#eeeeee',
-            borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '4px',
-            width: '50%'
-          }}
+          // style={{
+          //   alignItems: 'center',
+          //   backgroundColor: '#eeeeee',
+          //   borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+          //   display: 'flex',
+          //   justifyContent: 'center',
+          //   padding: '4px',
+          //   width: '50%'
+          // }}
+          className='items-center bg-white flex p-[4px] 2xl:w-[20%] xl:w-[20%] lg:w-[50%] md:w-[50%] sm:w-[50%]'
         >
           <div style={{ padding: '0px 2px' }}>
             <ZoomOut>
@@ -119,7 +121,9 @@ function Contentscreen(props) {
             </ZoomIn>
           </div>
         </div>
+        <div className='h-[5%] 2xl:ml-[49%] xl:ml-[47%] lg:ml-[47%] md:ml-[47%] sm:ml-[47%] ml-[38%] float-right'><button className='bg-white rounded-full scale-130 hover:scale-150 duration-300' onClick={closeQueWindow}><img className='text-white' width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="multiply" /></button></div>
       </div>
+      
       <div
         style={{
           flex: 1,
