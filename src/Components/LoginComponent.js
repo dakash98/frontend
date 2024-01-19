@@ -132,7 +132,7 @@ function LoginComponent() {
     event.preventDefault();
 
     const userPhnNumber = signinname;
-    const userPass = password;
+    const userPass = password1;
 
     axios
       .post("http://13.127.101.77/api/v1/login", {
