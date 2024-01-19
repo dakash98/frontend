@@ -45,15 +45,16 @@ function SanskritFullPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_sanskrit_full');
-    console.log(timestamp)
+    const data_sanskrit_full = localStorage.getItem('data_sanskrit_full');
 
-    if (timestamp) {
+    if (timestamp && data_sanskrit_full) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_sanskrit_full');
+        localStorage.removeItem('data_sanskrit_full');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

@@ -45,15 +45,16 @@ function HindiHalfPapers() {
     topFunction();
 
     const timestamp = localStorage.getItem('timestamp_hindi_half');
-    console.log(timestamp)
+    const data_hindi_half = localStorage.getItem('data_hindi_half');
 
-    if (timestamp) {
+    if (timestamp && data_hindi_half) {
 
       const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
       if (check) {
 
         localStorage.removeItem('timestamp_hindi_half');
+        localStorage.removeItem('data_hindi_half');
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);

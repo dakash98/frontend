@@ -44,7 +44,7 @@ function Navbar() {
 
 
   return (
-    <div className="flex items-center justify-between w-full lg:px-8 py-4 gradient-bg sm:mx-4">
+    <div className="flex items-center justify-between w-full lg:px-8 py-4 gradient-bg ">
       <div className="flex items-center">
         <button onClick={event => (redirectHome())}><img src={logoo} alt="Logo" className="h-20 " /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
