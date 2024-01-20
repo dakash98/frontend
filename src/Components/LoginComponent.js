@@ -43,7 +43,11 @@ function LoginComponent() {
   };
 
   const handlePhoneNumberChange = (event) => {
-    const numericValue = event.target.value.replace(/[^0-9]/g, "");
+    let numericValue = event.target.value.replace(/[^0-9]/g, "");
+    numericValue = numericValue.slice(0, 12);
+    if (!numericValue.startsWith("91")) {
+      numericValue = `91${numericValue}`;
+    }
     setPhoneNumber(numericValue);
   };
 
@@ -173,7 +177,7 @@ function LoginComponent() {
           <img
             src={myImageLogin}
             alt="Your Image Alt Text"
-            className="w-full w-[450px] h-auto md:h-[650px] md:ml-[5px] lg:ml-[150px] xl:ml-[300px] 2xl:ml-[350px] mt-[6%]"
+            className="w-full w-[450px] h-auto md:h-[650px]  lg:ml-[150px] xl:ml-[300px] 2xl:ml-[350px] mt-[6%]"
           />
         )}
         <div className="w-full md:w-[430px] sm:pr-1 mr:ml-[100px] md:mr-[350px] md:mt-[6%] 2xl:mr-[400px] bg-gray-200 h-auto md:h-[650px] relative">
