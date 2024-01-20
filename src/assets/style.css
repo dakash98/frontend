@@ -76,12 +76,27 @@ body {
 }
 
 .zoom-effect {
-  transition: font-size 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .zoom-effect:hover {
-  font-size: 110%;
+  animation: jerk 0.1s ease-in-out;
+  transform: scale(1.1);
 }
+
+@keyframes jerk {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
 
 .nav-link {
   text-decoration: none;
