@@ -9,10 +9,11 @@ function LoginComponent() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [name, setName] = useState("");
   const [signinname, signinName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("91");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password1, setSignInPassword] = useState("");
+  const [signInError, setSignInError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
   const [role, setRole] = useState("");
@@ -146,10 +147,10 @@ function LoginComponent() {
       .then((response) => {
         console.log(response);
         if (response.data.meta.message === "User logged in") {
-          // console.log("logggin", response.data.meta.message);
           localStorage.setItem("user_id", response.data.data.user_id);
           navigate("/");
         } else {
+          setSignInError("Invalid credentials / please SignUp if you dont have an account"); // Set error message
           console.log("Login failed");
         }
       })
@@ -337,7 +338,7 @@ function LoginComponent() {
                 className={`${activeForm === "sign_in" ? "" : "hidden"}`}
               >
                 <div className="w-full pl-[8%] mt-[35%] mr-[3%]">
-                  <div className=" w-[90%] relative mb-8 lg:ml-4 ">
+                  <div className=" w-[90%] relative mb-2 lg:ml-4 ">
                     <label htmlFor="phone">{phoneNumber ? "" : ""}</label>
                     <input
                       type="text"
@@ -352,11 +353,15 @@ function LoginComponent() {
                       Phone Number/Email*
                     </span>
                   </div>
+                  <div className="mb-8">
+                  {signInError && (
+                    <p className="text-red-500 text-xs mt-1 mx-2 lg:mx-4">{signInError}</p>
+                  )}</div>
 
                   <div className="w-[90%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password1 ? "" : ""}</label>
                     <div className="relative">
-                    <button
+                      <button
                         type="button"
                         className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 text-black focus:outline-none"
                         onClick={togglePasswordVisibility1}
@@ -377,7 +382,7 @@ function LoginComponent() {
                       Password*
                     </span>
                     {passwordError && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-red-500 text-sm mt-1 mx-2">
                         {passwordError}
                       </p>
                     )}
