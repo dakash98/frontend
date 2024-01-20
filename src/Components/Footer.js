@@ -405,11 +405,11 @@ function Footer() {
               <div className="mb-4 tracking-widest text-gray-100">
                 <p className="font-bold mb-4">PRODUCT</p>
 
-                <div className="flex flex-wrap lg:flex-nowrap">
+                <div className="flex flex-wrap lg:flex-nowrap ">
                   <nav className="flex flex-col lg:gap-4">
                     {subject.slice(0, 6).map((subjects) => (
                       <ol
-                        className="w-[140px] sm:w-[100px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
+                        className="w-[250px] md:w-[250px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
                         key={subjects.key}
                       >
                         <button
@@ -425,7 +425,7 @@ function Footer() {
                   <nav className="flex flex-col lg:gap-4 ml-0 lg:ml-8">
                     {subject.slice(6).map((subjects) => (
                       <ol
-                        className="w-[140px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
+                        className="w-[250px] md:w-[250px] lg:w-[250px] pt-2 text-left text-gray-400 hover:text-indigo-500 active:text-indigo-600"
                         key={subjects.key}
                       >
                         <button
@@ -442,7 +442,7 @@ function Footer() {
               {/* <!-- nav - end --> */}
 
               {/* <!-- nav - start --> */}
-              <div className="ml-[10px] lg:ml-[350px]">
+              <div className="ml-[60px] md:ml-[250px] lg:ml-[350px]">
                 <div className="ml-0 lg:ml-[30px] mb-20 tracking-widest text-gray-100">
                   <p className="font-bold mb-4"> COMPANY</p>
                   <nav className="flex flex-col lg:gap-4">
