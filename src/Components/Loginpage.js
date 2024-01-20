@@ -58,7 +58,7 @@ function Loginpage() {
   //   const userRole = event.target.urole.value;
 
   //   axios
-  //     .post("https://padhaiplanet-backend.onrender.com/v1/signup", {
+  //     .post("http://13.127.101.77/api/v1/signup", {
   //       name: userName,
   //       email: userEmail,
   //       phone: userPhnNumber,

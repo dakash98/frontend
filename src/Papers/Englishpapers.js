@@ -17,7 +17,7 @@ function EnglishPapers() {
 
   //For fetching data
   const API_hisory_paper =
-    "https://padhaiplanet-backend.onrender.com/v1/get-question?subject=english&medium=a&standard=10 ";
+    "http://13.127.101.77/api/v1/get-question?subject=english&medium=english&standard=10 ";
 
   //API data hooks
   const [que_data, setQue_data] = useState([]);

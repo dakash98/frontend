@@ -5,7 +5,7 @@ import readingImage from "../Static/astronut-book.png";
 import { ConfigData } from "./ConfigData";
 
 function Body() {
-  // const API_config = "https://padhaiplanet-backend.onrender.com/v1/config";
+  // const API_config = "http://13.127.101.77/api/v1/config";
 
   const navigate = useNavigate();
 
