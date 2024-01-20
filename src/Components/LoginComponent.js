@@ -106,6 +106,8 @@ function LoginComponent() {
     const userPass = password;
     const userRole = roleValues[role];
 
+    axios.defaults.withCredentials = true;
+
     axios
       .post("http://13.127.101.77/api/v1/signup", {
         name: userName,
@@ -138,6 +140,8 @@ function LoginComponent() {
 
     const userPhnNumber = signinname;
     const userPass = password1;
+
+    axios.defaults.withCredentials = true;
 
     axios
       .post("http://13.127.101.77/api/v1/login", {
