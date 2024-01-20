@@ -150,7 +150,7 @@ function LoginComponent() {
           localStorage.setItem("user_id", response.data.data.user_id);
           navigate("/");
         } else {
-          setSignInError("Invalid credentials / please SignUp if you dont have an account"); // Set error message
+          setSignInError("Invalid credentials / Please SignUp if you dont have an account"); // Set error message
           console.log("Login failed");
         }
       })
