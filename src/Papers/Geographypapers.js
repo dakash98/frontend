@@ -165,7 +165,7 @@ function GeographyPapers() {
                             >
                               {item.papers[index1]["name"]} Q Paper
                             </button>
-                            <button
+                            {item.papers[index1]["solution_url"] ? ( <button
                               onClick={(event) =>
                                 handleSolution(index1, index)
                               }
@@ -173,7 +173,12 @@ function GeographyPapers() {
                               key={index}
                             >
                               {item.papers[index1]["name"]} Solution
-                            </button>
+                            </button>) : (<button
+                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-green-600"
+                              key={index}
+                            >
+                              {item.papers[index1]["name"]} Solution Coming Soon
+                            </button>) }
                           </div>
                         </div>
                       ))}
