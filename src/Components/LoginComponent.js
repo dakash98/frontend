@@ -15,7 +15,6 @@ function LoginComponent() {
   const [password1, setSignInPassword] = useState("");
   const [signInError, setSignInError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
   const [role, setRole] = useState("");
   const [emailError, setEmailError] = useState("");
   const [activeForm, setActiveForm] = useState("sign_up");
@@ -138,8 +137,11 @@ function LoginComponent() {
   const submitHandlerSignIn = (event) => {
     event.preventDefault();
 
-    const userPhnNumber = signinname;
+    let userPhnNumber = signinname;
     const userPass = password1;
+    if (!isNaN(userPhnNumber)) {
+      userPhnNumber = `91${userPhnNumber}`;
+    }
 
     axios.defaults.withCredentials = true;
 
@@ -154,7 +156,7 @@ function LoginComponent() {
           localStorage.setItem("user_id", response.data.data.user_id);
           navigate("/");
         } else {
-          setSignInError("Invalid credentials / Please SignUp if you dont have an account"); // Set error message
+          setSignInError("Invalid credentials / Please SignUp if you dont have an account");
           console.log("Login failed");
         }
       })
@@ -162,6 +164,7 @@ function LoginComponent() {
         console.log(error);
       });
   };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -358,9 +361,9 @@ function LoginComponent() {
                     </span>
                   </div>
                   <div className="mb-8">
-                  {signInError && (
-                    <p className="text-red-500 text-xs mt-1 mx-2 lg:mx-4">{signInError}</p>
-                  )}</div>
+                    {signInError && (
+                      <p className="text-red-500 text-xs mt-1 mx-2 lg:mx-4">{signInError}</p>
+                    )}</div>
 
                   <div className="w-[90%] relative mb-5 lg:ml-4">
                     <label htmlFor="password">{password1 ? "" : ""}</label>
