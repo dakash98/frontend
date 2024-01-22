@@ -14,9 +14,12 @@ import StaticTag from "../Components/StaticTag.js";
 import LoginComponent from "../Components/LoginComponent.js";
 
 function Science1Papers() {
+
+  const pre_API = "http://13.127.101.77/api/v1/get-question?subject=science_1&medium=" + localStorage.getItem('medium') + "&standard=10";
+
   //For fetching data
-  const API_hisory_paper =
-    "http://13.127.101.77/api/v1/get-question?subject=science_1&medium=english&standard=10 ";
+  const API_hisory_paper = pre_API;
+    
 
   //API data hooks
   const [que_data, setQue_data] = useState([]);
@@ -30,7 +33,7 @@ function Science1Papers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
-      localStorage.setItem("data_science_1", JSON.stringify(data));
+      localStorage.setItem("data_science_1_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -44,8 +47,8 @@ function Science1Papers() {
   useEffect(() => {
     topFunction();
 
-    const timestamp = localStorage.getItem('timestamp_science_1');
-    const data_science_1 = localStorage.getItem('data_science_1');
+    const timestamp = localStorage.getItem('timestamp_science_1_' + localStorage.getItem('medium'));
+    const data_science_1 = localStorage.getItem('data_science_1_' + localStorage.getItem('medium'));
 
     if (timestamp && data_science_1) {
 
@@ -53,8 +56,8 @@ function Science1Papers() {
 
       if (check) {
 
-        localStorage.removeItem('timestamp_science_1');
-        localStorage.removeItem('data_science_1');
+        localStorage.removeItem('timestamp_science_1_' + localStorage.getItem('medium'));
+        localStorage.removeItem('data_science_1_' + localStorage.getItem('medium'));
 
         //Adding timestamp
         const date = new Date().setDate(new Date().getDate() + 6);
@@ -62,14 +65,14 @@ function Science1Papers() {
         // console.log(date);
         // console.log(new Date(date));
 
-        localStorage.setItem('timestamp_science_1', JSON.stringify({
+        localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
           value: "string",
           expDate: date,
         }))
 
         fetchdata(API_hisory_paper);
-      } else if(localStorage.getItem('data_science_1')) {
-        const object = JSON.parse(localStorage.getItem('data_science_1'))
+      } else if(localStorage.getItem('data_science_1_' + localStorage.getItem('medium'))) {
+        const object = JSON.parse(localStorage.getItem('data_science_1_' + localStorage.getItem('medium')))
         setData(object.data)
         document.getElementById("loader").classList.add("hidden");
         document.getElementById("parent").classList.remove("hidden");
@@ -85,7 +88,7 @@ function Science1Papers() {
       // console.log(date);
       // console.log(new Date(date));
 
-      localStorage.setItem('timestamp_science_1', JSON.stringify({
+      localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
         value: "string",
         expDate: date,
       }))
@@ -153,7 +156,7 @@ function Science1Papers() {
                     <div className="lg:flex w-full md:block">
                       {item.papers.map((item1, index1) => (
                         <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
-                          <div className="block">
+                          <div className="w-[50%] block">
                             <button
                               onClick={(event) =>
                                 HandleClick(index1, index)
@@ -162,7 +165,8 @@ function Science1Papers() {
                               className="rounded-2xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
                               key={index}
                             >
-                              {item.papers[index1]["name"]} Q Paper
+                              Q Paper
+                              {/* {item.papers[index1]["name"]}  */}
                             </button>
                             {item.papers[index1]["solution_url"] ? ( <button
                               onClick={(event) =>
@@ -171,12 +175,14 @@ function Science1Papers() {
                               className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
                               key={index}
                             >
-                              {item.papers[index1]["name"]} Solution
+                              Solution
+                              {/* {item.papers[index1]["name"]}  */}
                             </button>) : (<button
-                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-green-600"
+                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
                               key={index}
                             >
-                              {item.papers[index1]["name"]} Solution Coming Soon
+                              Solution Coming Soon
+                              {/* {item.papers[index1]["name"]}  */}
                             </button>) }
                           </div>
                         </div>
