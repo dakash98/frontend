@@ -59,9 +59,13 @@ function Body() {
       science_2: "/science-2-question-papers-10th-ssc",
     };
 
+
     console.log(form.elements["sub"].value);
+    localStorage.setItem('medium', form.elements["med"].value);
+    console.log(form.elements["med"].value);
     navigate(page_mapping[form.elements["sub"].value]);
   }
+
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
@@ -102,13 +106,13 @@ function Body() {
                 </option>
 
                 {standard.map((standards) => (
-                  <option value={standards.key}>{standards.value}</option>
+                  <option value={standards.key} selected>{standards.value}</option>
                 ))}
               </select>
             </div>
 
             <div>
-              <select
+              <select id="def_med"
                 name="med"
                 className="md:w-96  animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80 lg:w-[450px]"
                 type="button"

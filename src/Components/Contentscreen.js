@@ -30,7 +30,7 @@ function Contentscreen(props) {
 
   }
 
-
+  console.log(props.q_data)
 
 
   // return (
@@ -136,7 +136,8 @@ function Contentscreen(props) {
             className='max-w-[100%] 2xl:w-[50%] xl:w-[50%] lg:w-[70%] md:w-[80%] sm:w-[100%] 2xl:ml-[25%] xl:ml-[25%] lg:ml-[15%] md:ml-[10%] sm:ml-[10%] sm:mr-[10%] ml-[5%] mr-[5%] text-center h-[1000px] overflow-scroll'
           >
 
-            <Viewer  fileUrl={'https://padhai-planet.s3.ap-south-1.amazonaws.com/10/question_paper.pdf'} plugins={[zoomPluginInstance]} />
+            {/* <Viewer  fileUrl={'https://padhai-planet.s3.ap-south-1.amazonaws.com/10/question_paper.pdf'} plugins={[zoomPluginInstance]} /> */}
+            <Viewer  fileUrl={props.q_data} plugins={[zoomPluginInstance]} />
           </div>
         </Worker>
       </div>
