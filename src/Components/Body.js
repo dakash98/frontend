@@ -33,9 +33,9 @@ function Body() {
     setMedium(ConfigData[2].medium);
     setSubject(ConfigData[0].subject);
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640); 
+      setIsSmallScreen(window.innerWidth < 640);
     };
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -69,12 +69,14 @@ function Body() {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
-    {!isSmallScreen && (
-  <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
-    <img src={readingImage} alt="Reading" className="w-full h-auto" />
-  </div>
-)}
-    <form id="form" className="md:order-1 md:ml-4 mt-8 lg:mt-0">
+      {!isSmallScreen && (
+        <div className={isSmallScreen ? "w-[50%] md:w-[10%] md:order-2 mt-8 lg:mt-0" : "lg:w-[25%] md:order-2 lg:mt-0"}>
+          <img src={readingImage} alt="Reading" className="w-full h-auto" />
+        </div>
+      )}
+      <form id="form" onSubmit={(event) => {
+        handleSubmit();
+      }} className="md:order-1 md:ml-4 mt-8 lg:mt-0">
         <div className="">
           <div className="text-center h-fit sm:mx-4">
             <p className="md:mx-4 flex text-3xl lg:text-3xl text-white font-semibold my-6 lg:my-10 pt-2.5">
@@ -116,8 +118,9 @@ function Body() {
                 name="med"
                 className="md:w-96  animation text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-5 py-2 mb-2 lg:mb-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-80 lg:w-[450px]"
                 type="button"
+                required
               >
-                <option>
+                <option value="">
                   Medium{" "}
                   <svg
                     className="w-2.5 h-2.5 ms-[19.75rem]"
@@ -175,11 +178,11 @@ function Body() {
 
             <div>
               <button
-                onClick={(event) => {
-                  handleSubmit();
-                }}
+                // onClick={(event) => {
+                //   handleSubmit();
+                // }}
                 className="text-center rounded-lg text-white button-bg hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg pl-[5.25rem] py-2.5 mb-[30px] inline-flex items-center dark:bg-blue-600 mt-6 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60"
-                type="button"
+                type="submit"
               >
                 Submit
               </button>
