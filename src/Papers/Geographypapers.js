@@ -15,7 +15,7 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function GeographyPapers() {
 
-  const pre_API = "http://13.127.101.77/api/v1/get-question?subject=geography&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const pre_API = "http://padhaiplanet.com/api/v1/get-question?subject=geography&medium=" + localStorage.getItem('medium') + "&standard=10";
 
   //For fetching data
   const API_hisory_paper =

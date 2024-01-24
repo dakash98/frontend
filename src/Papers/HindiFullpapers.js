@@ -15,7 +15,7 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function HindiFullPapers() {
   
-  const pre_API = "http://13.127.101.77/api/v1/get-question?subject=hindi_full&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const pre_API = "http://padhaiplanet.com/api/v1/get-question?subject=hindi_full&medium=" + localStorage.getItem('medium') + "&standard=10";
 
   //For fetching data
   const API_hisory_paper = pre_API;

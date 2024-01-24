@@ -29,7 +29,7 @@ function Navbar() {
   const handleLogout = () => {
     axios.defaults.withCredentials = true;
     axios
-      .post("http://13.127.101.77/api/v1/logout", {"user_id": localStorage.getItem("user_id")})
+      .post("http://padhaiplanet.com/api/v1/logout", {"user_id": localStorage.getItem("user_id")})
       .then((response) => {
         console.log(response);
         localStorage.removeItem("user_id");

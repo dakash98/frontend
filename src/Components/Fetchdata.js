@@ -2,7 +2,7 @@
 
 // function Fetchdata() {
 
-//     const API1 = 'http://13.127.101.77/api/v1/config';
+//     const API1 = 'http://padhaiplanet.com/api/v1/config';
 
 //     const [agayaData, setAgayaData] = useState([])
 

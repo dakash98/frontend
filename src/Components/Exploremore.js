@@ -6,7 +6,7 @@ function Exploremore(props) {
 
   const navigate = useNavigate();
 
-  // const API_config = 'http://13.127.101.77/api/v1/config';
+  // const API_config = 'http://padhaiplanet.com/api/v1/config';
 
   const [subject, setSubject] = useState([]);
 
