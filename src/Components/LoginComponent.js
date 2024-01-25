@@ -140,7 +140,17 @@ function LoginComponent() {
     let userPhnNumber = signinname;
     const userPass = password1;
     if (!isNaN(userPhnNumber)) {
-      userPhnNumber = `91${userPhnNumber}`;
+
+      if(userPhnNumber.length === 10){
+        userPhnNumber = `91${userPhnNumber}`;
+      }
+      else if(userPhnNumber.length === 12) {
+        userPhnNumber = `${userPhnNumber}`
+      }
+      else{
+        userPhnNumber = "";
+      }
+      console.log(userPhnNumber.length);
     }
 
     axios.defaults.withCredentials = true;
@@ -248,6 +258,7 @@ function LoginComponent() {
                       name="phone"
                       className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
+                      minlength="10"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
                       required
@@ -352,6 +363,7 @@ function LoginComponent() {
                       name="phone"
                       className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
+                      minlength="10"
                       value={signinname}
                       onChange={handlesignInputChange}
                       required
