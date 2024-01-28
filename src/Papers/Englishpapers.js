@@ -15,7 +15,7 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function EnglishPapers() {
 
-  const pre_API = "http://padhaiplanet.com/api/v1/get-question?subject=english&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=english&medium=" + localStorage.getItem('medium') + "&standard=10";
   console.log(pre_API)
 
   //For fetching data

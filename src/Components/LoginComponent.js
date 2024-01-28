@@ -108,7 +108,7 @@ function LoginComponent() {
     axios.defaults.withCredentials = true;
 
     axios
-      .post("http://padhaiplanet.com/api/v1/signup", {
+      .post("https://padhaiplanet.com/api/v1/signup", {
         name: userName,
         email: userEmail,
         phone: userPhnNumber,
@@ -156,7 +156,7 @@ function LoginComponent() {
     axios.defaults.withCredentials = true;
 
     axios
-      .post("http://padhaiplanet.com/api/v1/login", {
+      .post("https://padhaiplanet.com/api/v1/login", {
         email_or_phone: userPhnNumber,
         password: userPass,
       })
