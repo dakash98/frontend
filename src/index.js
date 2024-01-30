@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Helmet } from 'react-helmet';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div>
+      <Helmet>
+        <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+      </Helmet>
+      <App />
+    </div>
   </React.StrictMode>
 );
 
