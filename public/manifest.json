@@ -1,19 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Padhaiplanet",
+  "name": "Padhaiplanet",
+  "description": "Access the ultimate collection of 10th SSC Maharashtra Board question papers for free. Students can get valuable insights from the previous year's question paper and solutions for the 10th SSC Maharashtra Board for the respective years 2018,2019,2020,2022,2023",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
+      "src": "Padhaiplanet-logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Padhaiplanet-logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

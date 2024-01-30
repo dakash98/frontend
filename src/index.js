@@ -10,6 +10,8 @@ root.render(
   <React.StrictMode>
     <div>
       <Helmet>
+        <title>Crack Maharashtra 10th SSC Board Exams with Free Previous Year Question Papers and solutions</title>
+        <meta name="description" content="Access the ultimate collection of 10th SSC Maharashtra Board question papers for free. Students can get valuable insights from the previous year's question paper and solutions for the 10th SSC Maharashtra Board for the respective years 2018,2019,2020,2022,2023" />
         <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
