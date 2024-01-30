@@ -9,7 +9,7 @@ function LoginComponent() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [name, setName] = useState("");
   const [signinname, signinName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("91");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password1, setSignInPassword] = useState("");
@@ -44,10 +44,10 @@ function LoginComponent() {
 
   const handlePhoneNumberChange = (event) => {
     let numericValue = event.target.value.replace(/[^0-9]/g, "");
-    numericValue = numericValue.slice(0, 12);
-    if (!numericValue.startsWith("91")) {
-      numericValue = `91${numericValue}`;
-    }
+    // numericValue = numericValue.slice(0, 12);
+    // if (!numericValue.startsWith("91")) {
+    //   numericValue = `91${numericValue}`;
+    // }
     setPhoneNumber(numericValue);
   };
 
@@ -99,19 +99,22 @@ function LoginComponent() {
       parent: 2,
       teacher: 3,
     };
-    const userName = name;
-    const userPhnNumber = phoneNumber;
-    const userEmail = email;
-    const userPass = password;
-    const userRole = roleValues[role];
+    let userPhnNumber = phoneNumber;
+    let userPass = password;
+    let userRole = roleValues[role];
+
+    if (userPhnNumber.length > 10 || !isValidEmail(email)) {
+      console.log("There is some issue with the Phone or Email.")
+      return 
+    }    
 
     axios.defaults.withCredentials = true;
 
     axios
       .post("https://padhaiplanet.com/api/v1/signup", {
-        name: userName,
-        email: userEmail,
-        phone: userPhnNumber,
+        name: name,
+        email: email,
+        phone: `91${userPhnNumber}`,
         password: userPass,
         role: userRole,
       })
@@ -259,6 +262,7 @@ function LoginComponent() {
                       className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
                       placeholder=""
                       minlength="10"
+                      maxLength="10"
                       value={phoneNumber}
                       onChange={handlePhoneNumberChange}
                       required
