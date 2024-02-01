@@ -1,9 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import {
-  BreadcrumbPages,
-} from "../Components/Breadcrumbs";
+import { BreadcrumbPages } from "../Components/Breadcrumbs";
 import Joiningoptions from "../Components/Joiningoptions";
 import Exploremore from "../Components/Exploremore";
 import { useState, useEffect } from "react";
@@ -12,6 +10,7 @@ import Loader from "../Components/Loader.js";
 import { sleep, topFunction } from "../Global.js";
 import StaticTag from "../Components/StaticTag.js";
 import LoginComponent from "../Components/LoginComponent.js";
+import { Helmet } from 'react-helmet';
 
 function Math1Papers() {
 
@@ -21,7 +20,6 @@ function Math1Papers() {
 
   //For fetching data
   const API_hisory_paper = pre_API;
-    
 
   //API data hooks
   const [que_data, setQue_data] = useState([]);
@@ -45,7 +43,6 @@ function Math1Papers() {
       console.log(e);
     }
   };
-
 
   useEffect(() => {
     topFunction();
@@ -164,9 +161,7 @@ function Math1Papers() {
                         <div className="block xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
                           <div className="2xl:w-[100%] xl:w-[100%] lg:w-[100%] md:w-[100%] sm:w-[100%] w-[100%] block">
                             <button
-                              onClick={(event) =>
-                                HandleClick(index1, index)
-                              }
+                              onClick={(event) => HandleClick(index1, index)}
                               type="submit"
                               className="rounded-2xl 2xl:w-[300px] xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
                               key={index}
