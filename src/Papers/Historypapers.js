@@ -33,7 +33,8 @@ function HistoryPapers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
-      localStorage.setItem("data_history_" + localStorage.getItem('medium'), JSON.stringify(data));
+      //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
+      // localStorage.setItem("data_history_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -46,55 +47,60 @@ function HistoryPapers() {
 
   useEffect(() => {
     topFunction();
+    fetchdata(API_hisory_paper);
 
-    const timestamp = localStorage.getItem('timestamp_history_' + localStorage.getItem('medium'));
-    const data_history = localStorage.getItem('data_history_' + localStorage.getItem('medium'));
+    //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
 
-    if (timestamp && data_history) {
 
-      const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+    // const timestamp = localStorage.getItem('timestamp_history_' + localStorage.getItem('medium'));
+    // const data_history = localStorage.getItem('data_history_' + localStorage.getItem('medium'));
 
-      if (check) {
+    // if (timestamp && data_history) {
 
-        localStorage.removeItem('timestamp_history_' + localStorage.getItem('medium'));
-        localStorage.removeItem('data_history_' + localStorage.getItem('medium'));
+    //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+    //   console.log(new Date(timestamp).toLocaleDateString());
 
-        //Adding timestamp
-        const date = new Date().setDate(new Date().getDate() + 6);
+    //   if (check) {
 
-        // console.log(date);
-        // console.log(new Date(date));
+    //     localStorage.removeItem('timestamp_history_' + localStorage.getItem('medium'));
+    //     localStorage.removeItem('data_history_' + localStorage.getItem('medium'));
 
-        localStorage.setItem('timestamp_history_' + localStorage.getItem('medium'), JSON.stringify({
-          value: "string",
-          expDate: date,
-        }))
+    //     //Adding timestamp
+    //     const date = new Date().setDate(new Date().getDate() + 6);
 
-        fetchdata(API_hisory_paper);
-      } else if(localStorage.getItem('data_history_' + localStorage.getItem('medium'))) {
-        const object = JSON.parse(localStorage.getItem('data_history_' + localStorage.getItem('medium')))
-        setData(object.data)
-        document.getElementById("loader").classList.add("hidden");
-        document.getElementById("parent").classList.remove("hidden");
-        document.getElementById("explore").classList.remove("hidden");
-        document.getElementById("footer").classList.remove("hidden");
-      }
+    //     // console.log(date);
+    //     // console.log(new Date(date));
 
-    } else {
+    //     localStorage.setItem('timestamp_history_' + localStorage.getItem('medium'), JSON.stringify({
+    //       value: "string",
+    //       expDate: date,
+    //     }))
 
-      //Adding timestamp
-      const date = new Date().setDate(new Date().getDate() + 6);
+    //     fetchdata(API_hisory_paper);
+    //   } else if(localStorage.getItem('data_history_' + localStorage.getItem('medium'))) {
+    //     const object = JSON.parse(localStorage.getItem('data_history_' + localStorage.getItem('medium')))
+    //     setData(object.data)
+    //     document.getElementById("loader").classList.add("hidden");
+    //     document.getElementById("parent").classList.remove("hidden");
+    //     document.getElementById("explore").classList.remove("hidden");
+    //     document.getElementById("footer").classList.remove("hidden");
+    //   }
 
-      // console.log(date);
-      // console.log(new Date(date));
+    // } else {
 
-      localStorage.setItem('timestamp_history_' + localStorage.getItem('medium'), JSON.stringify({
-        value: "string",
-        expDate: date,
-      }))
+    //   //Adding timestamp
+    //   const date = new Date().setDate(new Date().getDate() + 6);
 
-      fetchdata(API_hisory_paper);
-    }
+    //   // console.log(date);
+    //   // console.log(new Date(date));
+
+    //   localStorage.setItem('timestamp_history_' + localStorage.getItem('medium'), JSON.stringify({
+    //     value: "string",
+    //     expDate: date,
+    //   }))
+
+    //   fetchdata(API_hisory_paper);
+    // }
 
   }, []);
 

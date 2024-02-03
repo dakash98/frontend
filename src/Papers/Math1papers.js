@@ -33,7 +33,8 @@ function Math1Papers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
-      localStorage.setItem("data_math_1_" + localStorage.getItem('medium'), JSON.stringify(data));
+      //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
+      // localStorage.setItem("data_math_1_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -46,55 +47,58 @@ function Math1Papers() {
 
   useEffect(() => {
     topFunction();
+    fetchdata(API_hisory_paper);
 
-    const timestamp = localStorage.getItem('timestamp_math_1_' + localStorage.getItem('medium'));
-    const data_math_1 = localStorage.getItem('data_math_1_' + localStorage.getItem('medium'));
+    //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
 
-    if (timestamp && data_math_1) {
+    // const timestamp = localStorage.getItem('timestamp_math_1_' + localStorage.getItem('medium'));
+    // const data_math_1 = localStorage.getItem('data_math_1_' + localStorage.getItem('medium'));
 
-      const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+    // if (timestamp && data_math_1) {
 
-      if (check) {
+    //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
-        localStorage.removeItem('timestamp_math_1_' + localStorage.getItem('medium'));
-        localStorage.removeItem('data_math_1_' + localStorage.getItem('medium'));
+    //   if (check) {
 
-        //Adding timestamp
-        const date = new Date().setDate(new Date().getDate() + 6);
+    //     localStorage.removeItem('timestamp_math_1_' + localStorage.getItem('medium'));
+    //     localStorage.removeItem('data_math_1_' + localStorage.getItem('medium'));
 
-        // console.log(date);
-        // console.log(new Date(date));
+    //     //Adding timestamp
+    //     const date = new Date().setDate(new Date().getDate() + 6);
 
-        localStorage.setItem('timestamp_math_1_' + localStorage.getItem('medium'), JSON.stringify({
-          value: "string",
-          expDate: date,
-        }))
+    //     // console.log(date);
+    //     // console.log(new Date(date));
 
-        fetchdata(API_hisory_paper);
-      } else if(localStorage.getItem('data_math_1_' + localStorage.getItem('medium'))) {
-        const object = JSON.parse(localStorage.getItem('data_math_1_' + localStorage.getItem('medium')))
-        setData(object.data)
-        document.getElementById("loader").classList.add("hidden");
-        document.getElementById("parent").classList.remove("hidden");
-        document.getElementById("explore").classList.remove("hidden");
-        document.getElementById("footer").classList.remove("hidden");
-      }
+    //     localStorage.setItem('timestamp_math_1_' + localStorage.getItem('medium'), JSON.stringify({
+    //       value: "string",
+    //       expDate: date,
+    //     }))
 
-    } else {
+    //     fetchdata(API_hisory_paper);
+    //   } else if(localStorage.getItem('data_math_1_' + localStorage.getItem('medium'))) {
+    //     const object = JSON.parse(localStorage.getItem('data_math_1_' + localStorage.getItem('medium')))
+    //     setData(object.data)
+    //     document.getElementById("loader").classList.add("hidden");
+    //     document.getElementById("parent").classList.remove("hidden");
+    //     document.getElementById("explore").classList.remove("hidden");
+    //     document.getElementById("footer").classList.remove("hidden");
+    //   }
 
-      //Adding timestamp
-      const date = new Date().setDate(new Date().getDate() + 6);
+    // } else {
 
-      // console.log(date);
-      // console.log(new Date(date));
+    //   //Adding timestamp
+    //   const date = new Date().setDate(new Date().getDate() + 6);
 
-      localStorage.setItem('timestamp_math_1_' + localStorage.getItem('medium'), JSON.stringify({
-        value: "string",
-        expDate: date,
-      }))
+    //   // console.log(date);
+    //   // console.log(new Date(date));
 
-      fetchdata(API_hisory_paper);
-    }
+    //   localStorage.setItem('timestamp_math_1_' + localStorage.getItem('medium'), JSON.stringify({
+    //     value: "string",
+    //     expDate: date,
+    //   }))
+
+    //   fetchdata(API_hisory_paper);
+    // }
 
   }, []);
 
