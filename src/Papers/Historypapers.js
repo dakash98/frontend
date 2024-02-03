@@ -154,16 +154,16 @@ function HistoryPapers() {
                       {item.year}
                     </div>
                     {/* <div className="lg:flex md:block lg:pl-[28%]"> */}
-                    <div className="lg:flex w-full md:block">
+                    <div className="lg:block lg:block w-full md:block block">
                       {item.papers.map((item1, index1) => (
-                        <div className="flex xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
-                          <div className="w-[50%] block">
+                        <div className="block xl:mr-[0%] lg:mr-[3%] md:mr-[0%] mr-[0%]">
+                          <div className="2xl:w-[100%] xl:w-[100%] lg:w-[100%] md:w-[100%] sm:w-[100%] w-[100%] block">
                             <button
                               onClick={(event) =>
                                 HandleClick(index1, index)
                               }
                               type="submit"
-                              className="rounded-2xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
+                              className="rounded-2xl 2xl:w-[300px] xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[200px] text-lg text-center font-semibold mt-[50px] bg-gradient-to-r from-[#054569] to-[#5591A9]"
                               key={index}
                             >
                               Q Paper
@@ -173,13 +173,13 @@ function HistoryPapers() {
                               onClick={(event) =>
                                 handleSolution(index1, index)
                               }
-                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
+                              className="rounded-xl 2xl:w-[300px] xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] inset-0 m-auto text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9] block"
                               key={index}
                             >
                               Solution
                               {/* {item.papers[index1]["name"]}  */}
                             </button>) : (<button
-                              className="rounded-xl xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9]"
+                              className="rounded-xl 2xl:w-[300px] xl:w-[300px] lg:w-[280px] md:w-[250px] w-[200px] inset-0 m-auto text-white h-[50px] text-center font-medium mt-[25px] bg-[#5591A9] block"
                               key={index}
                             >
                               Solution Coming Soon
