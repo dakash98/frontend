@@ -15,7 +15,11 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function HistoryPapers() {
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=history_and_political_science&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=history_and_political_science&medium=" + sel_med + "&standard=10";
+
+  console.log(pre_API);
 
   //For fetching data
   const API_hisory_paper = pre_API;

@@ -15,7 +15,9 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function GeographyPapers() {
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=geography&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi"
+
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=geography&medium=" + sel_med + "&standard=10";
 
   //For fetching data
   const API_hisory_paper =

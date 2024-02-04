@@ -15,7 +15,9 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function MarathiPapers() {
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=marathi&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=marathi&medium=" + sel_med + "&standard=10";
 
   //For fetching data
   const API_hisory_paper = pre_API;

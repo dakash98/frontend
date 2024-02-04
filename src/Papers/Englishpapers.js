@@ -15,8 +15,10 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function EnglishPapers() {
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=english&medium=" + localStorage.getItem('medium') + "&standard=10";
-  console.log(pre_API)
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=english&medium=" + sel_med + "&standard=10";
+  // console.log(pre_API)
 
   //For fetching data
   const API_hisory_paper =
@@ -135,7 +137,7 @@ function EnglishPapers() {
   for (var j = 0; j < data["length"]; j++) {
     data_imp.push(data[j]);
   }
-  console.log(data_imp)
+  // console.log(data_imp)
 
   return (
     <div className="relative z-0">
