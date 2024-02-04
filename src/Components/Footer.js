@@ -25,6 +25,9 @@ function Footer() {
 
   useEffect(() => {
     setSubject(ConfigData[0].subject);
+    if(!localStorage.getItem("medium")){
+      localStorage.setItem("medium", "marathi");
+    }
   }, []);
 
   function handleClick(user_selected_option) {

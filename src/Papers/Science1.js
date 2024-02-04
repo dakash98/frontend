@@ -15,7 +15,9 @@ import LoginComponent from "../Components/LoginComponent.js";
 
 function Science1Papers() {
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=science_1&medium=" + localStorage.getItem('medium') + "&standard=10";
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=science_1&medium=" + sel_med + "&standard=10";
 
   //For fetching data
   const API_hisory_paper = pre_API;
@@ -33,7 +35,8 @@ function Science1Papers() {
       const data = await res.json();
       await sleep(3000);
       setData(data.data);
-      localStorage.setItem("data_science_1_" + localStorage.getItem('medium'), JSON.stringify(data));
+      //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
+      // localStorage.setItem("data_science_1_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -46,55 +49,58 @@ function Science1Papers() {
 
   useEffect(() => {
     topFunction();
+    fetchdata(API_hisory_paper);
 
-    const timestamp = localStorage.getItem('timestamp_science_1_' + localStorage.getItem('medium'));
-    const data_science_1 = localStorage.getItem('data_science_1_' + localStorage.getItem('medium'));
+    //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
+    
+    // const timestamp = localStorage.getItem('timestamp_science_1_' + localStorage.getItem('medium'));
+    // const data_science_1 = localStorage.getItem('data_science_1_' + localStorage.getItem('medium'));
 
-    if (timestamp && data_science_1) {
+    // if (timestamp && data_science_1) {
 
-      const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+    //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
-      if (check) {
+    //   if (check) {
 
-        localStorage.removeItem('timestamp_science_1_' + localStorage.getItem('medium'));
-        localStorage.removeItem('data_science_1_' + localStorage.getItem('medium'));
+    //     localStorage.removeItem('timestamp_science_1_' + localStorage.getItem('medium'));
+    //     localStorage.removeItem('data_science_1_' + localStorage.getItem('medium'));
 
-        //Adding timestamp
-        const date = new Date().setDate(new Date().getDate() + 6);
+    //     //Adding timestamp
+    //     const date = new Date().setDate(new Date().getDate() + 6);
 
-        // console.log(date);
-        // console.log(new Date(date));
+    //     // console.log(date);
+    //     // console.log(new Date(date));
 
-        localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
-          value: "string",
-          expDate: date,
-        }))
+    //     localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
+    //       value: "string",
+    //       expDate: date,
+    //     }))
 
-        fetchdata(API_hisory_paper);
-      } else if(localStorage.getItem('data_science_1_' + localStorage.getItem('medium'))) {
-        const object = JSON.parse(localStorage.getItem('data_science_1_' + localStorage.getItem('medium')))
-        setData(object.data)
-        document.getElementById("loader").classList.add("hidden");
-        document.getElementById("parent").classList.remove("hidden");
-        document.getElementById("explore").classList.remove("hidden");
-        document.getElementById("footer").classList.remove("hidden");
-      }
+    //     fetchdata(API_hisory_paper);
+    //   } else if(localStorage.getItem('data_science_1_' + localStorage.getItem('medium'))) {
+    //     const object = JSON.parse(localStorage.getItem('data_science_1_' + localStorage.getItem('medium')))
+    //     setData(object.data)
+    //     document.getElementById("loader").classList.add("hidden");
+    //     document.getElementById("parent").classList.remove("hidden");
+    //     document.getElementById("explore").classList.remove("hidden");
+    //     document.getElementById("footer").classList.remove("hidden");
+    //   }
 
-    } else {
+    // } else {
 
-      //Adding timestamp
-      const date = new Date().setDate(new Date().getDate() + 6);
+    //   //Adding timestamp
+    //   const date = new Date().setDate(new Date().getDate() + 6);
 
-      // console.log(date);
-      // console.log(new Date(date));
+    //   // console.log(date);
+    //   // console.log(new Date(date));
 
-      localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
-        value: "string",
-        expDate: date,
-      }))
+    //   localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
+    //     value: "string",
+    //     expDate: date,
+    //   }))
 
-      fetchdata(API_hisory_paper);
-    }
+    //   fetchdata(API_hisory_paper);
+    // }
 
   }, []);
 

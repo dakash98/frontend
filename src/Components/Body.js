@@ -60,9 +60,9 @@ function Body() {
     };
 
 
-    console.log(form.elements["sub"].value);
+    // console.log(form.elements["sub"].value);
     localStorage.setItem('medium', form.elements["med"].value);
-    console.log(form.elements["med"].value);
+    // console.log(form.elements["med"].value);
     navigate(page_mapping[form.elements["sub"].value]);
   }
 
