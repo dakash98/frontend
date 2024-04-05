@@ -243,7 +243,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="uname"
-                      className=" text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 sm:mr-4"
+                      className=" text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1 sm:mr-4"
                       placeholder=""
                       value={name}
                       onChange={handleInputChange}
@@ -259,7 +259,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="phone"
-                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
                       placeholder=""
                       minlength="10"
                       maxLength="10"
@@ -277,7 +277,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="email"
-                      className={`text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10 ${emailError ? "border-red-500" : ""
+                      className={`text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1 ${emailError ? "border-red-500" : ""
                         }`}
                       placeholder=""
                       value={email}
@@ -296,7 +296,7 @@ function LoginComponent() {
                     <label htmlFor="role">{role ? "" : ""}</label>
                     <select
                       name="role"
-                      className="text-4sm text-gray-900 w-full h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[54px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
                       value={role}
                       onChange={handleRoleChange}
                     >
@@ -365,7 +365,7 @@ function LoginComponent() {
                     <input
                       type="text"
                       name="phone"
-                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-10"
+                      className="text-4sm text-gray-900 w-full h-[50px] p-4 rounded-lg border-2 border-gray-300 outline-none focus:outline-none focus:border-blue-500 transition-all duration-200 relative z-1"
                       placeholder=""
                       minlength="10"
                       value={signinname}
