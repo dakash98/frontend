@@ -12,6 +12,7 @@ import Loader from "../Components/Loader.js";
 import { sleep, topFunction } from "../Global.js";
 import StaticTag from "../Components/StaticTag.js";
 import LoginComponent from "../Components/LoginComponent.js";
+import { Helmet } from 'react-helmet';
 
 function Science1Papers() {
 
@@ -21,7 +22,7 @@ function Science1Papers() {
 
   //For fetching data
   const API_hisory_paper = pre_API;
-    
+
 
   //API data hooks
   const [que_data, setQue_data] = useState([]);
@@ -52,7 +53,7 @@ function Science1Papers() {
     fetchdata(API_hisory_paper);
 
     //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
-    
+
     // const timestamp = localStorage.getItem('timestamp_science_1_' + localStorage.getItem('medium'));
     // const data_science_1 = localStorage.getItem('data_science_1_' + localStorage.getItem('medium'));
 
@@ -133,6 +134,11 @@ function Science1Papers() {
 
   return (
     <div className="relative z-0">
+      <Helmet>
+        <title>Discover English Medium, Marathi Medium, and Sem-English Medium Maharashtra 10th SSC Board History Question Paper for 2018,2019,2020,2022,2023.</title>
+        <meta name="description" content="Prepare for your exam with our history question paper for the Maharashtra 10th SSC board. Prepare with the best resources and boost your chances of success in Maharashtra 10th SSC boards by practicing the previous year's question papers for 2018,2019,2020,2022,2023." />
+        <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Mathematics 1 question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
+      </Helmet>
       <div>
         <div className="sticky flex top-0 z-10">
           <Navbar />
@@ -174,7 +180,7 @@ function Science1Papers() {
                               Q Paper
                               {/* {item.papers[index1]["name"]}  */}
                             </button>
-                            {item.papers[index1]["solution_url"] ? ( <button
+                            {item.papers[index1]["solution_url"] ? (<button
                               onClick={(event) =>
                                 handleSolution(index1, index)
                               }
@@ -189,7 +195,7 @@ function Science1Papers() {
                             >
                               Solution Coming Soon
                               {/* {item.papers[index1]["name"]}  */}
-                            </button>) }
+                            </button>)}
                           </div>
                         </div>
                       ))}
