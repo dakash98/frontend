@@ -6,10 +6,15 @@ import Footer from "./Footer";
 import myAboutImage1 from "../Static/aboutUs1.jpg";
 import myAboutImage2 from "../Static/aboutUs2.jpg";
 import StaticTag from "./StaticTag";
+import { Helmet } from "react-helmet";
 
 function AboutUs() {
   return (
     <div>
+      <Helmet>
+        <title>Providing Maharashtra 10th Board exam question papers.</title>
+        <meta name="description" content="PadhaiPlanet is a platform that provides previous year's question papers for Maharashtra 10th SSC board exams. It mainly comprises question papers in English, Marathi, and Semi- English Mediums for 2018,2019,2020,2022,2023" />
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
@@ -31,7 +36,7 @@ function AboutUs() {
                 <img
                   src={myAboutImage2}
                   alt="Your Image Alt Text"
-                  className="w-full h-auto object-cover  md:w-auto md:h-auto pr-8" 
+                  className="w-full h-auto object-cover  md:w-auto md:h-auto pr-8"
                 />
               </div>
 

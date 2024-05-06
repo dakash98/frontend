@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import myImage6 from './image6.jpg';
 import Joiningoptions from '../Joiningoptions';
 import { BreadcrumbBlogs } from '../Breadcrumbs';
+import { Helmet } from 'react-helmet';
 
 const Blog6 = () => {
   useEffect(() => {
@@ -11,6 +12,10 @@ const Blog6 = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Easily Crack Class 10 Examination with great revision and practice.</title>
+        <meta name="description" content="Unleash your full potential and conquer the Class 10th examination with a detailed understanding of topics and concepts." />
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

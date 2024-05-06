@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import myImage2 from './image2.jpg';
 import Joiningoptions from '../Joiningoptions';
 import { BreadcrumbBlogs } from '../Breadcrumbs';
+import { Helmet } from 'react-helmet';
 
 const Blog2 = () => {
   useEffect(() => {
@@ -11,6 +12,10 @@ const Blog2 = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>10th Maharashtra SSC Timetable 2024: Discover the Remarkable Secrets to Success</title>
+        <meta name="description" content="Get ready for the 10th Maharashtra SSC Exam Timetable 2024 and uncover remarkable secrets that will lead you to outstanding success." />
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import myImage4 from './image4.jpg';
 import Joiningoptions from '../Joiningoptions';
 import { BreadcrumbBlogs } from '../Breadcrumbs';
+import { Helmet } from 'react-helmet';
 
 const Blog4 = () => {
   useEffect(() => {
@@ -11,7 +12,10 @@ const Blog4 = () => {
   }, []);
   return (
     <div>
-
+      <Helmet>
+        <title>Surging Towards Success: Unleashing the Power of 10th for a Wonderful Life.</title>
+        <meta name="description" content="Unleash the true potential of the 10th exam and discover the previous year's question papers that will transform your life." />
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
