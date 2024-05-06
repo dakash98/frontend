@@ -15,6 +15,9 @@ function AboutUs() {
         <title>Providing Maharashtra 10th Board exam question papers.</title>
         <meta name="description" content="PadhaiPlanet is a platform that provides previous year's question papers for Maharashtra 10th SSC board exams. It mainly comprises question papers in English, Marathi, and Semi- English Mediums for 2018,2019,2020,2022,2023" />
       </Helmet>
+      <head>
+        <link rel="canonical" href="https://padhaiplanet.com/about-us" />
+      </head>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
