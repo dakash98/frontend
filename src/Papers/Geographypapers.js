@@ -140,6 +140,9 @@ function GeographyPapers() {
         <meta name="description" content="Prepare for your exam with our Geography question paper for the Maharashtra 10th SSC board. Prepare with the best resources and boost your chances of success in Maharashtra 10th SSC boards by practicing the previous year's question papers for 2018,2019,2020,2022,2023." />
         <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Geography question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
       </Helmet>
+      <head>
+        <link rel="canonical" href="https://padhaiplanet.com/geography-question-papers-10th-ssc" />
+      </head>
       <div>
         <div className="sticky flex top-0 z-10">
           <Navbar />

@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import myImage1 from './image1.jpg';
 import Joiningoptions from '../Joiningoptions';
 import { BreadcrumbBlogs } from '../Breadcrumbs';
+import { Helmet } from 'react-helmet';
 
 const Blog1 = () => {
   useEffect(() => {
@@ -11,6 +12,11 @@ const Blog1 = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>10th Board SSC Exam 2024  Journey Towards Success in 10th Board SSC Exam 2024 with all important set of question papers.</title>
+        <meta name="description" content="Get ready for a fascinating insight into the 10th Board SSC Exam 2024. Discover the journey towards success with valuable tips and tricks that will leave you well-prepared and confident with our new set of question papers." />
+      </Helmet>
+
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

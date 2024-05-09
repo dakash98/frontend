@@ -7,7 +7,7 @@ import LoginComponent from './LoginComponent'
 import StaticTag from "./StaticTag";
 
 function Loginpage() {
-   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   // const [name, setName] = useState("");
   // const [phoneNumber, setPhoneNumber] = useState("");
   // const [email, setEmail] = useState("");
@@ -87,11 +87,14 @@ function Loginpage() {
 
   return (
     <>
+      <head>
+        <link rel="canonical" href="https://padhaiplanet.com/login" />
+      </head>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
       <div className="mr-4 md:mr-[4%] lg:mr-[4%]">
-        <StaticTag/>
+        <StaticTag />
       </div>
       <div id="home">
         <BreadcrumbLogin />
@@ -99,7 +102,7 @@ function Loginpage() {
       <div id="profile" className="hidden">
         <BreadcrumbProfile />
       </div>
-      <LoginComponent/>
+      <LoginComponent />
       {/* <div className="flex flex-col md:flex-row ">
         {screenWidth >= 768 && (
           <img

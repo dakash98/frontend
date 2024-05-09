@@ -5,6 +5,7 @@ import myImage5 from './image5.jpg';
 import Joiningoptions from '../Joiningoptions';
 import Profilepage from '../Profilepage';
 import { BreadcrumbBlogs, BreadcrumbProfile, Breadcrumbhome } from '../Breadcrumbs';
+import { Helmet } from 'react-helmet';
 
 const Blog5 = () => {
   useEffect(() => {
@@ -12,7 +13,10 @@ const Blog5 = () => {
   }, []);
   return (
     <div>
-
+      <Helmet>
+        <title>Students should have Proper Planning for the 10th SSC Exam Maharashtra Board to secure good results.</title>
+        <meta name="description" content="Discover the remarkable importance of planning for the 10th SSC Exam Maharashtra Board. Learn practical tips and techniques mentioned in some of our question papers." />
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

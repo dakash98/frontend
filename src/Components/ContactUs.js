@@ -7,10 +7,18 @@ import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import ContactUsLink from "./ContactUsLink";
 import StaticTag from "./StaticTag";
+import { Helmet } from "react-helmet";
 
 function ContactUs() {
   return (
     <div>
+      <Helmet>
+        <title>Contact Us</title>
+        <meta name="description" content="PadhaiPlanet is a platform where students would get the 10th SSC Exam Maharashtra Board question papers. If anyone has any suggestions and needs to contact , one can check our Contact Us page." />
+      </Helmet>
+      <head>
+        <link rel="canonical" href="https://padhaiplanet.com/contact-us" />
+      </head>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

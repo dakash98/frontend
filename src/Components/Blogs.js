@@ -77,9 +77,12 @@ const Blogs = () => {
   };
 
 
-  
+
   return (
     <div>
+      <head>
+        <link rel="canonical" href="https://padhaiplanet.com/blogs" />
+      </head>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
@@ -138,9 +141,8 @@ const Blogs = () => {
                 <button
                   key={index}
                   onClick={() => paginate(index + 1)}
-                  className={`mx-2 px-4 py-2 rounded-full ${
-                    currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"
-                  }`}
+                  className={`mx-2 px-4 py-2 rounded-full ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"
+                    }`}
                 >
                   {index + 1}
                 </button>
