@@ -24,6 +24,10 @@ import Blog3 from './Components/Blogs/Blog3';
 import Blog4 from './Components/Blogs/Blog4';
 import Blog5 from './Components/Blogs/Blog5';
 import Blog6 from './Components/Blogs/Blog6';
+import Blog7 from './Components/Blogs/Blog7';
+import Blog8 from './Components/Blogs/Blog8';
+import Blog9 from './Components/Blogs/Blog9';
+import Blog10 from './Components/Blogs/Blog10';
 import ContactUs from './Components/ContactUs';
 import Loader from './Components/Loader';
 import Profilepage from './Components/Profilepage';
@@ -61,6 +65,10 @@ function App() {
           <Route path='/importance-of-10th' element={<Blog4 />} />
           <Route path='/importance-of-planning' element={<Blog5 />} />
           <Route path='/how-easy-is-it-to-crack-class-10-examination?' element={<Blog6 />} />
+          <Route path='/cbse-2023-results-and-2024-syllabus' element={<Blog7 />} />
+          <Route path='/a-reflection-and-plan-for-the-2024-syllabus-based-on-bihar-board-results-2023' element={<Blog8 />} />
+          <Route path='/a-comprehensive-analysis-of-the-10th-up-board-results-in-2023-introduction' element={<Blog9 />} />
+          <Route path='/maharashtra-board-sscand-hsc-results-2024-how-to-check-the-result' element={<Blog10 />} />
           <Route path='/login' element={<Profilepage />} />
           <Route path='/terms-&-conditions' element={<TermsNConditions/>}/>
           <Route path='/privacy-&-policy' element={<PrivacyNPolicy/>}/>
