@@ -19,6 +19,10 @@ const Blog10 = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>10th SSC Maharashtra board results and 12th HSC Maharashtra board results.</title>
+                <meta name="description" content=" SSC and HSC Maharashtra board results 2024 are out on May 11! Students can check 10th and 12th exam results online at mahresult.nic.in. See if you passed and view your marks now." />
+            </Helmet>
             <div className="sticky top-0 flex z-10">
                 <Navbar />
             </div>

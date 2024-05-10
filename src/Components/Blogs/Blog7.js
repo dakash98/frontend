@@ -19,6 +19,10 @@ const Blog7 = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Get overview of  CBSE 2024 results and 2024 Syllabus.</title>
+                <meta name="description" content="The CBSE 2024 results are out! Get all the details on the 2024 CBSE board exam results and find out how students across India performed. We also cover the new 2024 CBSE syllabus." />
+            </Helmet>
             <div className="sticky top-0 flex z-10">
                 <Navbar />
             </div>

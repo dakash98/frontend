@@ -19,6 +19,10 @@ const Blog9 = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Exploring the Depths: An In-Depth Examination of the 10th UP Board Results for 2024.</title>
+                <meta name="description" content="The 2024 10th UP Board results are finally out! Our in-depth analysis covers all the crucial aspects. Find out with our detailed breakdown of the highlights, trends and insights from the latest 10th results." />
+            </Helmet>
             <div className="sticky top-0 flex z-10">
                 <Navbar />
             </div>

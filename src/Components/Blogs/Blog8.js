@@ -19,6 +19,10 @@ const Blog8 = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>10th bihar board results and 12th bihar board results.</title>
+                <meta name="description" content="Bihar Board has announced the 2024 exam results! Check this post to get direct links to view your 10th Bihar board result 2024 and 12th Bihar board result 2024 marks online. It also offers key statistics and highlights of the results." />
+            </Helmet>
             <div className="sticky top-0 flex z-10">
                 <Navbar />
             </div>
