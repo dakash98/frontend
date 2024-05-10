@@ -65,7 +65,36 @@ const Blogs = () => {
       content:
         "How easy or hard it is to get good marks in any examination is purely based on consistency.",
     },
+    {
+      url: "/cbse-2023-results-and-2024-syllabus",
+      image: myImage7,
+      heading: "CBSE 2023 results and 2024 Syllabus",
+      content:
+        "CBSE Results 2023 The results of CBSE 2023 showed a significant growth in education across the nation",
+    },
+    {
+      url: "/a-reflection-and-plan-for-the-2024-syllabus-based-on-bihar-board-results-2023",
+      image: myImage7,
+      heading: " A Reflection and Plan for the 2024 Syllabus Based on Bihar Board Results 2023 ",
+      content:
+        "Millions of students across the state are influenced by the Bihar School Examination Board (BSEB)",
+    },
+    {
+      url: "/a-comprehensive-analysis-of-the-10th-up-board-results-in-2023-introduction",
+      image: myImage7,
+      heading: " A Comprehensive Analysis of the 10th UP Board Results in 2023 Introduction",
+      content:
+        "The Uttar Pradesh Leading group of Secondary School and Moderate Training, generally known as the UP Board",
+    },
+    {
+      url: "/maharashtra-board-sscand-hsc-results-2024-how-to-check-the-result",
+      image: myImage7,
+      heading: "Maharashtra Board SSC and HSC Results 2024: How to Check the result",
+      content:
+        "As the academic year comes to an end, Maharashtra students are eagerly waiting for the declaration of the SSC (10th)",
+    },
   ];
+
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
