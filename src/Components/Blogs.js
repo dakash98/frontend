@@ -12,6 +12,7 @@ import myImage5 from "./Blogs/image4.jpg";
 import myImage6 from "./Blogs/image5.jpg";
 import myImage7 from "./Blogs/image6.jpg";
 import StaticTag from "./StaticTag";
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   const navigate = useNavigate();
@@ -109,9 +110,9 @@ const Blogs = () => {
 
   return (
     <div>
-      <head>
+      <Helmet>
         <link rel="canonical" href="https://padhaiplanet.com/blogs" />
-      </head>
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>

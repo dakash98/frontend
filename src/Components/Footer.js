@@ -96,7 +96,6 @@ function Footer() {
 
                 <p class="mb-6 text-gray-400 sm:pr-8">
                   One vision, one mission, question papers at single station.
-                  One vision, one mission, question papers at single station.
                 </p>
 
                 {/* <!-- social - start --> */}

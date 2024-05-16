@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { BreadcrumbLogin, BreadcrumbProfile } from "./Breadcrumbs";
 import LoginComponent from './LoginComponent'
 import StaticTag from "./StaticTag";
+import { Helmet } from "react-helmet";
 
 function Loginpage() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -87,9 +88,9 @@ function Loginpage() {
 
   return (
     <>
-      <head>
+      <Helmet>
         <link rel="canonical" href="https://padhaiplanet.com/login" />
-      </head>
+      </Helmet>
       <div className="sticky top-0 flex z-10">
         <Navbar />
       </div>
