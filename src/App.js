@@ -43,18 +43,18 @@ function App() {
           <Route path='/loader' element={<Loader />} />
           <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<Loginpage />} />
-          <Route path='/history-and-political-science-question-papers-10th-ssc' element={<Historypapers />} />
-          <Route path='/english-question-papers-10th-ssc' element={<Englishpapers />} />
-          <Route path='/hindi-full-question-papers-10th-ssc' element={<HindiFullpapers />} />
-          <Route path='/hindi-half-question-papers-10th-ssc' element={<HindiHalfpapers />} />
-          <Route path='/sanskrit-full-question-papers-10th-ssc' element={<SanskritFullpapers />} />
-          <Route path='/sanskrit-half-question-papers-10th-ssc' element={<SanskritHalfpapers />} />
-          <Route path='/marathi-question-papers-10th-ssc' element={<Marathipapers />} />
-          <Route path='/geography-question-papers-10th-ssc' element={<Geographypapers />} />
-          <Route path='/math-1-question-papers-10th-ssc' element={<Math1papers />} />
-          <Route path='/math-2-question-papers-10th-ssc' element={<Math2papers />} />
-          <Route path='/science-1-question-papers-10th-ssc' element={<Science1 />} />
-          <Route path='/science-2-question-papers-10th-ssc' element={<Science2 />} />
+          <Route path='/maharashtra-board-history-and-political-science-question-papers-10th-ssc' element={<Historypapers />} />
+          <Route path='/maharashtra-board-english-question-papers-10th-ssc' element={<Englishpapers />} />
+          <Route path='/maharashtra-board-hindi-full-question-papers-10th-ssc' element={<HindiFullpapers />} />
+          <Route path='/maharashtra-board-hindi-half-question-papers-10th-ssc' element={<HindiHalfpapers />} />
+          <Route path='/maharashtra-board-sanskrit-full-question-papers-10th-ssc' element={<SanskritFullpapers />} />
+          <Route path='/maharashtra-board-sanskrit-half-question-papers-10th-ssc' element={<SanskritHalfpapers />} />
+          <Route path='/maharashtra-board-marathi-question-papers-10th-ssc' element={<Marathipapers />} />
+          <Route path='/maharashtra-board-geography-question-papers-10th-ssc' element={<Geographypapers />} />
+          <Route path='/maharashtra-board-math-1-question-papers-10th-ssc' element={<Math1papers />} />
+          <Route path='/maharashtra-board-math-2-question-papers-10th-ssc' element={<Math2papers />} />
+          <Route path='/maharashtra-board-science-1-question-papers-10th-ssc' element={<Science1 />} />
+          <Route path='/maharashtra-board-science-2-question-papers-10th-ssc' element={<Science2 />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/content' element={<Contentscreen />} />
