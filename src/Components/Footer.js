@@ -32,19 +32,19 @@ function Footer() {
 
   function handleClick(user_selected_option) {
     const page_mapping = {
-      english: "/english-question-papers-10th-ssc",
-      hindi_full: "/hindi-full-question-papers-10th-ssc",
-      hindi_half: "/hindi-half-question-papers-10th-ssc",
-      sanskrit_full: "/sanskrit-full-question-papers-10th-ssc",
-      sanskrit_half: "/sanskrit-half-question-papers-10th-ssc",
-      marathi: "/marathi-question-papers-10th-ssc",
+      english: "/maharashtra-board-english-question-papers-10th-ssc",
+      hindi_full: "/maharashtra-board-hindi-full-question-papers-10th-ssc",
+      hindi_half: "/maharashtra-board-hindi-half-question-papers-10th-ssc",
+      sanskrit_full: "/maharashtra-board-sanskrit-full-question-papers-10th-ssc",
+      sanskrit_half: "/maharashtra-board-sanskrit-half-question-papers-10th-ssc",
+      marathi: "/maharashtra-board-marathi-question-papers-10th-ssc",
       history_and_political_science:
-        "/history-and-political-science-question-papers-10th-ssc",
-      geography: "/geography-question-papers-10th-ssc",
-      math_1: "/math-1-question-papers-10th-ssc",
-      math_2: "/math-2-question-papers-10th-ssc",
-      science_1: "/science-1-question-papers-10th-ssc",
-      science_2: "/science-2-question-papers-10th-ssc",
+        "/maharashtra-board-history-and-political-science-question-papers-10th-ssc",
+      geography: "/maharashtra-board-geography-question-papers-10th-ssc",
+      math_1: "/maharashtra-board-math-1-question-papers-10th-ssc",
+      math_2: "/maharashtra-board-math-2-question-papers-10th-ssc",
+      science_1: "/maharashtra-board-science-1-question-papers-10th-ssc",
+      science_2: "/maharashtra-board-science-2-question-papers-10th-ssc",
     };
 
     navigate(page_mapping[user_selected_option]);

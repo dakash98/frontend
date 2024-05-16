@@ -140,7 +140,7 @@ function Math2Papers() {
         <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Mathematics 2 question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
       </Helmet>
       <head>
-        <link rel="canonical" href="https://padhaiplanet.com/math-2-question-papers-10th-ssc" />
+        <link rel="canonical" href="https://padhaiplanet.com/maharashtra-board-math-2-question-papers-10th-ssc" />
       </head>
       <div>
         <div className="sticky flex top-0 z-10">
