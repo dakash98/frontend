@@ -87,7 +87,7 @@ function Footer() {
                         <img src={logoo} alt="Logo" className="h-10 " />
                       </button>
                       <h1 className="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl">
-                        adhaiPlanet
+                        PadhaiPlanet
                       </h1>
                     </div>
                   </button>

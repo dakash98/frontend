@@ -49,7 +49,7 @@ function Navbar() {
       <div className="flex items-center">
         <button onClick={event => (redirectHome())}><img src={logoo} alt="Logo" className="h-20 " /></button>
         <h1 className="text-white sm:text-6xl text-3xl font-bold text-center justify-center">
-          adhaiPlanet
+          PadhaiPlanet
         </h1>
       </div>
       {/* Navigation Links for Wider Screens */}

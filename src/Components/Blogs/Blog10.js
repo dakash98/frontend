@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Navbar';
 import Footer from '../Footer';
-import myImage6 from './image6.jpg';
+import myImage10 from './image10.jpg';
 import Joiningoptions from '../Joiningoptions';
 import { BreadcrumbBlogs } from '../Breadcrumbs';
 import { Helmet } from 'react-helmet';
@@ -34,7 +34,7 @@ const Blog10 = () => {
                 <div className="p-4 md:p-8 lg:mb-10 flex items-center justify-center min-h-screen">
                     <div className="rounded-lg p-4 md:p-8 lg:px-24">
                         <img
-                            src={myImage6}
+                            src={myImage10}
                             alt="Description of the image"
                             className="w-full h-auto max-w-full rounded-lg"
                         />
