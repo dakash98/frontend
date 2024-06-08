@@ -8,7 +8,8 @@ import Joiningoptions from "../Components/Joiningoptions";
 import Exploremore from "../Components/Exploremore";
 import { useState, useEffect } from "react";
 import Contentscreen from "../Components/Contentscreen.js";
-import Loader from "../Components/Loader.js";
+// import Loader from "../Components/Loader.js";
+import HashLoader from "../Components/Loader.js";
 import { sleep, topFunction } from "../Global.js";
 import StaticTag from "../Components/StaticTag.js";
 import LoginComponent from "../Components/LoginComponent.js";
@@ -40,6 +41,7 @@ function EnglishPapers() {
       //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
       // localStorage.setItem("data_english_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
+      document.getElementById("cliploader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
       document.getElementById("footer").classList.remove("hidden");
@@ -243,7 +245,7 @@ function EnglishPapers() {
       </div>
 
       <div id="loader" className="absolute top-0 w-full h-[100%] z-10">
-        <Loader />
+        <HashLoader />
       </div>
     </div>
   );
