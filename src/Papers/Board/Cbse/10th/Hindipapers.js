@@ -1,142 +1,142 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "../../../../Components/Navbar.js";
+import Footer from "../../../../Components/Footer.js";
 import {
   BreadcrumbPages,
-} from "../Components/Breadcrumbs";
-import Joiningoptions from "../Components/Joiningoptions";
-import Exploremore from "../Components/Exploremore";
+} from "../../../../Components/Breadcrumbs.js";
+import Joiningoptions from "../../../../Components/Joiningoptions.js";
+import Exploremore from "../../../../Components/Exploremore.js";
 import { useState, useEffect } from "react";
-import Contentscreen from "../Components/Contentscreen.js";
-import Loader from "../Components/Loader.js";
-import { sleep, topFunction } from "../Global.js";
-import StaticTag from "../Components/StaticTag.js";
-import LoginComponent from "../Components/LoginComponent.js";
+import Contentscreen from "../../../../Components/Contentscreen.js";
+import Loader from "../../../../Components/Loader.js";
+import { sleep, topFunction } from "../../../../Global.js";
+import StaticTag from "../../../../Components/StaticTag.js";
+import LoginComponent from "../../../../Components/LoginComponent.js";
 import { Helmet } from 'react-helmet';
 
-function HindiFullPapers() {
+function HindiPapers() {
 
-  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+//   const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=hindi_full&medium=" + sel_med + "&standard=10";
+//   const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=hindi_full&medium=" + sel_med + "&standard=10";
 
-  //For fetching data
-  const API_hisory_paper = pre_API;
+//   //For fetching data
+//   const API_hisory_paper = pre_API;
 
-  //API data hooks
-  const [que_data, setQue_data] = useState([]);
+//   //API data hooks
+//   const [que_data, setQue_data] = useState([]);
 
-  const [data, setData] = useState([]);
+//   const [data, setData] = useState([]);
 
-  //Assigning
-  const fetchdata = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      await sleep(3000);
-      setData(data.data);
-      //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
-      // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
-      document.getElementById("loader").classList.add("hidden");
-      document.getElementById("parent").classList.remove("hidden");
-      document.getElementById("explore").classList.remove("hidden");
-      document.getElementById("footer").classList.remove("hidden");
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-
-  useEffect(() => {
-    topFunction();
-    fetchdata(API_hisory_paper);
-
-    //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
-
-    // const timestamp = localStorage.getItem('timestamp_hindi_full_' + localStorage.getItem('medium'));
-    // const data_hindi_full = localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium'));
-
-    // if (timestamp && data_hindi_full) {
-
-    //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
-
-    //   if (check) {
-
-    //     localStorage.removeItem('timestamp_hindi_full_' + localStorage.getItem('medium'));
-    //     localStorage.removeItem('data_hindi_full_' + localStorage.getItem('medium'));
-
-    //     //Adding timestamp
-    //     const date = new Date().setDate(new Date().getDate() + 6);
-
-    //     // console.log(date);
-    //     // console.log(new Date(date));
-
-    //     localStorage.setItem('timestamp_hindi_full_' + localStorage.getItem('medium'), JSON.stringify({
-    //       value: "string",
-    //       expDate: date,
-    //     }))
-
-    //     fetchdata(API_hisory_paper);
-    //   } else if(localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium'))) {
-    //     const object = JSON.parse(localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium')))
-    //     setData(object.data)
-    //     document.getElementById("loader").classList.add("hidden");
-    //     document.getElementById("parent").classList.remove("hidden");
-    //     document.getElementById("explore").classList.remove("hidden");
-    //     document.getElementById("footer").classList.remove("hidden");
-    //   }
-
-    // } else {
-
-    //   //Adding timestamp
-    //   const date = new Date().setDate(new Date().getDate() + 6);
-
-    //   // console.log(date);
-    //   // console.log(new Date(date));
-
-    //   localStorage.setItem('timestamp_hindi_full_' + localStorage.getItem('medium'), JSON.stringify({
-    //     value: "string",
-    //     expDate: date,
-    //   }))
-
-    //   fetchdata(API_hisory_paper);
-    // }
-
-  }, []);
-
-  const data_imp = [];
-  for (var j = 0; j < data["length"]; j++) {
-    data_imp.push(data[j]);
-  }
+//   //Assigning
+//   const fetchdata = async (url) => {
+//     try {
+//       const res = await fetch(url);
+//       const data = await res.json();
+//       await sleep(3000);
+//       setData(data.data);
+//       //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
+//       // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
+//       document.getElementById("loader").classList.add("hidden");
+//       document.getElementById("parent").classList.remove("hidden");
+//       document.getElementById("explore").classList.remove("hidden");
+//       document.getElementById("footer").classList.remove("hidden");
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   };
 
 
-  function HandleClick(paper_no, year) {
-    topFunction();
-    if (!localStorage.getItem("user_id")) {
-      document.getElementById("forms_window").classList.remove("hidden");
-      document.getElementById("forms_window").classList.add("opacity-90");
-    } else {
-      document.getElementById("que_paper_screen").classList.remove("hidden");
-      setQue_data(data_imp[year].papers[paper_no].question_url);
-      console.log("year: " + year + "paper_number" + paper_no);
-    }
-  }
+//   useEffect(() => {
+//     topFunction();
+//     fetchdata(API_hisory_paper);
 
-  function handleSolution(paper_no, year) {
-    if (!localStorage.getItem("user_id")) {
-      document.getElementById("forms_window").classList.remove("hidden");
-      document.getElementById("forms_window").classList.add("opacity-90");
-    } else {
-      window.open(data_imp[year].papers[paper_no].solution_url);
-      console.log("year: " + year + "paper_number" + paper_no);
-    }
-  }
+//     //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
+
+//     // const timestamp = localStorage.getItem('timestamp_hindi_full_' + localStorage.getItem('medium'));
+//     // const data_hindi_full = localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium'));
+
+//     // if (timestamp && data_hindi_full) {
+
+//     //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+
+//     //   if (check) {
+
+//     //     localStorage.removeItem('timestamp_hindi_full_' + localStorage.getItem('medium'));
+//     //     localStorage.removeItem('data_hindi_full_' + localStorage.getItem('medium'));
+
+//     //     //Adding timestamp
+//     //     const date = new Date().setDate(new Date().getDate() + 6);
+
+//     //     // console.log(date);
+//     //     // console.log(new Date(date));
+
+//     //     localStorage.setItem('timestamp_hindi_full_' + localStorage.getItem('medium'), JSON.stringify({
+//     //       value: "string",
+//     //       expDate: date,
+//     //     }))
+
+//     //     fetchdata(API_hisory_paper);
+//     //   } else if(localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium'))) {
+//     //     const object = JSON.parse(localStorage.getItem('data_hindi_full_' + localStorage.getItem('medium')))
+//     //     setData(object.data)
+//     //     document.getElementById("loader").classList.add("hidden");
+//     //     document.getElementById("parent").classList.remove("hidden");
+//     //     document.getElementById("explore").classList.remove("hidden");
+//     //     document.getElementById("footer").classList.remove("hidden");
+//     //   }
+
+//     // } else {
+
+//     //   //Adding timestamp
+//     //   const date = new Date().setDate(new Date().getDate() + 6);
+
+//     //   // console.log(date);
+//     //   // console.log(new Date(date));
+
+//     //   localStorage.setItem('timestamp_hindi_full_' + localStorage.getItem('medium'), JSON.stringify({
+//     //     value: "string",
+//     //     expDate: date,
+//     //   }))
+
+//     //   fetchdata(API_hisory_paper);
+//     // }
+
+//   }, []);
+
+//   const data_imp = [];
+//   for (var j = 0; j < data["length"]; j++) {
+//     data_imp.push(data[j]);
+//   }
+
+
+//   function HandleClick(paper_no, year) {
+//     topFunction();
+//     if (!localStorage.getItem("user_id")) {
+//       document.getElementById("forms_window").classList.remove("hidden");
+//       document.getElementById("forms_window").classList.add("opacity-90");
+//     } else {
+//       document.getElementById("que_paper_screen").classList.remove("hidden");
+//       setQue_data(data_imp[year].papers[paper_no].question_url);
+//       console.log("year: " + year + "paper_number" + paper_no);
+//     }
+//   }
+
+//   function handleSolution(paper_no, year) {
+//     if (!localStorage.getItem("user_id")) {
+//       document.getElementById("forms_window").classList.remove("hidden");
+//       document.getElementById("forms_window").classList.add("opacity-90");
+//     } else {
+//       window.open(data_imp[year].papers[paper_no].solution_url);
+//       console.log("year: " + year + "paper_number" + paper_no);
+//     }
+//   }
 
   return (
     <div className="relative z-0">
       <Helmet>
         <title>Discover English Medium, Marathi Medium, and Sem-English Medium Maharashtra 10th SSC Board History Question Paper for 2018,2019,2020,2022,2023.</title>
-        <link rel="canonical" href="https://padhaiplanet.com/maharashtra-board-hindi-full-question-papers-10th-ssc" />
+        <link rel="canonical" href="https://padhaiplanet.com/cbse-board-hindi-question-papers-10th" />
         <meta name="description" content="Prepare for your exam with our Hindi Full question paper for the Maharashtra 10th SSC board. Prepare with the best resources and boost your chances of success in Maharashtra 10th SSC boards by practicing the previous year's question papers for 2018,2019,2020,2022,2023." />
         <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Hindi Full question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
       </Helmet>
@@ -240,4 +240,4 @@ function HindiFullPapers() {
   );
 }
 
-export default HindiFullPapers;
+export default HindiPapers;
