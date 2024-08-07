@@ -16,40 +16,56 @@ import { Helmet } from 'react-helmet';
 
 function PunjabiPapers() {
 
-//   const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
+  const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
 
-//   const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=hindi_full&medium=" + sel_med + "&standard=10";
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=hindi_full&medium=" + sel_med + "&standard=10";
 
-//   //For fetching data
-//   const API_hisory_paper = pre_API;
+  //For fetching data
+  const API_hisory_paper = pre_API;
 
-//   //API data hooks
-//   const [que_data, setQue_data] = useState([]);
+  //API data hooks
+  const [que_data, setQue_data] = useState([]);
 
-//   const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-//   //Assigning
-//   const fetchdata = async (url) => {
-//     try {
-//       const res = await fetch(url);
-//       const data = await res.json();
-//       await sleep(3000);
-//       setData(data.data);
-//       //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
-//       // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
-//       document.getElementById("loader").classList.add("hidden");
-//       document.getElementById("parent").classList.remove("hidden");
-//       document.getElementById("explore").classList.remove("hidden");
-//       document.getElementById("footer").classList.remove("hidden");
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   };
+  //Assigning
+  const fetchdata = async (url) => {
+    try {
+      // const res = await fetch(url);
+      // const data = await res.json();
+      // await sleep(3000);
+
+      const data = {
+        "data": [
+          {
+              "year": 2024,
+              "papers": [
+                  {
+                      "id": 236,
+                      "name": "punjabi_2024_delhi.pdf",
+                      "question_url": "https://padhai-planet.s3.ap-south-1.amazonaws.com/Cbse/Delhi%20region/punjabi_2024_delhi.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBkaCmFwLXNvdXRoLTEiRzBFAiAPIEMUv13HlwYmtZeXTT8mjnCVCCg6u5HW2RRy9p8MvAIhALZ1mY8CS%2B%2B92Qh5nCcIeVnVcHLtdYw7P9F4zpzrHb5lKugCCBIQABoMNTkwMTg0MTA4ODcxIgxcYkx2P4RfCp5bfvYqxQIiLO76eEkjxZk5T9GGeb8kNQO94G1LAZd6neWxJbZE2ym142QRb5p%2FHhlsw%2BCrypwEkIRMfd6TlaUQTVeLda8n0iuhMBR7L%2F4QWMSvjsePQoM0S%2B6SKMQc6HlG%2BAbTdrn67bXU%2FGzBbYMQ%2FE9hpqo%2BCrTMXKRKNDkmaxn0gJv8fpwWG8PKtmJ%2FuZO5DIEBfBj8ol2zYsOxcBBJusFw%2Bt4SI26wS1ZWXU364%2BAEjPdXrs3OLJGiiKQFQL47nDJMe4UD%2BNrMKHD9iihwuLkJHhSXtQG1tbv9P6n9wKHJL8mhkO35%2FJeTD%2FdYjchFRevSjRIP%2BJ0e%2FutxW28NSAdxHIidPNcX4e16IWtMbjcYjwqJFtOps3FFNzcFN3leE71WciKNdm60VstJNnXd%2FleYy7no2WEjo2xS9JQq8mZd6%2BNaqFVDzM%2F1MKfgzLUGOrMC%2Ffgpl5daS%2BJud%2FhUHehhcOyqKLGF6%2Bbym6fP5n3vkHWy6%2FPacFv%2F%2FN8sesZgAl2ktJqUmfITbl2cHLbO7dhSIhZsgI2y7eIDd6MhhznB9a6CvVtNYQVTQy1qcg3xk%2BBpX9%2F8U9iell8v5adsyc4r4Wmcg91%2FxK58GgYTFb951J1RweHty1XDYmxMR6UmHBjyl73hFdU%2FCfxwgsCJy7friqQvts5O2BUX1D6jMq%2BckT8iylfI3qS30OVRZtd7k8hheFUeOsMLjxD%2BB20cS%2BRl82phfFa%2BDpTZ994TfQZQYsutdBUJuqB0luO3N3pVOXdBTIBo2AxX2aw4K%2B%2FFqHQirqj9uDhYs%2FXunFi9iLXZ95PaA%2Fwi61jM7OWt940L%2BHdEtMV1o%2B5ge%2BsuUA8XGMo6sa9Ywg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240807T170345Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAYS2NW2NDYNTBLSV6%2F20240807%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=744dc76208d1aaaa1c5da2aaefc0052c1a014588c2e8b10364f894fcc344711f",
+                      "solution_url": ""
+                  }
+              ]
+          }
+      ]
+      }
+      setData(data.data);
+      //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
+      // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
+      document.getElementById("loader").classList.add("hidden");
+      document.getElementById("parent").classList.remove("hidden");
+      document.getElementById("explore").classList.remove("hidden");
+      document.getElementById("footer").classList.remove("hidden");
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
 
-//   useEffect(() => {
-//     topFunction();
-//     fetchdata(API_hisory_paper);
+  useEffect(() => {
+    topFunction();
+    fetchdata(API_hisory_paper);
 
 //     //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
 
@@ -102,35 +118,35 @@ function PunjabiPapers() {
 //     //   fetchdata(API_hisory_paper);
 //     // }
 
-//   }, []);
+  }, []);
 
-//   const data_imp = [];
-//   for (var j = 0; j < data["length"]; j++) {
-//     data_imp.push(data[j]);
-//   }
+  const data_imp = [];
+  for (var j = 0; j < data["length"]; j++) {
+    data_imp.push(data[j]);
+  }
 
 
-//   function HandleClick(paper_no, year) {
-//     topFunction();
-//     if (!localStorage.getItem("user_id")) {
-//       document.getElementById("forms_window").classList.remove("hidden");
-//       document.getElementById("forms_window").classList.add("opacity-90");
-//     } else {
-//       document.getElementById("que_paper_screen").classList.remove("hidden");
-//       setQue_data(data_imp[year].papers[paper_no].question_url);
-//       console.log("year: " + year + "paper_number" + paper_no);
-//     }
-//   }
+  function HandleClick(paper_no, year) {
+    topFunction();
+    if (!localStorage.getItem("user_id")) {
+      document.getElementById("forms_window").classList.remove("hidden");
+      document.getElementById("forms_window").classList.add("opacity-90");
+    } else {
+      document.getElementById("que_paper_screen").classList.remove("hidden");
+      setQue_data(data_imp[year].papers[paper_no].question_url);
+      console.log("year: " + year + "paper_number" + paper_no);
+    }
+  }
 
-//   function handleSolution(paper_no, year) {
-//     if (!localStorage.getItem("user_id")) {
-//       document.getElementById("forms_window").classList.remove("hidden");
-//       document.getElementById("forms_window").classList.add("opacity-90");
-//     } else {
-//       window.open(data_imp[year].papers[paper_no].solution_url);
-//       console.log("year: " + year + "paper_number" + paper_no);
-//     }
-//   }
+  function handleSolution(paper_no, year) {
+    if (!localStorage.getItem("user_id")) {
+      document.getElementById("forms_window").classList.remove("hidden");
+      document.getElementById("forms_window").classList.add("opacity-90");
+    } else {
+      window.open(data_imp[year].papers[paper_no].solution_url);
+      console.log("year: " + year + "paper_number" + paper_no);
+    }
+  }
 
   return (
     <div className="relative z-0">
