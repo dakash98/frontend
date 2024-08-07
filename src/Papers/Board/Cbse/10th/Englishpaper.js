@@ -29,9 +29,25 @@ function EnglishPapers() {
   //Assigning
   const fetchdata = async (url) => {
     try {
-      const res = await fetch(url);
-      const data = await res.json();
-      await sleep(3000);
+      // const res = await fetch(url);
+      // const data = await res.json();
+      // await sleep(3000);
+
+      const data = {
+        "data": [
+          {
+              "year": 2024,
+              "papers": [
+                  {
+                      "id": 232,
+                      "name": "english_2024_delhi.pdf",
+                      "question_url": "https://padhai-planet.s3.ap-south-1.amazonaws.com/Cbse/Delhi%20region/english_2024_delhi.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBkaCmFwLXNvdXRoLTEiRzBFAiAPIEMUv13HlwYmtZeXTT8mjnCVCCg6u5HW2RRy9p8MvAIhALZ1mY8CS%2B%2B92Qh5nCcIeVnVcHLtdYw7P9F4zpzrHb5lKugCCBIQABoMNTkwMTg0MTA4ODcxIgxcYkx2P4RfCp5bfvYqxQIiLO76eEkjxZk5T9GGeb8kNQO94G1LAZd6neWxJbZE2ym142QRb5p%2FHhlsw%2BCrypwEkIRMfd6TlaUQTVeLda8n0iuhMBR7L%2F4QWMSvjsePQoM0S%2B6SKMQc6HlG%2BAbTdrn67bXU%2FGzBbYMQ%2FE9hpqo%2BCrTMXKRKNDkmaxn0gJv8fpwWG8PKtmJ%2FuZO5DIEBfBj8ol2zYsOxcBBJusFw%2Bt4SI26wS1ZWXU364%2BAEjPdXrs3OLJGiiKQFQL47nDJMe4UD%2BNrMKHD9iihwuLkJHhSXtQG1tbv9P6n9wKHJL8mhkO35%2FJeTD%2FdYjchFRevSjRIP%2BJ0e%2FutxW28NSAdxHIidPNcX4e16IWtMbjcYjwqJFtOps3FFNzcFN3leE71WciKNdm60VstJNnXd%2FleYy7no2WEjo2xS9JQq8mZd6%2BNaqFVDzM%2F1MKfgzLUGOrMC%2Ffgpl5daS%2BJud%2FhUHehhcOyqKLGF6%2Bbym6fP5n3vkHWy6%2FPacFv%2F%2FN8sesZgAl2ktJqUmfITbl2cHLbO7dhSIhZsgI2y7eIDd6MhhznB9a6CvVtNYQVTQy1qcg3xk%2BBpX9%2F8U9iell8v5adsyc4r4Wmcg91%2FxK58GgYTFb951J1RweHty1XDYmxMR6UmHBjyl73hFdU%2FCfxwgsCJy7friqQvts5O2BUX1D6jMq%2BckT8iylfI3qS30OVRZtd7k8hheFUeOsMLjxD%2BB20cS%2BRl82phfFa%2BDpTZ994TfQZQYsutdBUJuqB0luO3N3pVOXdBTIBo2AxX2aw4K%2B%2FFqHQirqj9uDhYs%2FXunFi9iLXZ95PaA%2Fwi61jM7OWt940L%2BHdEtMV1o%2B5ge%2BsuUA8XGMo6sa9Ywg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240807T151406Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAYS2NW2NDYNTBLSV6%2F20240807%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=67f5d7d1d82f61baa03df492e7e0500b4c602a2001c6de6ab57778929ca1f362",
+                      "solution_url": ""
+                  }
+              ]
+          }
+      ]
+      }
       setData(data.data);
       //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
       // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
