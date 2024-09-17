@@ -12,7 +12,7 @@ import StaticTag from "../../../../Components/StaticTag.js";
 import LoginComponent from "../../../../Components/LoginComponent.js";
 import { Helmet } from 'react-helmet';
 
-function EnglishPapers() {
+function EnglishPaper() {
 
   const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
 
@@ -254,4 +254,4 @@ function EnglishPapers() {
   );
 }
 
-export default EnglishPapers;
+export default EnglishPaper;

@@ -18,6 +18,13 @@ import Math1papers from '../src/Papers/Board/Maharashtra/10th/Math1papers';
 import Math2papers from '../src/Papers/Board/Maharashtra/10th/Math2papers';
 import Science1 from '../src/Papers/Board/Maharashtra/10th/Science1';
 import Science2 from '../src/Papers/Board/Maharashtra/10th/Science2';
+import EnglishPaper from './Papers/Board/Cbse/10th/Englishpaper';
+import HindiPapers from './Papers/Board/Cbse/10th/Hindipapers';
+import MathPapers from './Papers/Board/Cbse/10th/Mathematics';
+import PunjabiPapers from './Papers/Board/Cbse/10th/PunjabiPapers';
+import SanskritPapers from './Papers/Board/Cbse/10th/SanskritPapers';
+import SciencePapers from './Papers/Board/Cbse/10th/SciencePapers';
+import SocialSciencePapers from './Papers/Board/Cbse/10th/SocailSciencePapers';
 import Blog1 from './Components/Blogs/Blog1';
 import Blog2 from './Components/Blogs/Blog2';
 import Blog3 from './Components/Blogs/Blog3';
@@ -55,6 +62,13 @@ function App() {
           <Route path='/maharashtra-board-math-2-question-papers-10th-ssc' element={<Math2papers />} />
           <Route path='/maharashtra-board-science-1-question-papers-10th-ssc' element={<Science1 />} />
           <Route path='/maharashtra-board-science-2-question-papers-10th-ssc' element={<Science2 />} />
+          <Route path='/cbse-board-english-question-papers-10th' element={<EnglishPaper />}/>
+          <Route path='/cbse-board-hindi-question-papers-10th' element={<HindiPapers />}/>
+          <Route path='/cbse-board-Mathematics-question-papers-10th' element={<MathPapers />}/>
+          <Route path='/cbse-board-punjabi-question-papers-10th' element={<PunjabiPapers />}/>
+          <Route path='/cbse-board-sanskrit-question-papers-10th' element={<SanskritPapers />}/>
+          <Route path='/cbse-board-science-question-papers-10th' element={<SciencePapers />}/>
+          <Route path='/cbse-board-socialscience-question-papers-10th' element={<SocialSciencePapers />}/>
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/content' element={<Contentscreen />} />
