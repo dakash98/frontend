@@ -1,28 +1,28 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "../../../../Components/Navbar.js";
+import Footer from "../../../../Components/Footer.js";
 import {
   BreadcrumbPages,
-} from "../Components/Breadcrumbs";
-import Joiningoptions from "../Components/Joiningoptions";
-import Exploremore from "../Components/Exploremore";
+} from "../../../../Components/Breadcrumbs.js";
+import Joiningoptions from "../../../../Components/Joiningoptions.js";
+import Exploremore from "../../../../Components/Exploremore.js";
 import { useState, useEffect } from "react";
-import Contentscreen from "../Components/Contentscreen.js";
-import Loader from "../Components/Loader.js";
-import { sleep, topFunction } from "../Global.js";
-import StaticTag from "../Components/StaticTag.js";
-import LoginComponent from "../Components/LoginComponent.js";
+import Contentscreen from "../../../../Components/Contentscreen.js";
+import Loader from "../../../../Components/Loader.js";
+import { sleep, topFunction } from "../../../../Global.js";
+import StaticTag from "../../../../Components/StaticTag.js";
+import LoginComponent from "../../../../Components/LoginComponent.js";
 import { Helmet } from 'react-helmet';
 
-function Math2Papers() {
+function SciencePapers() {
 
   const sel_med = localStorage.getItem('medium') ? localStorage.getItem('medium') : "marathi";
 
-  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=math_2&medium=" + sel_med + "&standard=10";
+  const pre_API = "https://padhaiplanet.com/api/v1/get-question?subject=science_1&medium=" + sel_med + "&standard=10";
 
   //For fetching data
-  const API_hisory_paper =
-    pre_API;
+  const API_hisory_paper = pre_API;
+
 
   //API data hooks
   const [que_data, setQue_data] = useState([]);
@@ -32,12 +32,28 @@ function Math2Papers() {
   //Assigning
   const fetchdata = async (url) => {
     try {
-      const res = await fetch(url);
-      const data = await res.json();
-      await sleep(3000);
+      // const res = await fetch(url);
+      // const data = await res.json();
+      // await sleep(3000);
+
+      const data = {
+        "data": [
+          {
+              "year": 2024,
+              "papers": [
+                  {
+                      "id": 238,
+                      "name": "science_2024_delhi.pdf",
+                      "question_url": "https://padhai-planet.s3.ap-south-1.amazonaws.com/Cbse/Delhi%20region/science_2024_delhi.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBkaCmFwLXNvdXRoLTEiRzBFAiAPIEMUv13HlwYmtZeXTT8mjnCVCCg6u5HW2RRy9p8MvAIhALZ1mY8CS%2B%2B92Qh5nCcIeVnVcHLtdYw7P9F4zpzrHb5lKugCCBIQABoMNTkwMTg0MTA4ODcxIgxcYkx2P4RfCp5bfvYqxQIiLO76eEkjxZk5T9GGeb8kNQO94G1LAZd6neWxJbZE2ym142QRb5p%2FHhlsw%2BCrypwEkIRMfd6TlaUQTVeLda8n0iuhMBR7L%2F4QWMSvjsePQoM0S%2B6SKMQc6HlG%2BAbTdrn67bXU%2FGzBbYMQ%2FE9hpqo%2BCrTMXKRKNDkmaxn0gJv8fpwWG8PKtmJ%2FuZO5DIEBfBj8ol2zYsOxcBBJusFw%2Bt4SI26wS1ZWXU364%2BAEjPdXrs3OLJGiiKQFQL47nDJMe4UD%2BNrMKHD9iihwuLkJHhSXtQG1tbv9P6n9wKHJL8mhkO35%2FJeTD%2FdYjchFRevSjRIP%2BJ0e%2FutxW28NSAdxHIidPNcX4e16IWtMbjcYjwqJFtOps3FFNzcFN3leE71WciKNdm60VstJNnXd%2FleYy7no2WEjo2xS9JQq8mZd6%2BNaqFVDzM%2F1MKfgzLUGOrMC%2Ffgpl5daS%2BJud%2FhUHehhcOyqKLGF6%2Bbym6fP5n3vkHWy6%2FPacFv%2F%2FN8sesZgAl2ktJqUmfITbl2cHLbO7dhSIhZsgI2y7eIDd6MhhznB9a6CvVtNYQVTQy1qcg3xk%2BBpX9%2F8U9iell8v5adsyc4r4Wmcg91%2FxK58GgYTFb951J1RweHty1XDYmxMR6UmHBjyl73hFdU%2FCfxwgsCJy7friqQvts5O2BUX1D6jMq%2BckT8iylfI3qS30OVRZtd7k8hheFUeOsMLjxD%2BB20cS%2BRl82phfFa%2BDpTZ994TfQZQYsutdBUJuqB0luO3N3pVOXdBTIBo2AxX2aw4K%2B%2FFqHQirqj9uDhYs%2FXunFi9iLXZ95PaA%2Fwi61jM7OWt940L%2BHdEtMV1o%2B5ge%2BsuUA8XGMo6sa9Ywg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240807T171423Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAYS2NW2NDYNTBLSV6%2F20240807%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=4bba7c35159bbde4c875795f0dbf0f22891100dca14307a18259ea93101bd978",
+                      "solution_url": ""
+                  }
+              ]
+          }
+      ]
+      }
       setData(data.data);
       //⚠️⚠️⚠️ Do not remove below line!!⚠️⚠️⚠️
-      // localStorage.setItem("data_math_2_" + localStorage.getItem('medium'), JSON.stringify(data));
+      // localStorage.setItem("data_hindi_full_" + localStorage.getItem('medium'), JSON.stringify(data));
       document.getElementById("loader").classList.add("hidden");
       document.getElementById("parent").classList.remove("hidden");
       document.getElementById("explore").classList.remove("hidden");
@@ -52,56 +68,56 @@ function Math2Papers() {
     topFunction();
     fetchdata(API_hisory_paper);
 
-    //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
+//     //⚠️⚠️⚠️ Below commented code can be fixed. Do not remove!!⚠️⚠️⚠️
 
-    // const timestamp = localStorage.getItem('timestamp_math_2_' + localStorage.getItem('medium'));
-    // const data_math_2 = localStorage.getItem('data_math_2_' + localStorage.getItem('medium'));
+//     // const timestamp = localStorage.getItem('timestamp_science_1_' + localStorage.getItem('medium'));
+//     // const data_science_1 = localStorage.getItem('data_science_1_' + localStorage.getItem('medium'));
 
-    // if (timestamp &&  data_math_2) {
+//     // if (timestamp && data_science_1) {
 
-    //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
+//     //   const check = (new Date()).getDate() > JSON.parse(timestamp).expDate;
 
-    //   if (check) {
+//     //   if (check) {
 
-    //     localStorage.removeItem('timestamp_math_2_' + localStorage.getItem('medium'));
-    //     localStorage.removeItem('data_math_2_' + localStorage.getItem('medium'));
+//     //     localStorage.removeItem('timestamp_science_1_' + localStorage.getItem('medium'));
+//     //     localStorage.removeItem('data_science_1_' + localStorage.getItem('medium'));
 
-    //     //Adding timestamp
-    //     const date = new Date().setDate(new Date().getDate() + 6);
+//     //     //Adding timestamp
+//     //     const date = new Date().setDate(new Date().getDate() + 6);
 
-    //     // console.log(date);
-    //     // console.log(new Date(date));
+//     //     // console.log(date);
+//     //     // console.log(new Date(date));
 
-    //     localStorage.setItem('timestamp_math_2_' + localStorage.getItem('medium'), JSON.stringify({
-    //       value: "string",
-    //       expDate: date,
-    //     }))
+//     //     localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
+//     //       value: "string",
+//     //       expDate: date,
+//     //     }))
 
-    //     fetchdata(API_hisory_paper);
-    //   } else if(localStorage.getItem('data_math_2_' + localStorage.getItem('medium'))) {
-    //     const object = JSON.parse(localStorage.getItem('data_math_2_' + localStorage.getItem('medium')))
-    //     setData(object.data)
-    //     document.getElementById("loader").classList.add("hidden");
-    //     document.getElementById("parent").classList.remove("hidden");
-    //     document.getElementById("explore").classList.remove("hidden");
-    //     document.getElementById("footer").classList.remove("hidden");
-    //   }
+//     //     fetchdata(API_hisory_paper);
+//     //   } else if(localStorage.getItem('data_science_1_' + localStorage.getItem('medium'))) {
+//     //     const object = JSON.parse(localStorage.getItem('data_science_1_' + localStorage.getItem('medium')))
+//     //     setData(object.data)
+//     //     document.getElementById("loader").classList.add("hidden");
+//     //     document.getElementById("parent").classList.remove("hidden");
+//     //     document.getElementById("explore").classList.remove("hidden");
+//     //     document.getElementById("footer").classList.remove("hidden");
+//     //   }
 
-    // } else {
+//     // } else {
 
-    //   //Adding timestamp
-    //   const date = new Date().setDate(new Date().getDate() + 6);
+//     //   //Adding timestamp
+//     //   const date = new Date().setDate(new Date().getDate() + 6);
 
-    //   // console.log(date);
-    //   // console.log(new Date(date));
+//     //   // console.log(date);
+//     //   // console.log(new Date(date));
 
-    //   localStorage.setItem('timestamp_math_2_' + localStorage.getItem('medium'), JSON.stringify({
-    //     value: "string",
-    //     expDate: date,
-    //   }))
+//     //   localStorage.setItem('timestamp_science_1_' + localStorage.getItem('medium'), JSON.stringify({
+//     //     value: "string",
+//     //     expDate: date,
+//     //   }))
 
-    //   fetchdata(API_hisory_paper);
-    // }
+//     //   fetchdata(API_hisory_paper);
+//     // }
 
   }, []);
 
@@ -136,9 +152,9 @@ function Math2Papers() {
     <div className="relative z-0">
       <Helmet>
         <title>Discover English Medium, Marathi Medium, and Sem-English Medium Maharashtra 10th SSC Board History Question Paper for 2018,2019,2020,2022,2023.</title>
-        <link rel="canonical" href="https://padhaiplanet.com/maharashtra-board-math-2-question-papers-10th-ssc" />
-        <meta name="description" content="Prepare for your exam with our Mathematics 2 question paper for the Maharashtra 10th SSC board. Prepare with the best resources and boost your chances of success in Maharashtra 10th SSC boards by practicing the previous year's question papers for 2018,2019,2020,2022,2023." />
-        <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Mathematics 2 question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
+        <link rel="canonical" href="https://padhaiplanet.com/cbse-board-science-question-papers-10th" />
+        <meta name="description" content="Prepare for your exam with our Science 1 question paper for the Maharashtra 10th SSC board. Prepare with the best resources and boost your chances of success in Maharashtra 10th SSC boards by practicing the previous year's question papers for 2018,2019,2020,2022,2023." />
+        <meta name="keywords" content="10th SSC Maharashtra board question papers, Last 5 years question papers, Class 10 th Maharashtra board Science 1 question paper and Solutions., Question paper pdf., 10th Standard Board exam., Maharashtra Board questions paper all classes., Maharashtra Board Question and Solutions." />
       </Helmet>
       
       <div>
@@ -149,7 +165,7 @@ function Math2Papers() {
           <StaticTag />
         </div>
         <div className="lg:px-8 md:px-6 sm:mx-4">
-          <BreadcrumbPages sub={"Mathematics 2"} />
+          <BreadcrumbPages sub={"Science and Technology 1"} />
         </div>
         <div id="parent" className="relative">
           <div id="go" className=" top-0 w-full mt-[50px]">
@@ -157,7 +173,7 @@ function Math2Papers() {
             <div className="pb-[5%]">
               {/* <h1 className="xl:ml-[25%] lg:ml-[80%] md:ml-[25%] ml-[30%] xl:mb-[0%] lg:mb-[0%] md:mb-[0%] mb-[50%] text-center text-3xl font-bold text-white"> */}
               <h1 className="text-center xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl text-2xl font-bold text-white">
-                Mathematics 2
+                Science and Technology 1
               </h1>
               {/* <div className="w-[100%] xl:ml-[0%] lg:ml-[0%] md:ml-[25%] ml-[0%]"> */}
               <div className="w-full items-center">
@@ -226,7 +242,7 @@ function Math2Papers() {
           <Joiningoptions />
         </div>
         <div id="explore" className="hidden">
-          <Exploremore sub_name={"math_2"} />
+          <Exploremore sub_name={"science_1"} />
         </div>
         <div id="footer" className="hidden">
           <Footer />
@@ -240,4 +256,4 @@ function Math2Papers() {
   );
 }
 
-export default Math2Papers;
+export default SciencePapers;
